@@ -1,0 +1,48 @@
+/* _content/BootstrapBlazor.Shared/Shared/MainLayout.razor.rz.scp.css */
+.bd-offcanvas[b-stnq5s0i90] {
+    overflow-y: auto;
+}
+
+@media (min-width: 992px) {
+    .bd-offcanvas[b-stnq5s0i90] {
+        position: inherit;
+        height: calc(100vh - 4rem);
+        width: auto;
+    }
+}
+/* _content/BootstrapBlazor.Shared/Shared/NavMenu.razor.rz.scp.css */
+.oi[b-igrtg5w5ag] {
+    width: 2rem;
+    font-size: 1.1rem;
+    vertical-align: text-top;
+    top: -2px;
+}
+
+.nav-item[b-igrtg5w5ag] {
+    font-size: 0.9rem;
+    padding-bottom: 0.5rem;
+}
+
+    .nav-item[b-igrtg5w5ag]  a {
+        color: #575757;
+        border-radius: 4px;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        line-height: 3rem;
+    }
+
+        .nav-item[b-igrtg5w5ag]  a.active {
+            background-color: rgba(24,24,255,0.7);
+            color: white;
+        }
+
+        .nav-item[b-igrtg5w5ag]  a.active:hover {
+            background-color: rgba(24,24,255,0.6);
+            color: white;
+        }
+
+        .nav-item[b-igrtg5w5ag]  a:hover {
+            background-color: rgba(24,24,255,0.4);
+            color: white;
+        }
