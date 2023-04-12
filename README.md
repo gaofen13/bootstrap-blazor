@@ -1,6 +1,6 @@
 # BootstrapBlazor
-»ùÓÚ[Bootstrap 5](https://getbootstrap.com/)µÄBlazor×é¼ş¿â
+åŸºäº[Bootstrap 5](https://getbootstrap.com/)çš„Blazorç»„ä»¶åº“
 
-[DemoµØÖ·(github)](https://gaofen13.github.io/bootstrap-blazor)
+[Demoåœ°å€(github)](https://gaofen13.github.io/bootstrap-blazor)
 
-[DemoµØÖ·(gitee)](https://gaofen13.gitee.io/bootstrap-blazor)
+[Demoåœ°å€(gitee)](https://gaofen13.gitee.io/bootstrap-blazor)
