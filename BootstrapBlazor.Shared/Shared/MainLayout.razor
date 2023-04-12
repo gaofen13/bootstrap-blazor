@@ -1,0 +1,26 @@
+﻿@inherits LayoutComponentBase
+
+<PageTitle>BootstrapBlazor</PageTitle>
+
+<header class="navbar sticky-top" style="height:4rem;background-color: #712cf9;box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15), inset 0 -1px 0 rgba(255,255,255,0.15);">
+    <nav class="container-fluid flex-wrap flex-lg-nowrap gap-2">
+        <button @onclick="@ToggleMenu" class="d-lg-none navbar-toggler p-2" style="color:rgba(255,255,255,0.85);" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="bi" fill="currentColor" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"></path>
+            </svg>
+        </button>
+        <a class="navbar-brand" style="gap:0.5rem;color:rgba(255,255,255,0.85);" href="">BootstrapBlazor</a>
+        <a class="ms-auto" style="color:rgba(255,255,255,0.85);" href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+    </nav>
+</header>
+<div class="container-fluid d-flex" style="height:calc(100vh - 4rem);gap:0.5rem;">
+    <BootstrapOffcanvas @bind-Show="@showMenu" ShowBackdrop="@ShowBackdrop" Class="bd-offcanvas">
+        <NavMenu />
+    </BootstrapOffcanvas>
+
+    <main class="w-100 p-3" style="overflow-y:auto;">
+        <BootstrapErrorBoundary>
+            @Body
+        </BootstrapErrorBoundary>
+    </main>
+</div>

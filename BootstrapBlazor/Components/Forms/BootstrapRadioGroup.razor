@@ -1,0 +1,9 @@
+﻿@namespace BootstrapBlazor
+@inherits BootstrapInputBase<TValue>
+@typeparam TValue
+
+<div @ref="@Element" role="radiogroup" class="@Classname" style="@Style" @attributes="@AdditionalAttributes">
+    <CascadingValue Value="@this" IsFixed>
+        @ChildContent
+    </CascadingValue>
+</div>

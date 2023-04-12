@@ -1,0 +1,13 @@
+﻿@namespace BootstrapBlazor
+@inherits BootstrapComponentBase
+@typeparam TItem
+
+<tr class="@TrClass" style="@Style" @attributes="@AdditionalAttributes">
+    @if (MultiSelection)
+    {
+        <td class="mdui-table-cell-checkbox">
+            <BootstrapCheckbox Value="@Checked" ValueChanged="@OnCheckedChanged" />
+        </td>
+    }
+    @ChildContent
+</tr>

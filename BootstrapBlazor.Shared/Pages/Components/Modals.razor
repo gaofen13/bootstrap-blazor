@@ -1,0 +1,15 @@
+﻿@page "/components/modal"
+@inject ToastService ToastService
+@inject ModalService ModalService
+
+<h3>Modal</h3>
+<BootstrapButton OnClick="@ShowModalAsync">ShowModal</BootstrapButton>
+
+@code {
+    private async Task ShowModalAsync()
+    {
+        var reference = ModalService.Show<ModalContentExample>("ModalExample");
+        var res = await reference.Result;
+        ToastService.ShowInfo(res.Data?.ToString() ?? "");
+    }
+}

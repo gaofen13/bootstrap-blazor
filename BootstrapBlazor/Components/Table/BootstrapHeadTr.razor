@@ -1,0 +1,13 @@
+﻿@namespace BootstrapBlazor
+@inherits BootstrapComponentBase
+@typeparam TItem
+
+<tr class="@Class" style="@Style" @attributes="@AdditionalAttributes">
+    @if (MultiSelection)
+    {
+        <th scope="col">
+            <BootstrapCheckbox Value="@Checked" ValueChanged="@OnCheckedChanged" />
+        </th>
+    }
+    @ChildContent
+</tr>

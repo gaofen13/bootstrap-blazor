@@ -1,0 +1,27 @@
+﻿@namespace BootstrapBlazor
+@inherits BootstrapComponentBase
+
+<div class="@Classname" style="@Style" role="alert" @attributes="@AdditionalAttributes">
+    @if (!string.IsNullOrWhiteSpace(Title))
+    {
+        <h4 class="alert-heading">@Title</h4>
+    }
+    @if (IconContent is not null)
+    {
+        @IconContent
+    }
+    <div>
+        @if (!string.IsNullOrWhiteSpace(Message))
+        {
+            @Message
+        }
+        else
+        {
+            @ChildContent
+        }
+    </div>
+    @if (ShowCloseBtn)
+    {
+        <button class="btn-close" aria-label="Close" @onclick="@OnClickCloseBtn"></button>
+    }
+</div>

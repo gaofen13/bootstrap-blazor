@@ -1,0 +1,35 @@
+﻿@namespace BootstrapBlazor
+@inherits BootstrapComponentBase
+
+<div class="@Classname" style="@Style" @attributes="@AdditionalAttributes">
+    @if (CardHeader is not null)
+    {
+        <div class="card-header">
+            @CardHeader
+        </div>
+    }
+    @if (ChildContent is not null)
+    {
+        @ChildContent
+    }
+    else
+    {
+        <div class="card-body">
+            @if (!string.IsNullOrWhiteSpace(Title))
+            {
+                <h5 class="card-title">@Title</h5>
+            }
+            @if (!string.IsNullOrWhiteSpace(Subtitle))
+            {
+                <h6 class="card-subtitle mb-2 text-muted">@Subtitle</h6>
+            }
+            @CardBody
+        </div>
+    }
+    @if (CardFooter is not null)
+    {
+        <div class="card-footer">
+            @CardFooter
+        </div>
+    }
+</div>

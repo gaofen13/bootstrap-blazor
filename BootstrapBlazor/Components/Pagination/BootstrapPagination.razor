@@ -1,0 +1,76 @@
+﻿@namespace BootstrapBlazor
+@inherits BootstrapComponentBase
+
+<nav>
+    <ul class="@Classname">
+        <BootstrapPaginationItem Disabled="@PrevDisabled" OnClick="@OnClickPrev">
+            &lt;
+        </BootstrapPaginationItem>
+        @if (Total >= 1)
+        {
+            <BootstrapPaginationItem OnClick="_=>OnClickPager(1)" Actived="@(PageIndex==1)">
+                1
+            </BootstrapPaginationItem>
+        }
+        @if (Total <= 7)
+        {
+            for (int i = 2; i < Total; i++)
+            {
+                var buttonIndex = i;
+                <BootstrapPaginationItem OnClick="_=>OnClickPager(buttonIndex)" Actived="@(PageIndex==buttonIndex)">
+                    @buttonIndex
+                </BootstrapPaginationItem>
+            }
+        }
+        else
+        {
+            if (PageIndex <= 4)
+            {
+                for (int i = 2; i < 5; i++)
+                {
+                    var buttonIndex = i;
+                    <BootstrapPaginationItem OnClick="_=>OnClickPager(buttonIndex)" Actived="@(PageIndex==buttonIndex)">
+                        @buttonIndex
+                    </BootstrapPaginationItem>
+                }
+                <BootstrapPaginationItem OnClick="_=>OnClickPager(5)" Actived="@(PageIndex==5)">
+                    5
+                </BootstrapPaginationItem>
+                <BootstrapPaginationItem Disabled>...</BootstrapPaginationItem>
+            }
+            else if (PageIndex > Total - 4)
+            {
+                <BootstrapPaginationItem Disabled>...</BootstrapPaginationItem>
+                @for (int i = Total - 4; i < Total; i++)
+                {
+                    var buttonIndex = i;
+                    <BootstrapPaginationItem OnClick="_=>OnClickPager(buttonIndex)" Actived="@(PageIndex==buttonIndex)">
+                        @buttonIndex
+                    </BootstrapPaginationItem>
+                }
+            }
+            else
+            {
+                <BootstrapPaginationItem Disabled>...</BootstrapPaginationItem>
+                @for (int i = PageIndex - 1; i < PageIndex + 2; i++)
+                {
+                    var buttonIndex = i;
+                    <BootstrapPaginationItem OnClick="_=>OnClickPager(buttonIndex)" Actived="@(PageIndex==buttonIndex)">
+                        @buttonIndex
+                    </BootstrapPaginationItem>
+                }
+                <BootstrapPaginationItem Disabled>...</BootstrapPaginationItem>
+            }
+
+        }
+        @if (Total >= 2)
+        {
+            <BootstrapPaginationItem OnClick="_=>OnClickPager(Total)" Actived="@(PageIndex==Total)">
+                @Total
+            </BootstrapPaginationItem>
+        }
+        <BootstrapPaginationItem Disabled="@NexDisabled" OnClick="@OnClickNex">
+            &gt;
+        </BootstrapPaginationItem>
+    </ul>
+</nav>

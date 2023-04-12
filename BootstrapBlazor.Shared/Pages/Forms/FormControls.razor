@@ -1,0 +1,39 @@
+﻿@page "/forms/formcontrols"
+
+<h3>FormControls</h3>
+
+<BootstrapContainer>
+    <BootstrapFormField Class="mb-3 align-items-center" Label="Email address">
+        <BootstrapInputText Type="email" Placeholder="name@example.com" />
+    </BootstrapFormField>
+    <BootstrapFormField Class="mb-3 align-items-center" Label="Example textarea">
+        <BootstrapTextArea />
+    </BootstrapFormField>
+</BootstrapContainer>
+
+<h3>Sizing </h3>
+
+<BootstrapContainer>
+    <BootstrapInputText Class="mb-3" Size="@Size.lg" Placeholder="form-control-lg" />
+    <BootstrapInputText Class="mb-3" Placeholder="Default input" />
+    <BootstrapInputText Class="mb-3" Size="@Size.sm" Placeholder="form-control-sm" />
+</BootstrapContainer>
+
+<h3>Disabled & Readonly  </h3>
+
+<BootstrapContainer>
+    <BootstrapInputText Class="mb-3" Disabled Placeholder="Disabled input" />
+    <BootstrapInputText Class="mb-3" Readonly Value="Readonly input here..." />
+    <BootstrapInputText Class="mb-3" Disabled Readonly Value="Disabled readonly input" />
+    </BootstrapContainer>
+
+    <h3>Readonly plain text</h3>
+
+    <BootstrapContainer>
+    <BootstrapFormField Class="mb-3" Label="Email address" LabelClass="col-3 text-end">
+        <BootstrapInputText Type="email" Readonly Plaintext Placeholder="name@example.com" />
+    </BootstrapFormField>
+        <BootstrapFormField Class="mb-3" Label="Password" LabelClass="col-3 text-end">
+        <BootstrapInputText Type="password" />
+    </BootstrapFormField>
+    </BootstrapContainer>

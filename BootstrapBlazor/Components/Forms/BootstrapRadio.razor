@@ -1,0 +1,15 @@
+﻿@namespace BootstrapBlazor
+@inherits BootstrapComponentBase
+@typeparam TValue
+
+<label class="@ContainerClass">
+    @if (ChildContent is not null)
+    {
+        <span class="form-check-label">@ChildContent</span>
+    }
+    else if (Label is not null)
+    {
+        <span class="form-check-label">@Label</span>
+    }
+    <input type="radio" id="@Id" name="@(Name??RadioGroup?.RadioName)" class="@Classname" style="@Style" disabled="@Disabled" @attributes="@AdditionalAttributes" checked="@Checked" value="@Value" @onchange="@OnRadioChanged" />
+</label>

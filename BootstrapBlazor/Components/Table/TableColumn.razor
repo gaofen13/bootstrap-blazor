@@ -1,0 +1,23 @@
+﻿@namespace BootstrapBlazor
+@inherits BootstrapComponentBase
+
+@if (Visible)
+{
+    if (Mode == RenderMode.Body)
+    {
+        <td class="@Classname">@ChildContent</td>
+    }
+    else if (Mode == RenderMode.Head)
+    {
+        <th scope="col">
+            @if (TitleContent is not null)
+            {
+                @TitleContent
+            }
+            else
+            {
+                @Title
+            }
+        </th>
+    }
+}

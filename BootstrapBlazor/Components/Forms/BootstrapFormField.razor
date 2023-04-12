@@ -1,0 +1,31 @@
+﻿@namespace BootstrapBlazor
+@using Microsoft.AspNetCore.Components.Forms
+@inherits BootstrapComponentBase
+
+<div class="@Classname" style="@Style" @attributes="@AdditionalAttributes">
+    <label for="@ForId" class="@LabelClassname">@Label</label>
+    <div class="col">
+        <CascadingValue Value="@this" Name="FormField" IsFixed>
+            @ChildContent
+        </CascadingValue>
+        @if (!string.IsNullOrWhiteSpace(ValidText) && _isValid == true)
+        {
+            <div class="valid-feedback">
+                @ValidText
+            </div>
+        }
+        else if (_isValid == false)
+        {
+            <div class="invalid-feedback">
+                @if (!string.IsNullOrWhiteSpace(InvalidText))
+                {
+                    @InvalidText
+                }
+                else
+                {
+                    @_invalidText
+                }
+            </div>
+        }
+    </div>
+</div>

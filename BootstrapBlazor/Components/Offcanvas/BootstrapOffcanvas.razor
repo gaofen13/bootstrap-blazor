@@ -1,0 +1,23 @@
+﻿@namespace BootstrapBlazor
+@inherits BootstrapComponentBase
+
+<div class="@Classname" style="@Style" @attributes="@AdditionalAttributes">
+    @if (!string.IsNullOrWhiteSpace(Title) || ShowCloseButton)
+    {
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">@Title</h5>
+            @if (ShowCloseButton)
+            {
+                <button type="button" class="btn-close" aria-label="Close" @onclick="@Close"></button>
+            }
+        </div>
+    }
+    <div class="offcanvas-body">
+        @ChildContent
+    </div>
+</div>
+
+@if (ShowBackdrop && Show)
+{
+    <div class="offcanvas-backdrop fade show" @onclick="@OnClickBackdrop"></div>
+}

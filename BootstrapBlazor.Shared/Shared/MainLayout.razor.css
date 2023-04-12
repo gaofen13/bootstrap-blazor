@@ -1,0 +1,11 @@
+.bd-offcanvas {
+    overflow-y: auto;
+}
+
+@media (min-width: 992px) {
+    .bd-offcanvas {
+        position: inherit;
+        height: calc(100vh - 4rem);
+        width: auto;
+    }
+}

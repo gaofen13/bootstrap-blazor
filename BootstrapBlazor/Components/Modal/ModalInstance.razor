@@ -1,0 +1,24 @@
+﻿@namespace BootstrapBlazor
+@inherits BootstrapComponentBase
+
+<div tabindex="-1" class="@Classname" style="@Stylelist" role="dialog" @attributes="@AdditionalAttributes" @onclick="@OnClickBackgroundAsync">
+    <div class="modal-dialog" @onclick:stopPropagation="@true">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5">@Title</h1>
+                @if (_options.ShowCloseBtn)
+                {
+                    <button class="btn-close" aria-label="Close" @onclick="@OnClickCloseBtn"></button>
+                }
+            </div>
+            <CascadingValue Value="@this" IsFixed>
+                @ChildContent
+            </CascadingValue>
+        </div>
+    </div>
+</div>
+
+@if (Visible)
+{
+    <div class="modal-backdrop show"></div>
+}

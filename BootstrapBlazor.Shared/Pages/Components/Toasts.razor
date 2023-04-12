@@ -1,0 +1,30 @@
+﻿@page "/components/toast"
+@inject ToastService ToastService
+
+<h3>Toast</h3>
+<BootstrapButton OnClick="@ShowSuccess">ShowSuccess</BootstrapButton>
+<BootstrapButton OnClick="@ShowInfo">ShowInfo</BootstrapButton>
+<BootstrapButton OnClick="@ShowWarning">ShowWarning</BootstrapButton>
+<BootstrapButton OnClick="@ShowError">ShowError</BootstrapButton>
+
+@code {
+    private void ShowSuccess()
+    {
+        ToastService.ShowSuccess("SuccessMessage");
+    }
+
+    private void ShowInfo()
+    {
+        ToastService.ShowInfo("InfoMessage");
+    }
+
+    private void ShowWarning()
+    {
+        ToastService.ShowWarning("WarningMessage");
+    }
+
+    private void ShowError()
+    {
+        ToastService.ShowError("ErrorMessage");
+    }
+}

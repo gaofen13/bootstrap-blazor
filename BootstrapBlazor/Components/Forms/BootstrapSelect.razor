@@ -1,0 +1,7 @@
+﻿@namespace BootstrapBlazor
+@inherits BootstrapInputBase<TValue>
+@typeparam TValue
+
+<select @ref="@Element" id="@Id" name="@Name" class="@Classname" style="@Style" required="@Required" autofocus="@AutoFocus" @attributes="@AdditionalAttributes" value="@CurrentValueAsString" @onchange="@(EventCallback.Factory.CreateBinder<string?>(this,__value=>CurrentValueAsString=__value,default))">
+    @ChildContent
+</select>

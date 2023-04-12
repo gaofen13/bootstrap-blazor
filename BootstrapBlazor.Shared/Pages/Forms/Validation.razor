@@ -1,0 +1,66 @@
+﻿@page "/forms/validation"
+@using System.ComponentModel.DataAnnotations;
+
+<h3>Validation</h3>
+
+<EditForm @ref="@form" Model="@test" OnValidSubmit="@OnValidSubmit">
+    <DataAnnotationsValidator />
+    <BootstrapFormField InvalidText="不能为空">
+        <BootstrapInputText @bind-Value="@test.Field1" />
+    </BootstrapFormField>
+    <BootstrapFormField>
+        <BootstrapInputText @bind-Value="@test.Field1" />
+    </BootstrapFormField>
+    <BootstrapFormField>
+        <BootstrapRadioGroup @bind-Value="@test.Radio1">
+            <BootstrapRadio Value="1">1</BootstrapRadio>
+            <BootstrapRadio Value="2">2</BootstrapRadio>
+            <BootstrapRadio Value="3">3</BootstrapRadio>
+        </BootstrapRadioGroup>
+    </BootstrapFormField>
+    <BootstrapFormField>
+        <BootstrapSelect @bind-Value="@test.Radio1">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </BootstrapSelect>
+    </BootstrapFormField>
+    <BootstrapFormField>
+        <BootstrapRange Min="0" Max="100" @bind-Value="@test.Range1" />
+    </BootstrapFormField>
+    <BootstrapCheckbox Label="同意" @bind-Value="@test.Checked1" />
+    <BootstrapCheckbox IsSwitch Label="同意" @bind-Value="@test.Checked1" />
+    <BootstrapButton ButtonType="@ButtonType.submit">Submit form</BootstrapButton>
+    <BootstrapButton ButtonType="@ButtonType.reset" Color="@Color.secondary" OnClick="@OnResetForm">Reset form</BootstrapButton>
+</EditForm>
+
+@code {
+    private EditForm? form;
+    private ValidationClass test = new ValidationClass();
+
+    private void OnValidSubmit()
+    {
+
+    }
+
+    private void OnResetForm()
+    {
+        test = new ValidationClass();
+    }
+
+    class ValidationClass
+    {
+        [Required]
+        public string? Field1 { get; set; }
+
+        [Range(1, 10)]
+        public int Radio1 { get; set; }
+
+        [Range(1, 100)]
+        public int Range1 { get; set; }
+
+        [Range(1, 1)]
+        public bool Checked1 { get; set; }
+    }
+}

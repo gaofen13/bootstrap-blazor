@@ -1,0 +1,16 @@
+﻿@namespace BootstrapBlazor
+@inherits BootstrapButtonBase
+
+<BootstrapElement @bind-Ref="@Element"
+                 HtmlTag="@HtmlTag"
+                 Class="@Classname"
+                 Style="@Style"
+                 @attributes="@AdditionalAttributes"
+                 @onclick="@OnClickHandler"
+                 type="@ButtonType"
+                 href="@Href"
+                 target="@Target"
+                 rel="@(Target=="_blank"?"noopener":null)"
+                 disabled="@Disabled">
+    @ChildContent
+</BootstrapElement>

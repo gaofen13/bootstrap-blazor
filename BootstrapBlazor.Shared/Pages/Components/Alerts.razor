@@ -1,0 +1,97 @@
+﻿@page "/components/alert"
+
+<h3>警告框（Alert）</h3>
+
+<h4>Simple Alert</h4>
+<BootstrapAlert AlertLevel="@Color.primary">A simple primary alert—check it out!</BootstrapAlert>
+<BootstrapAlert AlertLevel="@Color.secondary">A simple secondary alert—check it out!</BootstrapAlert>
+<BootstrapAlert AlertLevel="@Color.success">A simple success alert—check it out!</BootstrapAlert>
+<BootstrapAlert AlertLevel="@Color.danger">A simple danger alert—check it out!</BootstrapAlert>
+<BootstrapAlert AlertLevel="@Color.warning">A simple warning alert—check it out!</BootstrapAlert>
+<BootstrapAlert AlertLevel="@Color.info">A simple info alert—check it out!</BootstrapAlert>
+<BootstrapAlert AlertLevel="@Color.light">A simple light alert—check it out!</BootstrapAlert>
+<BootstrapAlert AlertLevel="@Color.dark">A simple dark alert—check it out!</BootstrapAlert>
+
+<h4>Live example</h4>
+@if (showAlert)
+{
+    <BootstrapAlert AlertLevel="@Color.primary"
+                        ShowCloseBtn OnClickCloseBtn="@(_=>showAlert=false)">A simple primary alert—check it out!</BootstrapAlert>
+}
+<BootstrapButton OnClick="@ShowAlert">Show live alert</BootstrapButton>
+
+<h4>Link color</h4>
+<BootstrapAlert AlertLevel="@Color.primary">
+    A simple primary alert with <BootstrapAlertLink Href="#">an example link</BootstrapAlertLink>. Give it a click if you like.
+</BootstrapAlert>
+<BootstrapAlert AlertLevel="@Color.secondary">
+    A simple secondary alert with <BootstrapAlertLink Href="#">an example link</BootstrapAlertLink>. Give it a click if you like.
+</BootstrapAlert>
+<BootstrapAlert AlertLevel="@Color.success">
+    A simple success alert with <BootstrapAlertLink Href="#">an example link</BootstrapAlertLink>. Give it a click if you like.
+</BootstrapAlert>
+<BootstrapAlert AlertLevel="@Color.danger">
+    A simple danger alert with <BootstrapAlertLink Href="#">an example link</BootstrapAlertLink>. Give it a click if you like.
+</BootstrapAlert>
+<BootstrapAlert AlertLevel="@Color.warning">
+    A simple warning alert with <BootstrapAlertLink Href="#">an example link</BootstrapAlertLink>. Give it a click if you like.
+</BootstrapAlert>
+<BootstrapAlert AlertLevel="@Color.info">
+    A simple info alert with <BootstrapAlertLink Href="#">an example link</BootstrapAlertLink>. Give it a click if you like.
+</BootstrapAlert>
+<BootstrapAlert AlertLevel="@Color.light">
+    A simple light alert with <BootstrapAlertLink Href="#">an example link</BootstrapAlertLink>. Give it a click if you like.
+</BootstrapAlert>
+<BootstrapAlert AlertLevel="@Color.dark">
+    A simple dark alert with <BootstrapAlertLink Href="#">an example link</BootstrapAlertLink>. Give it a click if you like.
+</BootstrapAlert>
+
+<h4>Additional content </h4>
+<BootstrapAlert AlertLevel="@Color.primary">
+    <h4 class="alert-heading">Well done!</h4>
+    <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+    <hr>
+    <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+</BootstrapAlert>
+
+<h4>Icons </h4>
+<BootstrapAlert Class="d-flex align-items-center" AlertLevel="@Color.primary" Message="An example alert with an icon">
+    <IconContent>
+        <svg xmlns="http://www.w3.org/2000/svg" role="img" class="bi me-2" fill="currentcolor" width="16" height="16">
+            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
+        </svg>
+    </IconContent>
+</BootstrapAlert>
+<BootstrapAlert Class="d-flex align-items-center" AlertLevel="@Color.success" Message="An example success alert with an icon">
+    <IconContent>
+        <svg xmlns="http://www.w3.org/2000/svg" role="img" class="bi me-2" fill="currentcolor" width="16" height="16">
+            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+        </svg>
+    </IconContent>
+</BootstrapAlert>
+<BootstrapAlert Class="d-flex align-items-center" AlertLevel="@Color.warning" Message="An example warning alert with an icon">
+    <IconContent>
+        <svg xmlns="http://www.w3.org/2000/svg" role="img" class="bi me-2" fill="currentcolor" width="16" height="16">
+            <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+        </svg>
+    </IconContent>
+</BootstrapAlert>
+<BootstrapAlert Class="d-flex align-items-center" AlertLevel="@Color.danger" Message="An example danger alert with an icon">
+    <IconContent>
+        <svg xmlns="http://www.w3.org/2000/svg" role="img" class="bi me-2" fill="currentcolor" width="16" height="16">
+            <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+        </svg>
+    </IconContent>
+</BootstrapAlert>
+
+@code {
+    private bool showAlert;
+
+    private void ShowAlert()
+    {
+        if (!showAlert)
+        {
+            showAlert = true;
+        }
+    }
+}

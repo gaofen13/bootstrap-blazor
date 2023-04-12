@@ -1,0 +1,18 @@
+﻿@namespace BootstrapBlazor
+@inherits BootstrapComponentBase
+
+@if (ToastList.Any())
+{
+    <div class="@ContainerClass" style="@Style" @attributes="@AdditionalAttributes">
+        <CascadingValue Value="@this" IsFixed>
+            @foreach (var toast in ToastList.OrderBy(x => x.TimeStamp))
+            {
+                <BootstrapToast @key="toast" Options="toast.Options" ToastId="@toast.Id" ToastLevel="@toast.ToastLevel" Title="@toast.Title">
+                    <MessageContent>
+                        @toast.MessageContent
+                    </MessageContent>
+                </BootstrapToast>
+            }
+        </CascadingValue>
+    </div>
+}

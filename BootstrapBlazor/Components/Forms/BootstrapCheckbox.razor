@@ -1,0 +1,34 @@
+﻿@namespace BootstrapBlazor
+@using Microsoft.AspNetCore.Components.Forms
+@inherits BootstrapInputBase<bool>
+
+<label class="@ContainerClass">
+    @if (ChildContent is not null)
+    {
+        <span class="form-check-label">@ChildContent</span>
+    }
+    else if (Label is not null)
+    {
+        <span class="form-check-label">@Label</span>
+    }
+    <input @ref="@Element" type="checkbox" id="@Id" name="@Name" class="@Classname" style="@Style" required="@Required" disabled="@Disabled" readonly="@Readonly" @attributes="@AdditionalAttributes" checked="@BindConverter.FormatValue(Value)" @onchange="@(EventCallback.Factory.CreateBinder<bool>(this,__value=>Value=__value,Value))" />
+    @if (IsValid == true)
+    {
+        <span class="valid-feedback">
+            @ValidText
+        </span>
+    }
+    else if (IsValid == false)
+    {
+        <span class="invalid-feedback">
+            @if (!string.IsNullOrWhiteSpace(InvalidText))
+            {
+                @InvalidText
+            }
+            else
+            {
+                @InvalidMessageList.FirstOrDefault()
+            }
+        </span>
+    }
+</label>
