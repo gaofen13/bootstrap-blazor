@@ -43,5 +43,5 @@ jobs:
         # Gitee 目标仓库地址
         dst: gaofen13/bootstrap-blazor
         dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
-        dst_token: ${{ secrets.GITEE_Mirror_TOKEN }}
+        dst_token: ${{ secrets.GITEE_MIRROR_TOKEN }}
         account_type: user
