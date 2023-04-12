@@ -41,6 +41,6 @@ jobs:
         SSH_PRIVATE_KEY: ${{ secrets.GITEE_PRIVATE_KEY }}
       with:
         # GitHub 源仓库地址
-        source-repo: https://github.com/gaofen13/bootstrap-blazor.git
+        source-repo: git@github.com:gaofen13/bootstrap-blazor.git
         # Gitee 目标仓库地址
-        destination-repo: https://gitee.com/gaofen13/bootstrap-blazor.git
+        destination-repo: git@gitee.com:gaofen13/bootstrap-blazor.git
