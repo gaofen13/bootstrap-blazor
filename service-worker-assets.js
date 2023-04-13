@@ -33,7 +33,7 @@
       "url": "_framework\/icudt.dat"
     },
     {
-      "hash": "sha256-mgIdi4en5uu8j+qVHCYEOvvRcNn7ZxsMsK6fsgFSX1U=",
+      "hash": "sha256-tVRIe8zXvjnlsB7ygwDO5505GLurh2Fl1WkxqkBe7A4=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -45,7 +45,7 @@
       "url": "_framework\/BootstrapBlazor.dll"
     },
     {
-      "hash": "sha256-LQyxIw46KEyf6tvsNwjPhTNuNkczy8zyxC7chHgQujs=",
+      "hash": "sha256-WJmrPJ48KK0upvqbQd7M2T9M+YDdDlKD6+2rBIdguPI=",
       "url": "_framework\/BootstrapBlazor.Shared.dll"
     },
     {
@@ -209,7 +209,7 @@
       "url": "404.html"
     },
     {
-      "hash": "sha256-JEJhkzXnORIWyCIWhH+M1GdVfY0\/JpRzux7memXHwhE=",
+      "hash": "sha256-Hww\/Mx8zXBrlI+uxlg0kD283WsdQotzRVc0yNs669cE=",
       "url": "css\/app.css"
     },
     {
@@ -277,5 +277,5 @@
       "url": "_content\/BootstrapBlazor\/exampleJsInterop.js"
     }
   ],
-  "version": "lnItbN6y"
+  "version": "Fo0hFtwA"
 };
