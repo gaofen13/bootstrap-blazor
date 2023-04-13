@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BootstrapBlazor", "Bootstra
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BootstrapBlazor.Server", "BootstrapBlazor.Server\BootstrapBlazor.Server.csproj", "{207CDB8D-7247-4940-AF46-ACA11B6CD2D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BootstrapBlazor.Client", "BootstrapBlazor.Client\BootstrapBlazor.Client.csproj", "{650AE45D-A386-41B3-9675-258C0C72E466}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BootstrapBlazor.Client", "BootstrapBlazor.Client\BootstrapBlazor.Client.csproj", "{650AE45D-A386-41B3-9675-258C0C72E466}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "解决方案项", "解决方案项", "{6F4A4FC0-BEDD-4C58-B95B-E9F2722F70F5}"
 	ProjectSection(SolutionItems) = preProject
