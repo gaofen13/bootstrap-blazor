@@ -209,7 +209,7 @@
       "url": "404.html"
     },
     {
-      "hash": "sha256-47DEQpj8HBSa+\/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=",
+      "hash": "sha256-JEJhkzXnORIWyCIWhH+M1GdVfY0\/JpRzux7memXHwhE=",
       "url": "css\/app.css"
     },
     {
@@ -277,5 +277,5 @@
       "url": "_content\/BootstrapBlazor\/exampleJsInterop.js"
     }
   ],
-  "version": "XMU4xh7L"
+  "version": "lnItbN6y"
 };
