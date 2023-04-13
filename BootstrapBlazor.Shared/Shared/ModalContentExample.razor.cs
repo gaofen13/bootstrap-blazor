@@ -9,12 +9,12 @@ namespace BootstrapBlazor.Shared.Shared
 
         private void OnConfirm()
         {
-            ModalInstance.Close(ModalResult.Ok("µã»÷ÁËÈ·¶¨"));
+            ModalInstance.Close(ModalResult.Ok("ç‚¹å‡»äº†ç¡®å®š"));
         }
 
         private void OnCancel()
         {
-            ModalInstance.Cancel("µã»÷ÁËÈ¡Ïû");
+            ModalInstance.Cancel("ç‚¹å‡»äº†å–æ¶ˆ");
         }
     }
 }
