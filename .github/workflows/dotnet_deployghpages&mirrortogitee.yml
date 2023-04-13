@@ -36,11 +36,12 @@ jobs:
         FOLDER: deploy/wwwroot
         CLEAN: true
     - name: Mirror to Gitee
-      uses: wearerequired/git-mirror-action@master
-      env:
-        SSH_PRIVATE_KEY: ${{ secrets.GITEE_PRIVATE_KEY }}
+      uses: Yikun/hub-mirror-action@master
       with:
-        # GitHub 源仓库地址
-        source-repo: git@github.com:gaofen13/bootstrap-blazor.git
-        # Gitee 目标仓库地址
-        destination-repo: git@gitee.com:gaofen13/bootstrap-blazor.git
+          src: 'github/gaofen13'    						
+          dst: 'gitee/gaofen13'     						
+          dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}  
+          dst_token:  ${{ secrets.GITEE_TOKEN }}    
+          force_update: true
+          static_list: "bootstrap-blazor"   					
+          debug: true
