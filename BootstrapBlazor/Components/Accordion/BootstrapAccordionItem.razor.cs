@@ -15,15 +15,17 @@ namespace BootstrapBlazor
             .AddClass("collapsed", !Open)
             .Build();
 
-        private string BodyClassname =>
+        private string CollapseClassname =>
             new ClassBuilder("accordion-collapse collapse")
             .AddClass("show", Open)
             .Build();
 
-        private string BodyStylelist =>
-            new StyleBuilder("transition", "opacity 0.35s ease")
-            .AddStyle("opacity", Open ? "1" : "0")
-            .AddStyle("height", "0", !Open)
+        private string CollapseStylelist =>
+            new StyleBuilder("will-change", "max-height")
+            .AddStyle("transition", "max-height 0.35s ease")
+            .AddStyle("max-height", Open ? "100vh" : "0")
+            .AddStyle("overflow-y", "auto")
+            .AddStyle("display", "block")
             .Build();
 
         [CascadingParameter]
@@ -40,20 +42,43 @@ namespace BootstrapBlazor
 
         protected override void OnInitialized()
         {
-            Accordion?.AddAccordionItem(this);
+            Accordion?.AddItem(this);
             base.OnInitialized();
         }
 
-        public void Toggle()
+        private void OnToggleItem()
         {
-            Open = !Open;
-            _ = OpenChanged.InvokeAsync(Open);
+            if (Open)
+            {
+                CloseItem();
+            }
+            else
+            {
+                if (Accordion?.MultiOpen == false)
+                {
+                    Accordion.CloseAllItems();
+                }
+                OpenItem();
+            }
+        }
+
+        private void OpenItem()
+        {
+            Open = true;
+            _ = OpenChanged.InvokeAsync(true);
+            StateHasChanged();
+        }
+
+        internal void CloseItem()
+        {
+            Open = false;
+            _ = OpenChanged.InvokeAsync(false);
             StateHasChanged();
         }
 
         void IDisposable.Dispose()
         {
-            Accordion?.RemoveAccordionItem(this);
+            Accordion?.RemoveItem(this);
             GC.SuppressFinalize(this);
         }
     }

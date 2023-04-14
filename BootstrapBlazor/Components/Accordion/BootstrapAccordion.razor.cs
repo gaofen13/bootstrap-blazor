@@ -19,7 +19,7 @@ namespace BootstrapBlazor
         [Parameter]
         public bool MultiOpen { get; set; }
 
-        public void AddAccordionItem(BootstrapAccordionItem item)
+        internal void AddItem(BootstrapAccordionItem item)
         {
             if (!_items.Contains(item))
             {
@@ -27,7 +27,7 @@ namespace BootstrapBlazor
             }
         }
 
-        public void RemoveAccordionItem(BootstrapAccordionItem item)
+        internal void RemoveItem(BootstrapAccordionItem item)
         {
             if (_items.Contains(item))
             {
@@ -35,16 +35,12 @@ namespace BootstrapBlazor
             }
         }
 
-        public void ToggleItem(BootstrapAccordionItem item)
+        internal void CloseAllItems()
         {
-            if (!MultiOpen & !item.Open)
+            foreach (var openedItem in _items.Where(i => i.Open))
             {
-                foreach (var openedItem in _items.Where(i => i.Open))
-                {
-                    openedItem.Toggle();
-                }
+                openedItem.CloseItem();
             }
-            item.Toggle();
         }
     }
 }
