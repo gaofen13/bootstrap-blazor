@@ -24,7 +24,6 @@ namespace BootstrapBlazor
             new StyleBuilder("transition", "opacity 0.35s ease")
             .AddStyle("opacity", Open ? "1" : "0")
             .AddStyle("height", "0", !Open)
-            .AddStyle("display", "block")
             .Build();
 
         [CascadingParameter]

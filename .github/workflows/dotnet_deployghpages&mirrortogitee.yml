@@ -1,4 +1,4 @@
-name: .NET
+name: .Net_deployghpages&mirrortogitee
 
 on:
   push:
@@ -8,23 +8,27 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v3
+  
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: |
             6.0.x 
             7.0.x
+
     - name: Restore dependencies
       run: dotnet restore
+
     - name: Build
       run: dotnet build --no-restore
+
     - name: Test
       run: dotnet test --no-build --verbosity normal
+
     - name: Publish wasm
       run: dotnet publish -c Release -o deploy BootstrapBlazor.Client
       
@@ -35,8 +39,9 @@ jobs:
         BRANCH: gh-pages
         FOLDER: deploy/wwwroot
         CLEAN: true
-    - name: Mirror to Gitee
-      uses: Yikun/hub-mirror-action@master
+
+    - name: Sync to Gitee
+      uses: Yikun/hub-mirror-action@v1.2
       with:
           src: 'github/gaofen13'    						
           dst: 'gitee/gaofen13'     						
@@ -45,3 +50,11 @@ jobs:
           force_update: true
           static_list: "bootstrap-blazor"   					
           debug: true
+
+    - name: Build Gitee Pages
+      uses: yanglbme/gitee-pages-action@v1.4.1
+      with:
+          gitee-username: gaofen13
+          gitee-password: ${{ secrets.GITEE_PASSWORD }}
+          gitee-repo: gaofen13/bootstrap-blazor
+          branch: gh-pages
