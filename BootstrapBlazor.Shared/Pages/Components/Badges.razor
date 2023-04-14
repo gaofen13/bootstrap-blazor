@@ -1,0 +1,55 @@
+﻿@page "/components/badge"
+
+<h3>Badges</h3>
+
+<h1>Example heading <BootstrapBadge>New</BootstrapBadge></h1>
+<h2>Example heading <BootstrapBadge>New</BootstrapBadge></h2>
+<h3>Example heading <BootstrapBadge>New</BootstrapBadge></h3>
+<h4>Example heading <BootstrapBadge>New</BootstrapBadge></h4>
+<h5>Example heading <BootstrapBadge>New</BootstrapBadge></h5>
+<h6>Example heading <BootstrapBadge>New</BootstrapBadge></h6>
+
+<h3>Buttons</h3>
+
+<BootstrapButton>
+    Notifications <BootstrapBadge Color="@Color.secondary">4</BootstrapBadge>
+</BootstrapButton>
+
+<h3>Positioned</h3>
+
+<div>
+    <BootstrapButton Class="position-relative">
+        Inbox
+        <BootstrapBadge Pill HorizontalPosition="@HorizontalPosition.end" VerticalPosition="@VerticalPosition.top" Color="@Color.danger">
+            99+
+        </BootstrapBadge>
+        </BootstrapButton>
+    </div>
+    <div class="mt-3">
+        <BootstrapButton Class="position-relative">
+        Profile
+        <BootstrapBadge Indicator HorizontalPosition="@HorizontalPosition.end" VerticalPosition="@VerticalPosition.top" Color="@Color.danger" />
+        </BootstrapButton>
+    </div>
+
+    <h3>Background colors</h3>
+
+    <BootstrapBadge Color="@Color.primary">Primary</BootstrapBadge>
+    <BootstrapBadge Color="@Color.secondary">Secondary</BootstrapBadge>
+    <BootstrapBadge Color="@Color.success">Success</BootstrapBadge>
+    <BootstrapBadge Color="@Color.danger">Danger</BootstrapBadge>
+    <BootstrapBadge Color="@Color.warning">Warning</BootstrapBadge>
+    <BootstrapBadge Color="@Color.info">Info</BootstrapBadge>
+    <BootstrapBadge Color="@Color.light">Light</BootstrapBadge>
+    <BootstrapBadge Color="@Color.dark">Dark</BootstrapBadge>
+
+    <h3>Pill badges</h3>
+
+    <BootstrapBadge Pill Color="@Color.primary">Primary</BootstrapBadge>
+<BootstrapBadge Pill Color="@Color.secondary">Secondary</BootstrapBadge>
+<BootstrapBadge Pill Color="@Color.success">Success</BootstrapBadge>
+<BootstrapBadge Pill Color="@Color.danger">Danger</BootstrapBadge>
+<BootstrapBadge Pill Color="@Color.warning">Warning</BootstrapBadge>
+<BootstrapBadge Pill Color="@Color.info">Info</BootstrapBadge>
+<BootstrapBadge Pill Color="@Color.light">Light</BootstrapBadge>
+<BootstrapBadge Pill Color="@Color.dark">Dark</BootstrapBadge>
