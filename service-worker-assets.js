@@ -33,19 +33,19 @@
       "url": "_framework\/icudt.dat"
     },
     {
-      "hash": "sha256-D4CCXmOKJErEgMhHwomixe3+2w1yD0IRf+jJWDHfdR8=",
+      "hash": "sha256-zUXojKpzu1Isk3yJVtsVacOxjwrIDlFmN7S8j7PF\/hU=",
       "url": "_framework\/blazor.boot.json"
     },
     {
-      "hash": "sha256-u64skp36+D25R+qjMhjAsT+maSlTPK52GUUaWPMUMvk=",
+      "hash": "sha256-Pd+qrb2LEi+oRFioh4\/tYXCuM2+hUhIHdAshBh507P4=",
       "url": "_framework\/BootstrapBlazor.Client.dll"
     },
     {
-      "hash": "sha256-rskjWztr4RtWNhM2e6\/CcptonnRRs34y0LOf+sCe0EQ=",
+      "hash": "sha256-h0inJD0C\/8y3pDjY\/ebIcRW3zwfxWFu+CF3CBWB6\/A8=",
       "url": "_framework\/BootstrapBlazor.dll"
     },
     {
-      "hash": "sha256-E+GuYtsOPMoNkTMFmL1xksU1YpjMC3PNH0qCtTlKsD8=",
+      "hash": "sha256-p250OFpgohRU8q8UeAFkZcVsT2+CgNsZ5a9o7hgDQv4=",
       "url": "_framework\/BootstrapBlazor.Shared.dll"
     },
     {
@@ -277,5 +277,5 @@
       "url": "_content\/BootstrapBlazor\/exampleJsInterop.js"
     }
   ],
-  "version": "nZnNM9K1"
+  "version": "WEcKeDH6"
 };
