@@ -2,12 +2,10 @@
 {
     public class ToastOptions
     {
-        public int TimeOut { get; set; } = 5;
+        public bool AutoClose { get; set; }
 
-        public bool ShowIcon { get; set; } = true;
+        public int CountdownTimeout { get; set; } = 5;
 
-        public bool ShowCountdown { get; set; } = true;
-
-        public bool ShowCloseButton { get; set; } = true;
+        public bool ManualClose { get; set; } = true;
     }
 }

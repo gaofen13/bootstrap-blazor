@@ -5,76 +5,37 @@ namespace BootstrapBlazor
 {
     public partial class BootstrapToast : BootstrapComponentBase
     {
-        private int _countdownTime;
-        private ToastOptions _options = new();
-        private CountdownTimer? _countdownTimer;
+        private bool HasHeader => !string.IsNullOrWhiteSpace(Title) || IconContent != null || (ToastInstance?.LiveOptions.AutoClose == true && ToastInstance.LiveOptions.CountdownTimeout > 0) || ToastInstance?.LiveOptions.ManualClose == true;
 
         private string Classname =>
             new ClassBuilder("toast fade show")
-            .AddClass($"text-bg-{ToastLevel}")
+            .AddClass($"text-bg-{Color}", Color != null)
             .AddClass(Class)
             .Build();
 
         private string HeaderClassname =>
             new ClassBuilder("toast-header")
-            .AddClass($"text-{ToastLevel}")
+            .AddClass($"text-{Color}", Color != null)
             .Build();
 
         [CascadingParameter]
-        private BootstrapToastContainer? ToastContainer { get; set; }
+        private ToastInstance? ToastInstance { get; set; }
 
         [Parameter]
-        public Color ToastLevel { get; set; }
+        public Color? Color { get; set; }
 
         [Parameter]
         public string? Title { get; set; }
 
         [Parameter]
-        public RenderFragment? MessageContent { get; set; }
+        public string? Message { get; set; }
 
         [Parameter]
-        public Guid ToastId { get; set; }
+        public RenderFragment? IconContent { get; set; }
 
-        [Parameter]
-        public ToastOptions? Options { get; set; }
-
-        protected override async Task OnInitializedAsync()
+        public void Close()
         {
-            if (Options != null)
-            {
-                _options = Options;
-            }
-            else
-            {
-                if (ToastContainer?.GlobalOptions != null)
-                {
-                    _options = ToastContainer.GlobalOptions;
-                }
-            }
-
-            _countdownTimer = new CountdownTimer(_countdownTime = _options.TimeOut)
-                .OnTick(CountdownAsync)
-                .OnElapsed(Close);
-
-            await _countdownTimer.StartAsync();
-        }
-
-        private async Task CountdownAsync(int time)
-        {
-            _countdownTime = time;
-            await InvokeAsync(StateHasChanged);
-        }
-
-        /// <summary>
-        /// Closes the toast
-        /// </summary>
-        public void Close() => ToastContainer?.RemoveToast(ToastId);
-
-        void IDisposable.Dispose()
-        {
-            _countdownTimer?.Dispose();
-            _countdownTimer = null;
-            GC.SuppressFinalize(this);
+            ToastInstance?.Close();
         }
     }
 }

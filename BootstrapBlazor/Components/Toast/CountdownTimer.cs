@@ -37,9 +37,11 @@
         {
             while (await _timer.WaitForNextTickAsync(_cancellationToken) && !_cancellationToken.IsCancellationRequested)
             {
-                _countdownTime--;
-                await _tickDelegate?.Invoke(_countdownTime)!;
-
+                if (_countdownTime > 0)
+                {
+                    _countdownTime--;
+                    await _tickDelegate?.Invoke(_countdownTime)!;
+                }
                 if (_countdownTime == 0)
                 {
                     _elapsedDelegate?.Invoke();
@@ -47,6 +49,9 @@
             }
         }
 
-        public void Dispose() => _timer.Dispose();
+        public void Dispose()
+        {
+            _timer.Dispose();
+        }
     }
 }

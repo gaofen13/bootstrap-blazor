@@ -7,12 +7,12 @@ namespace BootstrapBlazor
 {
     public partial class BootstrapModalContainer
     {
+        private readonly Collection<ModalReference> _modals = new();
+        private bool _haveActiveModals;
+
         [Inject] private NavigationManager? NavigationManager { get; set; }
         [Inject] private ModalService ModalService { get; set; } = default!;
         [Parameter] public ModalOptions? GlobalOptions { get; set; }
-
-        private readonly Collection<ModalReference> _modals = new();
-        private bool _haveActiveModals;
 
         protected override void OnInitialized()
         {

@@ -1,11 +1,31 @@
 ﻿@page "/components/toast"
 @inject ToastService ToastService
 
-<h3>Toast</h3>
+<h3>Basic</h3>
+<BootstrapToast Title="Bootstrap">
+    Hello, world! This is a toast message.
+</BootstrapToast>
+
+<h3>Live example</h3>
 <BootstrapButton OnClick="@ShowSuccess">ShowSuccess</BootstrapButton>
 <BootstrapButton OnClick="@ShowInfo">ShowInfo</BootstrapButton>
 <BootstrapButton OnClick="@ShowWarning">ShowWarning</BootstrapButton>
 <BootstrapButton OnClick="@ShowError">ShowError</BootstrapButton>
+
+<h3>Custom content</h3>
+<BootstrapToast>
+    Hello, world! This is a toast message.
+    <div class="mt-2 pt-2 border-top">
+        <BootstrapButton Size="@Size.sm">Take action</BootstrapButton>
+        <BootstrapButton Color="@Color.secondary" Size="@Size.sm">Close</BootstrapButton>
+    </div>
+</BootstrapToast>
+<BootstrapButton OnClick="@ShowLiveCustomToast">ShowLiveCustomToast</BootstrapButton>
+
+<h3>Color schemes</h3>
+<BootstrapToast Color="@Color.primary">
+    Hello, world! This is a toast message.
+</BootstrapToast>
 
 @code {
     private void ShowSuccess()
@@ -26,5 +46,10 @@
     private void ShowError()
     {
         ToastService.ShowError("ErrorMessage");
+    }
+
+    private void ShowLiveCustomToast()
+    {
+        ToastService.ShowToast<CustomToastExample>(new ToastOptions { AutoClose = true });
     }
 }
