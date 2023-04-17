@@ -1,12 +1,30 @@
 ﻿@namespace BootstrapBlazor
 @inherits BootstrapComponentBase
 
-<div class="@Classname" style="@Style" @attributes="@AdditionalAttributes">
-    @ChildContent
-</div>
-@if (ActionsContent is not null)
-{
-    <div class="modal-footer">
-        @ActionsContent
+<div tabindex="-1" class="@Classname" style="@Stylelist" role="dialog" @attributes="@AdditionalAttributes" @onclick="@OnClickBackgroundAsync">
+    <div class="@DialogClassname" @onclick:stopPropagation="@true">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5">@Title</h1>
+                @if (_options.ShowCloseBtn)
+                {
+                    <button class="btn-close" aria-label="Close" @onclick="@OnClickCloseBtn"></button>
+                }
+            </div>
+            <div class="@BodyClassname">
+                @ChildContent
+            </div>
+            @if (ActionsContent is not null)
+            {
+                <div class="modal-footer">
+                    @ActionsContent
+                </div>
+            }
+        </div>
     </div>
+</div>
+
+@if (Visible)
+{
+    <div class="modal-backdrop show"></div>
 }

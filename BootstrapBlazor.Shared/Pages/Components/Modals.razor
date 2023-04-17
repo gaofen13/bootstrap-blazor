@@ -2,13 +2,66 @@
 @inject ToastService ToastService
 @inject ModalService ModalService
 
-<h3>Modal</h3>
-<BootstrapButton OnClick="@ShowModalAsync">ShowModal</BootstrapButton>
+<h3>Examples</h3>
+<BootstrapModal @bind-Visible="@visible1" Title="Modal title" Options="@(new ModalOptions{ ShowCloseBtn = true})">
+    <ChildContent>
+        <p>Modal body text goes here.</p>
+    </ChildContent>
+    <ActionsContent>
+        <BootstrapButton Color="@Color.secondary" OnClick="_=>visible1=false">Close</BootstrapButton>
+        <BootstrapButton>Save changes</BootstrapButton>
+    </ActionsContent>
+</BootstrapModal>
+<BootstrapButton OnClick="_=>visible1=true">ShowModal</BootstrapButton>
+
+<h3>Live demo</h3>
+<BootstrapButton OnClick="@ShowLiveModalAsync">ShowLiveModal</BootstrapButton>
+
+<h3>Static backdrop</h3>
+<BootstrapModal @bind-Visible="@visible2" Title="Modal title" Options="@(new ModalOptions{ ShowCloseBtn = true, StaticBackdrop = true })">
+    <ChildContent>
+        <p>Modal body text goes here.</p>
+    </ChildContent>
+    <ActionsContent>
+        <BootstrapButton Color="@Color.secondary" OnClick="_=>visible2=false">Close</BootstrapButton>
+        <BootstrapButton>Save changes</BootstrapButton>
+    </ActionsContent>
+</BootstrapModal>
+<BootstrapButton OnClick="_=>visible2=true">ShowModal</BootstrapButton>
+
+<h3>Vertically centered</h3>
+<BootstrapModal @bind-Visible="@visible3" Title="Modal title" Options="@(new ModalOptions{ ShowCloseBtn = true, Centered = true })">
+    <ChildContent>
+        <p>Modal body text goes here.</p>
+    </ChildContent>
+    <ActionsContent>
+        <BootstrapButton Color="@Color.secondary" OnClick="_=>visible3=false">Close</BootstrapButton>
+        <BootstrapButton>Save changes</BootstrapButton>
+    </ActionsContent>
+</BootstrapModal>
+<BootstrapButton OnClick="_=>visible3=true">ShowModal</BootstrapButton>
+
+<h3>Toggle between modals</h3>
+<BootstrapModal @bind-Visible="@visible4" Title="Modal title">
+    <ChildContent>
+        <p>Modal body text goes here.</p>
+    </ChildContent>
+    <ActionsContent>
+        <BootstrapButton Color="@Color.secondary" OnClick="_=>visible4=false">Close</BootstrapButton>
+        <BootstrapButton OnClick="@ShowLiveModalAsync">Open sencode modal</BootstrapButton>
+    </ActionsContent>
+</BootstrapModal>
+<BootstrapButton OnClick="_=>visible4=true">Open first modal</BootstrapButton>
 
 @code {
-    private async Task ShowModalAsync()
+    private bool visible1;
+    private bool visible2;
+    private bool visible3;
+    private bool visible4;
+
+    private async Task ShowLiveModalAsync()
     {
-        var reference = ModalService.Show<ModalContentExample>("ModalExample");
+        var reference = ModalService.Show<ModalContentExample>();
         var res = await reference.Result;
         ToastService.ShowInfo(res.Data?.ToString() ?? "");
     }
