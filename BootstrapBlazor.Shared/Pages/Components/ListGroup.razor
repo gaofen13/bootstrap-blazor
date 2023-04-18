@@ -1,0 +1,126 @@
+﻿@page "/components/listgroup"
+
+<h3>ListGroup</h3>
+<BootstrapListGroup>
+    <BootstrapListGroupItem>An item</BootstrapListGroupItem>
+    <BootstrapListGroupItem>A second item</BootstrapListGroupItem>
+    <BootstrapListGroupItem>A third item</BootstrapListGroupItem>
+    <BootstrapListGroupItem>A fourth item</BootstrapListGroupItem>
+    <BootstrapListGroupItem>And a fifth item</BootstrapListGroupItem>
+</BootstrapListGroup>
+
+<h3>Active items</h3>
+<BootstrapListGroup>
+    <BootstrapListGroupItem Active>An active item</BootstrapListGroupItem>
+    <BootstrapListGroupItem>A second item</BootstrapListGroupItem>
+    <BootstrapListGroupItem>A third item</BootstrapListGroupItem>
+    <BootstrapListGroupItem>A fourth item</BootstrapListGroupItem>
+    <BootstrapListGroupItem>And a fifth item</BootstrapListGroupItem>
+</BootstrapListGroup>
+
+<h3>Disabled items</h3>
+<BootstrapListGroup>
+    <BootstrapListGroupItem Disabled>An disabled item</BootstrapListGroupItem>
+    <BootstrapListGroupItem>A second item</BootstrapListGroupItem>
+    <BootstrapListGroupItem>A third item</BootstrapListGroupItem>
+    <BootstrapListGroupItem>A fourth item</BootstrapListGroupItem>
+    <BootstrapListGroupItem>And a fifth item</BootstrapListGroupItem>
+</BootstrapListGroup>
+
+<h3>Actionable items</h3>
+<BootstrapListGroup Actionable>
+    <BootstrapListGroupItem Disabled>An disabled item</BootstrapListGroupItem>
+    <BootstrapListGroupItem>A second item</BootstrapListGroupItem>
+    <BootstrapListGroupItem>A third item</BootstrapListGroupItem>
+    <BootstrapListGroupItem>A fourth item</BootstrapListGroupItem>
+    <BootstrapListGroupItem Active>And a fifth item</BootstrapListGroupItem>
+</BootstrapListGroup>
+
+<h3>Flush</h3>
+<BootstrapListGroup Flush>
+    <BootstrapListGroupItem>An item</BootstrapListGroupItem>
+    <BootstrapListGroupItem>A second item</BootstrapListGroupItem>
+    <BootstrapListGroupItem>A third item</BootstrapListGroupItem>
+    <BootstrapListGroupItem>A fourth item</BootstrapListGroupItem>
+    <BootstrapListGroupItem>And a fifth item</BootstrapListGroupItem>
+</BootstrapListGroup>
+
+<h3>Numbered</h3>
+<BootstrapListGroup Numbered>
+    <BootstrapListGroupItem>A list item</BootstrapListGroupItem>
+    <BootstrapListGroupItem>A list item</BootstrapListGroupItem>
+    <BootstrapListGroupItem>A list item</BootstrapListGroupItem>
+</BootstrapListGroup>
+
+<h3>Horizontal</h3>
+<BootstrapListGroup Horizontal>
+    <BootstrapListGroupItem>An item</BootstrapListGroupItem>
+    <BootstrapListGroupItem>A second item</BootstrapListGroupItem>
+    <BootstrapListGroupItem>A third item</BootstrapListGroupItem>
+</BootstrapListGroup>
+<BootstrapListGroup Horizontal HorizontalBreakpoint="@Size.sm">
+    <BootstrapListGroupItem>An item</BootstrapListGroupItem>
+    <BootstrapListGroupItem>A second item</BootstrapListGroupItem>
+    <BootstrapListGroupItem>A third item</BootstrapListGroupItem>
+</BootstrapListGroup>
+<BootstrapListGroup Horizontal HorizontalBreakpoint="@Size.md">
+    <BootstrapListGroupItem>An item</BootstrapListGroupItem>
+    <BootstrapListGroupItem>A second item</BootstrapListGroupItem>
+    <BootstrapListGroupItem>A third item</BootstrapListGroupItem>
+</BootstrapListGroup>
+<BootstrapListGroup Horizontal HorizontalBreakpoint="@Size.lg">
+    <BootstrapListGroupItem>An item</BootstrapListGroupItem>
+    <BootstrapListGroupItem>A second item</BootstrapListGroupItem>
+    <BootstrapListGroupItem>A third item</BootstrapListGroupItem>
+</BootstrapListGroup>
+<BootstrapListGroup Horizontal HorizontalBreakpoint="@Size.xl">
+    <BootstrapListGroupItem>An item</BootstrapListGroupItem>
+    <BootstrapListGroupItem>A second item</BootstrapListGroupItem>
+    <BootstrapListGroupItem>A third item</BootstrapListGroupItem>
+</BootstrapListGroup>
+<BootstrapListGroup Horizontal HorizontalBreakpoint="@Size.xxl">
+    <BootstrapListGroupItem>An item</BootstrapListGroupItem>
+    <BootstrapListGroupItem>A second item</BootstrapListGroupItem>
+    <BootstrapListGroupItem>A third item</BootstrapListGroupItem>
+</BootstrapListGroup>
+
+<h3>Colors</h3>
+<BootstrapListGroup>
+    <BootstrapListGroupItem>A simple default list group item</BootstrapListGroupItem>
+    <BootstrapListGroupItem Color="@Color.primary">A simple primary list group item</BootstrapListGroupItem>
+    <BootstrapListGroupItem Color="@Color.secondary">A simple secondary list group item</BootstrapListGroupItem>
+    <BootstrapListGroupItem Color="@Color.success">A simple success list group item</BootstrapListGroupItem>
+    <BootstrapListGroupItem Color="@Color.danger">A simple danger list group item</BootstrapListGroupItem>
+    <BootstrapListGroupItem Color="@Color.warning">A simple warning list group item</BootstrapListGroupItem>
+    <BootstrapListGroupItem Color="@Color.info">A simple info list group item</BootstrapListGroupItem>
+    <BootstrapListGroupItem Color="@Color.light">A simple light list group item</BootstrapListGroupItem>
+    <BootstrapListGroupItem Color="@Color.dark">A simple dark list group item</BootstrapListGroupItem>
+</BootstrapListGroup>
+
+<h3>Custom content</h3>
+<BootstrapListGroup Actionable>
+    <BootstrapListGroupItem Active>
+        <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">List group item heading</h5>
+            <small>3 days ago</small>
+        </div>
+        <p class="mb-1">Some placeholder content in a paragraph.</p>
+        <small>And some small print.</small>
+    </BootstrapListGroupItem>
+    <BootstrapListGroupItem>
+        <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">List group item heading</h5>
+            <small class="text-muted">3 days ago</small>
+        </div>
+        <p class="mb-1">Some placeholder content in a paragraph.</p>
+        <small class="text-muted">And some muted small print.</small>
+    </BootstrapListGroupItem>
+    <BootstrapListGroupItem>
+        <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">List group item heading</h5>
+            <small class="text-muted">3 days ago</small>
+        </div>
+        <p class="mb-1">Some placeholder content in a paragraph.</p>
+        <small class="text-muted">And some muted small print.</small>
+    </BootstrapListGroupItem>
+</BootstrapListGroup>
