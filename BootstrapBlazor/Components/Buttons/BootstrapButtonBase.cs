@@ -23,7 +23,7 @@ namespace BootstrapBlazor
         /// The color of the component. It supports the theme colors.
         /// </summary>
         [Parameter]
-        public Color Color { get; set; } = Color.primary;
+        public Color Color { get; set; }
 
         [Parameter]
         public bool Text { get; set; }

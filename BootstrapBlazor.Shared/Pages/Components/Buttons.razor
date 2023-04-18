@@ -1,0 +1,115 @@
+﻿@page "/components/buttons"
+
+<h3>Buttons</h3>
+<BootstrapButton Color="@Color.primary">Primary</BootstrapButton>
+<BootstrapButton Color="@Color.secondary">Secondary</BootstrapButton>
+<BootstrapButton Color="@Color.success">Success</BootstrapButton>
+<BootstrapButton Color="@Color.danger">Danger</BootstrapButton>
+<BootstrapButton Color="@Color.warning">Warning</BootstrapButton>
+<BootstrapButton Color="@Color.info">Info</BootstrapButton>
+<BootstrapButton Color="@Color.light">Light</BootstrapButton>
+<BootstrapButton Color="@Color.dark">Dark</BootstrapButton>
+<BootstrapButton Href="#">Link</BootstrapButton>
+
+<h3>带轮廓线的按钮</h3>
+<BootstrapButton Outline Color="@Color.primary">Primary</BootstrapButton>
+<BootstrapButton Outline Color="@Color.secondary">Secondary</BootstrapButton>
+<BootstrapButton Outline Color="@Color.success">Success</BootstrapButton>
+<BootstrapButton Outline Color="@Color.danger">Danger</BootstrapButton>
+<BootstrapButton Outline Color="@Color.warning">Warning</BootstrapButton>
+<BootstrapButton Outline Color="@Color.info">Info</BootstrapButton>
+<BootstrapButton Outline Color="@Color.light">Light</BootstrapButton>
+<BootstrapButton Outline Color="@Color.dark">Dark</BootstrapButton>
+
+<h3>按钮的尺寸</h3>
+<BootstrapButton Size="@Size.lg" Color="@Color.primary">Large button</BootstrapButton>
+<BootstrapButton Size="@Size.lg" Color="@Color.secondary">Large button</BootstrapButton>
+<BootstrapButton Size="@Size.sm" Color="@Color.primary">Small button</BootstrapButton>
+<BootstrapButton Size="@Size.sm" Color="@Color.secondary">Small button</BootstrapButton>
+
+<h3>禁用状态</h3>
+<BootstrapButton Disabled Color="@Color.primary">Primary button</BootstrapButton>
+<BootstrapButton Disabled Color="@Color.secondary">Button</BootstrapButton>
+<BootstrapButton Disabled Outline Color="@Color.primary">Primary button</BootstrapButton>
+<BootstrapButton Disabled Outline Color="@Color.secondary">Button</BootstrapButton>
+
+<h3>Button group</h3>
+<BootstrapButtonGroup>
+    <BootstrapButton Active Color="@Color.primary">Left</BootstrapButton>
+    <BootstrapButton Color="@Color.primary">Middle</BootstrapButton>
+    <BootstrapButton Color="@Color.primary">Right</BootstrapButton>
+    </BootstrapButtonGroup>
+    <BootstrapButtonGroup>
+    <BootstrapButton Color="@Color.danger">Left</BootstrapButton>
+    <BootstrapButton Color="@Color.warning">Middle</BootstrapButton>
+    <BootstrapButton Color="@Color.success">Right</BootstrapButton>
+    </BootstrapButtonGroup>
+    <BootstrapButtonGroup>
+    <BootstrapButton Active Outline Color="@Color.primary">Left</BootstrapButton>
+    <BootstrapButton Outline Color="@Color.primary">Middle</BootstrapButton>
+    <BootstrapButton Outline Color="@Color.primary">Right</BootstrapButton>
+    </BootstrapButtonGroup>
+    <BootstrapButtonGroup Vertical>
+    <BootstrapButton Active Outline Color="@Color.primary">Left</BootstrapButton>
+    <BootstrapButton Outline Color="@Color.primary">Middle</BootstrapButton>
+    <BootstrapButton Outline Color="@Color.primary">Right</BootstrapButton>
+    </BootstrapButtonGroup>
+    <BootstrapButtonGroup Size="@Size.lg">
+    <BootstrapButton Active Outline Color="@Color.primary">Left</BootstrapButton>
+    <BootstrapButton Outline Color="@Color.primary">Middle</BootstrapButton>
+    <BootstrapButton Outline Color="@Color.primary">Right</BootstrapButton>
+    </BootstrapButtonGroup>
+
+    <h3>Button toolbar</h3>
+    <BootstrapButtonToolbar>
+    <BootstrapButtonGroup Class="me-2">
+        <BootstrapButton Color="@Color.primary">1</BootstrapButton>
+        <BootstrapButton Color="@Color.primary">2</BootstrapButton>
+        <BootstrapButton Color="@Color.primary">3</BootstrapButton>
+        <BootstrapButton Color="@Color.primary">4</BootstrapButton>
+    </BootstrapButtonGroup>
+    <BootstrapButtonGroup Class="me-2">
+        <BootstrapButton Color="@Color.secondary">5</BootstrapButton>
+        <BootstrapButton Color="@Color.secondary">6</BootstrapButton>
+        <BootstrapButton Color="@Color.secondary">7</BootstrapButton>
+    </BootstrapButtonGroup>
+    <BootstrapButtonGroup>
+        <BootstrapButton Color="@Color.info">8</BootstrapButton>
+    </BootstrapButtonGroup>
+    </BootstrapButtonToolbar>
+    <BootstrapButtonToolbar>
+    <BootstrapButtonGroup Class="me-2">
+        <BootstrapButton Outline Color="@Color.primary">1</BootstrapButton>
+        <BootstrapButton Outline Color="@Color.primary">2</BootstrapButton>
+        <BootstrapButton Outline Color="@Color.primary">3</BootstrapButton>
+        <BootstrapButton Outline Color="@Color.primary">4</BootstrapButton>
+        </BootstrapButtonGroup>
+        <BootstrapButtonGroup Class="me-2">
+        <BootstrapButton Outline Color="@Color.secondary">5</BootstrapButton>
+        <BootstrapButton Outline Color="@Color.secondary">6</BootstrapButton>
+        <BootstrapButton Outline Color="@Color.secondary">7</BootstrapButton>
+        </BootstrapButtonGroup>
+        <BootstrapButtonGroup>
+        <BootstrapButton Outline Color="@Color.info">8</BootstrapButton>
+        </BootstrapButtonGroup>
+        </BootstrapButtonToolbar>
+        <BootstrapButtonToolbar>
+        <BootstrapButtonGroup Class="me-2">
+        <BootstrapButton Color="@Color.primary">1</BootstrapButton>
+        <BootstrapButton Color="@Color.primary">2</BootstrapButton>
+        <BootstrapButton Color="@Color.primary">3</BootstrapButton>
+        <BootstrapButton Color="@Color.primary">4</BootstrapButton>
+        </BootstrapButtonGroup>
+        <BootstrapButtonGroup Class="me-2">
+        <BootstrapButton Color="@Color.secondary">5</BootstrapButton>
+        <BootstrapButton Color="@Color.secondary">6</BootstrapButton>
+        <BootstrapButton Color="@Color.secondary">7</BootstrapButton>
+        </BootstrapButtonGroup>
+        <BootstrapButtonGroup>
+        <BootstrapButton Color="@Color.info">8</BootstrapButton>
+        </BootstrapButtonGroup>
+        </BootstrapButtonToolbar>
+
+        <h3>Close button</h3>
+        <BootstrapCloseButton />
+        <BootstrapCloseButton Disabled />

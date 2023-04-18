@@ -7,11 +7,11 @@ namespace BootstrapBlazor
     {
         private string Classname =>
           new ClassBuilder("btn")
-            .AddClass($"btn-{Color}", !Outline)
-            .AddClass($"btn-outline-{Color}", Outline)
+            .AddClass($"btn{(Outline ? "-outline" : "")}-{Color}", Href == null)
             .AddClass($"btn-{Size}", Size != null)
             .AddClass("btn-disabled", Disabled)
-            .AddClass("btn-outline", Outline)
+            .AddClass("btn-link", Href != null)
+            .AddClass("active", Active)
             .AddClass("text-nowrap", TextNowrap)
             .AddClass(Class)
             .Build();
@@ -21,6 +21,9 @@ namespace BootstrapBlazor
 
         [Parameter]
         public Size? Size { get; set; }
+
+        [Parameter]
+        public bool Active { get; set; }
 
         [Parameter]
         public bool Outline { get; set; }

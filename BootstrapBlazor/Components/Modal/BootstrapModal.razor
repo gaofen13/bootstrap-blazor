@@ -8,7 +8,7 @@
                 <h1 class="modal-title fs-5">@Title</h1>
                 @if (_options.ShowCloseBtn)
                 {
-                    <button class="btn-close" aria-label="Close" @onclick="@OnClickCloseBtn"></button>
+                    <BootstrapCloseButton OnClick="@OnClickCloseBtn"></BootstrapCloseButton>
                 }
             </div>
             <div class="@BodyClassname">

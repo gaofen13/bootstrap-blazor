@@ -13,7 +13,7 @@
             }
             @if (ToastInstance?.LiveOptions?.ManualClose == true)
             {
-                <button type="button" class="btn-close" aria-label="Close" @onclick="@Close"></button>
+                <BootstrapCloseButton OnClick="@Close"></BootstrapCloseButton>
             }
         </div>
     }
