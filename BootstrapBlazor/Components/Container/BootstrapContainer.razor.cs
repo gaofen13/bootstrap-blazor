@@ -6,9 +6,8 @@ namespace BootstrapBlazor
     public partial class BootstrapContainer : BootstrapComponentBase
     {
         private string Classname =>
-          new ClassBuilder("container")
+          new ClassBuilder($"container{(Fluid ? "-fluid" : "")}")
             .AddClass($"container-{Breakpoint}", Breakpoint != null)
-            .AddClass("container-fluid", Fluid)
             .AddClass(Class)
             .Build();
 

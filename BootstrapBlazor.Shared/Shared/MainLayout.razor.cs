@@ -6,6 +6,7 @@ namespace BootstrapBlazor.Shared.Shared
 {
     public partial class MainLayout
     {
+        private bool showNavMenu;
         private bool showMenu;
         private int _windowWidth;
         private IJSObjectReference? _jsModule;
