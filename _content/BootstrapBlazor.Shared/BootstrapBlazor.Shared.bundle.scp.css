@@ -1,4 +1,9 @@
 /* _content/BootstrapBlazor.Shared/Shared/MainLayout.razor.rz.scp.css */
+.bd-container[b-stnq5s0i90] {
+    gap: 0.5rem;
+    height: calc(100vh - 56px);
+}
+
 .bd-offcanvas[b-stnq5s0i90] {
     overflow-y: auto;
 }
@@ -6,7 +11,6 @@
 @media (min-width: 992px) {
     .bd-offcanvas[b-stnq5s0i90] {
         position: inherit;
-        height: calc(100vh - 4rem);
         width: auto;
     }
 }
