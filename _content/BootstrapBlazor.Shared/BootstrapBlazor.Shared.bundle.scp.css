@@ -4,14 +4,20 @@
     height: calc(100vh - 56px);
 }
 
-.bd-offcanvas[b-stnq5s0i90] {
+@media (max-width:991.5px) {
+    .bd-container[b-stnq5s0i90] {
+        height: auto;
+    }
+}
+
+[b-stnq5s0i90] .bd-offcanvas {
     overflow-y: auto;
 }
 
 @media (min-width: 992px) {
-    .bd-offcanvas[b-stnq5s0i90] {
+    [b-stnq5s0i90] .bd-offcanvas {
         position: inherit;
-        width: auto;
+        z-index: 1;
     }
 }
 /* _content/BootstrapBlazor.Shared/Shared/NavMenu.razor.rz.scp.css */
