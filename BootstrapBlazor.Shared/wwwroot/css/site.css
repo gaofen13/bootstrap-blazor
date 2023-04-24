@@ -72,20 +72,3 @@
     .blazor-error-boundary::after {
         content: "An error has occurred."
     }
-
-.bd-container {
-    gap: 0.5rem;
-    height: calc(100vh - 56px);
-}
-
-.bd-offcanvas {
-    overflow-y: auto;
-}
-
-@media (min-width: 992px) {
-    .bd-offcanvas {
-        position: inherit;
-        width: auto;
-    }
-}
-

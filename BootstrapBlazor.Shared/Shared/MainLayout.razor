@@ -11,10 +11,10 @@
         </svg>
     </BootstrapNavbarToggler>
     <BootstrapNavbarCollaspeNav Show="@showNavMenu">
-        <BootstrapNavItem Href="https://docs.microsoft.com/aspnet/">About</BootstrapNavItem>
+        <BootstrapNavItem Class="mx-3" Href="https://docs.microsoft.com/aspnet/">About</BootstrapNavItem>
     </BootstrapNavbarCollaspeNav>
 </BootstrapNavbar>
-<BootstrapContainer Fluid Class="d-flex bd-container">
+<div class="w-100 d-flex bd-container">
     <BootstrapOffcanvas @bind-Show="@showMenu" ShowBackdrop="@ShowBackdrop" ShowCloseButton="@ShowBackdrop" Class="bd-offcanvas">
         <NavMenu />
     </BootstrapOffcanvas>
@@ -24,4 +24,4 @@
             @Body
         </BootstrapErrorBoundary>
     </main>
-</BootstrapContainer>
+</div>

@@ -3,13 +3,19 @@
     height: calc(100vh - 56px);
 }
 
-.bd-offcanvas {
+@media (max-width:991.5px) {
+    .bd-container {
+        height: auto;
+    }
+}
+
+::deep .bd-offcanvas {
     overflow-y: auto;
 }
 
 @media (min-width: 992px) {
-    .bd-offcanvas {
+    ::deep .bd-offcanvas {
         position: inherit;
-        width: auto;
+        z-index: 1;
     }
 }
