@@ -11,14 +11,14 @@ namespace BootstrapBlazor
             .AddClass("fixed-bottom", Placement == NavbarPlacement.FixedBottom)
             .AddClass("sticky-top", Placement == NavbarPlacement.StickyTop)
             .AddClass("sticky-bottom", Placement == NavbarPlacement.StickyBottom)
-            .AddClass($"navbar-expand-{Breakpoint}", Breakpoint != null)
+            .AddClass($"navbar-expand-{ExpandBreakpoint}", ExpandBreakpoint != null)
             .AddClass($"bg-{BgColor}", BgColor != null)
             .AddClass("navbar-dark", IsDarkBg)
             .AddClass(Class)
             .Build();
 
         [Parameter]
-        public Size? Breakpoint { get; set; }
+        public Size? ExpandBreakpoint { get; set; }
 
         [Parameter]
         public Color? BgColor { get; set; }

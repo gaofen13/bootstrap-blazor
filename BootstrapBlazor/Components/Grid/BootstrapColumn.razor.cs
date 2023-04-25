@@ -1,4 +1,5 @@
-﻿using BootstrapBlazor.Utilities;
+﻿using BootstrapBlazor.Extensions;
+using BootstrapBlazor.Utilities;
 using Microsoft.AspNetCore.Components;
 
 namespace BootstrapBlazor
@@ -7,30 +8,63 @@ namespace BootstrapBlazor
     {
         private string Classname =>
           new ClassBuilder()
-            .AddClass("col", Col)
-            .AddClass($"col-{Colspan}", Colspan > 0)
-            .AddClass($"col-{Breakpoint}", Breakpoint != null)
-            .AddClass($"col-{Breakpoint}-{BreakpointColspan}", BreakpointColspan > 0 && Breakpoint != null)
-            .AddClass($"offset-{Breakpoint}-{Offset}", Offset > 0 && Breakpoint != null)
+            .AddClass("col", DefaultCol)
+            .AddClass($"{ColSize?.ToDescriptionString()}")
+            .AddClass($"col-{XsBreakpoint?.ToDescriptionString()}", XsBreakpoint != null)
+            .AddClass($"col-{SmBreakpoint?.ToDescriptionString()}", SmBreakpoint != null)
+            .AddClass($"col-{MdBreakpoint?.ToDescriptionString()}", MdBreakpoint != null)
+            .AddClass($"col-{LgBreakpoint?.ToDescriptionString()}", LgBreakpoint != null)
+            .AddClass($"col-{XlBreakpoint?.ToDescriptionString()}", XlBreakpoint != null)
+            .AddClass($"col-{XxlBreakpoint?.ToDescriptionString()}", XxlBreakpoint != null)
+            .AddClass($"offset-{OffsetXsBreakpoint?.ToDescriptionString()}", OffsetXsBreakpoint != null)
+            .AddClass($"offset-{OffsetSmBreakpoint?.ToDescriptionString()}", OffsetSmBreakpoint != null)
+            .AddClass($"offset-{OffsetMdBreakpoint?.ToDescriptionString()}", OffsetMdBreakpoint != null)
+            .AddClass($"offset-{OffsetLgBreakpoint?.ToDescriptionString()}", OffsetLgBreakpoint != null)
+            .AddClass($"offset-{OffsetXlBreakpoint?.ToDescriptionString()}", OffsetXlBreakpoint != null)
+            .AddClass($"offset-{OffsetXxlBreakpoint?.ToDescriptionString()}", OffsetXxlBreakpoint != null)
             .AddClass(Class)
             .Build();
 
-        /// <summary>
-        /// Default true, add class .col
-        /// </summary>
         [Parameter]
-        public bool Col { get; set; } = true;
+        public bool DefaultCol { get; set; }
 
         [Parameter]
-        public int Colspan { get; set; }
+        public ColSize? ColSize { get; set; }
 
         [Parameter]
-        public Size? Breakpoint { get; set; }
+        public Breakpoint.Xs? XsBreakpoint { get; set; }
 
         [Parameter]
-        public int BreakpointColspan { get; set; }
+        public Breakpoint.Sm? SmBreakpoint { get; set; }
 
         [Parameter]
-        public int Offset { get; set; }
+        public Breakpoint.Md? MdBreakpoint { get; set; }
+
+        [Parameter]
+        public Breakpoint.Lg? LgBreakpoint { get; set; }
+
+        [Parameter]
+        public Breakpoint.Xl? XlBreakpoint { get; set; }
+
+        [Parameter]
+        public Breakpoint.Xxl? XxlBreakpoint { get; set; }
+
+        [Parameter]
+        public Breakpoint.Xs? OffsetXsBreakpoint { get; set; }
+
+        [Parameter]
+        public Breakpoint.Sm? OffsetSmBreakpoint { get; set; }
+
+        [Parameter]
+        public Breakpoint.Md? OffsetMdBreakpoint { get; set; }
+
+        [Parameter]
+        public Breakpoint.Lg? OffsetLgBreakpoint { get; set; }
+
+        [Parameter]
+        public Breakpoint.Xl? OffsetXlBreakpoint { get; set; }
+
+        [Parameter]
+        public Breakpoint.Xxl? OffsetXxlBreakpoint { get; set; }
     }
 }

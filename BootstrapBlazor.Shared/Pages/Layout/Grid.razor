@@ -4,9 +4,9 @@
 
 <BootstrapContainer Class="text-center">
     <BootstrapRow>
-        <BootstrapColumn Style="border:solid 1px;background-color:lightsteelblue">Column</BootstrapColumn>
-        <BootstrapColumn Style="border:solid 1px;background-color:lightsteelblue">Column</BootstrapColumn>
-        <BootstrapColumn Style="border:solid 1px;background-color:lightsteelblue">Column</BootstrapColumn>
+        <BootstrapColumn DefaultCol Style="border:solid 1px;background-color:lightsteelblue">Column</BootstrapColumn>
+        <BootstrapColumn DefaultCol Style="border:solid 1px;background-color:lightsteelblue">Column</BootstrapColumn>
+        <BootstrapColumn DefaultCol Style="border:solid 1px;background-color:lightsteelblue">Column</BootstrapColumn>
     </BootstrapRow>
 </BootstrapContainer>
 
@@ -14,13 +14,13 @@
 
 <BootstrapContainer Class="text-center">
     <BootstrapRow>
-        <BootstrapColumn Style="border:solid 1px;background-color:lightsteelblue">1 of 2</BootstrapColumn>
-        <BootstrapColumn Style="border:solid 1px;background-color:lightsteelblue">1 of 2</BootstrapColumn>
+        <BootstrapColumn DefaultCol Style="border:solid 1px;background-color:lightsteelblue">1 of 2</BootstrapColumn>
+        <BootstrapColumn DefaultCol Style="border:solid 1px;background-color:lightsteelblue">1 of 2</BootstrapColumn>
     </BootstrapRow>
     <BootstrapRow>
-        <BootstrapColumn Style="border:solid 1px;background-color:lightsteelblue">1 of 3</BootstrapColumn>
-        <BootstrapColumn Style="border:solid 1px;background-color:lightsteelblue">1 of 3</BootstrapColumn>
-        <BootstrapColumn Style="border:solid 1px;background-color:lightsteelblue">1 of 3</BootstrapColumn>
+        <BootstrapColumn DefaultCol Style="border:solid 1px;background-color:lightsteelblue">1 of 3</BootstrapColumn>
+        <BootstrapColumn DefaultCol Style="border:solid 1px;background-color:lightsteelblue">1 of 3</BootstrapColumn>
+        <BootstrapColumn DefaultCol Style="border:solid 1px;background-color:lightsteelblue">1 of 3</BootstrapColumn>
     </BootstrapRow>
 </BootstrapContainer>
 
@@ -28,14 +28,14 @@
 
 <BootstrapContainer Class="text-center">
     <BootstrapRow>
-        <BootstrapColumn Style="border:solid 1px;background-color:lightsteelblue">1 of 3</BootstrapColumn>
-        <BootstrapColumn Colspan="6" Style="border:solid 1px;background-color:lightsteelblue">1 of 3 (wider)</BootstrapColumn>
-        <BootstrapColumn Style="border:solid 1px;background-color:lightsteelblue">1 of 3</BootstrapColumn>
+        <BootstrapColumn DefaultCol Style="border:solid 1px;background-color:lightsteelblue">1 of 3</BootstrapColumn>
+        <BootstrapColumn ColSize="@ColSize.col6" Style="border:solid 1px;background-color:lightsteelblue">1 of 3 (wider)</BootstrapColumn>
+        <BootstrapColumn DefaultCol Style="border:solid 1px;background-color:lightsteelblue">1 of 3</BootstrapColumn>
     </BootstrapRow>
     <BootstrapRow>
-        <BootstrapColumn Style="border:solid 1px;background-color:lightsteelblue">1 of 3</BootstrapColumn>
-        <BootstrapColumn Colspan="5" Style="border:solid 1px;background-color:lightsteelblue">1 of 3 (wider)</BootstrapColumn>
-        <BootstrapColumn Style="border:solid 1px;background-color:lightsteelblue">1 of 3</BootstrapColumn>
+        <BootstrapColumn DefaultCol Style="border:solid 1px;background-color:lightsteelblue">1 of 3</BootstrapColumn>
+        <BootstrapColumn ColSize="@ColSize.col5" Style="border:solid 1px;background-color:lightsteelblue">1 of 3 (wider)</BootstrapColumn>
+        <BootstrapColumn DefaultCol Style="border:solid 1px;background-color:lightsteelblue">1 of 3</BootstrapColumn>
     </BootstrapRow>
 </BootstrapContainer>
 
@@ -43,13 +43,13 @@
 
 <BootstrapContainer Class="text-center">
     <BootstrapRow>
-        <BootstrapColumn Col="@false" Breakpoint="@Size.sm" BreakpointColspan="8" Style="border:solid 1px;background-color:lightsteelblue">col-sm-8</BootstrapColumn>
-        <BootstrapColumn Col="@false" Breakpoint="@Size.sm" BreakpointColspan="4" Style="border:solid 1px;background-color:lightsteelblue">col-sm-4</BootstrapColumn>
+        <BootstrapColumn SmBreakpoint="@Breakpoint.Sm.sm8" Style="border:solid 1px;background-color:lightsteelblue">col-sm-8</BootstrapColumn>
+        <BootstrapColumn SmBreakpoint="@Breakpoint.Sm.sm4" Style="border:solid 1px;background-color:lightsteelblue">col-sm-4</BootstrapColumn>
     </BootstrapRow>
     <BootstrapRow>
-        <BootstrapColumn Col="@false" Breakpoint="@Size.sm" Style="border:solid 1px;background-color:lightsteelblue">col-sm</BootstrapColumn>
-        <BootstrapColumn Col="@false" Breakpoint="@Size.sm" Style="border:solid 1px;background-color:lightsteelblue">col-sm</BootstrapColumn>
-        <BootstrapColumn Col="@false" Breakpoint="@Size.sm" Style="border:solid 1px;background-color:lightsteelblue">col-sm</BootstrapColumn>
+        <BootstrapColumn SmBreakpoint="@Breakpoint.Sm.sm" Style="border:solid 1px;background-color:lightsteelblue">col-sm</BootstrapColumn>
+        <BootstrapColumn SmBreakpoint="@Breakpoint.Sm.sm" Style="border:solid 1px;background-color:lightsteelblue">col-sm</BootstrapColumn>
+        <BootstrapColumn SmBreakpoint="@Breakpoint.Sm.sm" Style="border:solid 1px;background-color:lightsteelblue">col-sm</BootstrapColumn>
     </BootstrapRow>
 </BootstrapContainer>
 
@@ -57,16 +57,16 @@
 
 <BootstrapContainer Class="text-center">
     <BootstrapRow>
-        <BootstrapColumn Col="@false" Breakpoint="@Size.md" BreakpointColspan="8" Style="border:solid 1px;background-color:lightsteelblue">col-md-8</BootstrapColumn>
-        <BootstrapColumn Colspan="6" Breakpoint="@Size.md" BreakpointColspan="4" Style="border:solid 1px;background-color:lightsteelblue">col-6 col-md-4</BootstrapColumn>
+        <BootstrapColumn MdBreakpoint="@Breakpoint.Md.md8" Style="border:solid 1px;background-color:lightsteelblue">col-md-8</BootstrapColumn>
+        <BootstrapColumn ColSize="@ColSize.col6" MdBreakpoint="@Breakpoint.Md.md4" Style="border:solid 1px;background-color:lightsteelblue">col-6 col-md-4</BootstrapColumn>
     </BootstrapRow>
     <BootstrapRow>
-        <BootstrapColumn Colspan="6" Breakpoint="@Size.md" Style="border:solid 1px;background-color:lightsteelblue">col-6 col-md-4</BootstrapColumn>
-        <BootstrapColumn Colspan="6" Breakpoint="@Size.md" Style="border:solid 1px;background-color:lightsteelblue">col-6 col-md-4</BootstrapColumn>
-        <BootstrapColumn Colspan="6" Breakpoint="@Size.md" Style="border:solid 1px;background-color:lightsteelblue">col-6 col-md-4</BootstrapColumn>
+        <BootstrapColumn ColSize="@ColSize.col6" MdBreakpoint="@Breakpoint.Md.md" Style="border:solid 1px;background-color:lightsteelblue">col-6 col-md-4</BootstrapColumn>
+        <BootstrapColumn ColSize="@ColSize.col6" MdBreakpoint="@Breakpoint.Md.md" Style="border:solid 1px;background-color:lightsteelblue">col-6 col-md-4</BootstrapColumn>
+        <BootstrapColumn ColSize="@ColSize.col6" MdBreakpoint="@Breakpoint.Md.md" Style="border:solid 1px;background-color:lightsteelblue">col-6 col-md-4</BootstrapColumn>
     </BootstrapRow>
     <BootstrapRow>
-        <BootstrapColumn Colspan="6" Style="border:solid 1px;background-color:lightsteelblue">col-6</BootstrapColumn>
-        <BootstrapColumn Colspan="6" Style="border:solid 1px;background-color:lightsteelblue">col-6</BootstrapColumn>
+        <BootstrapColumn ColSize="@ColSize.col6" Style="border:solid 1px;background-color:lightsteelblue">col-6</BootstrapColumn>
+        <BootstrapColumn ColSize="@ColSize.col6" Style="border:solid 1px;background-color:lightsteelblue">col-6</BootstrapColumn>
     </BootstrapRow>
 </BootstrapContainer>
