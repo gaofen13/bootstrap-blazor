@@ -9,12 +9,12 @@ namespace BootstrapBlazor
         private string Classname =>
           new ClassBuilder("row")
             .AddClass($"row-{RowColumns?.ToDescriptionString()}", RowColumns != null)
-            .AddClass($"row-cols-{XsBreakpoint?.ToDescriptionString()}", XsBreakpoint != null)
+            .AddClass($"row-cols-{BreakpointXs?.ToDescriptionString()}", BreakpointXs != null)
             .AddClass($"row-cols-{MdBreakpoint?.ToDescriptionString()}", MdBreakpoint != null)
-            .AddClass($"row-cols-{SmBreakpoint?.ToDescriptionString()}", SmBreakpoint != null)
-            .AddClass($"row-cols-{LgBreakpoint?.ToDescriptionString()}", LgBreakpoint != null)
-            .AddClass($"row-cols-{XlBreakpoint?.ToDescriptionString()}", XlBreakpoint != null)
-            .AddClass($"row-cols-{XxlBreakpoint?.ToDescriptionString()}", XxlBreakpoint != null)
+            .AddClass($"row-cols-{BreakpointSm?.ToDescriptionString()}", BreakpointSm != null)
+            .AddClass($"row-cols-{BreakpointLg?.ToDescriptionString()}", BreakpointLg != null)
+            .AddClass($"row-cols-{BreakpointXl?.ToDescriptionString()}", BreakpointXl != null)
+            .AddClass($"row-cols-{BreakpointXxl?.ToDescriptionString()}", BreakpointXxl != null)
             .AddClass(Class)
             .Build();
 
@@ -22,21 +22,21 @@ namespace BootstrapBlazor
         public RowColumns? RowColumns { get; set; }
 
         [Parameter]
-        public Breakpoint.Xs? XsBreakpoint { get; set; }
+        public Breakpoint.Xs? BreakpointXs { get; set; }
 
         [Parameter]
-        public Breakpoint.Sm? SmBreakpoint { get; set; }
+        public Breakpoint.Sm? BreakpointSm { get; set; }
 
         [Parameter]
         public Breakpoint.Md? MdBreakpoint { get; set; }
 
         [Parameter]
-        public Breakpoint.Lg? LgBreakpoint { get; set; }
+        public Breakpoint.Lg? BreakpointLg { get; set; }
 
         [Parameter]
-        public Breakpoint.Xl? XlBreakpoint { get; set; }
+        public Breakpoint.Xl? BreakpointXl { get; set; }
 
         [Parameter]
-        public Breakpoint.Xxl? XxlBreakpoint { get; set; }
+        public Breakpoint.Xxl? BreakpointXxl { get; set; }
     }
 }

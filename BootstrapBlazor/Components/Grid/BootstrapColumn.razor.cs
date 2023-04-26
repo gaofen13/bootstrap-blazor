@@ -9,19 +9,20 @@ namespace BootstrapBlazor
         private string Classname =>
           new ClassBuilder()
             .AddClass("col", DefaultCol)
-            .AddClass($"{ColSize?.ToDescriptionString()}")
-            .AddClass($"col-{XsBreakpoint?.ToDescriptionString()}", XsBreakpoint != null)
-            .AddClass($"col-{SmBreakpoint?.ToDescriptionString()}", SmBreakpoint != null)
-            .AddClass($"col-{MdBreakpoint?.ToDescriptionString()}", MdBreakpoint != null)
-            .AddClass($"col-{LgBreakpoint?.ToDescriptionString()}", LgBreakpoint != null)
-            .AddClass($"col-{XlBreakpoint?.ToDescriptionString()}", XlBreakpoint != null)
-            .AddClass($"col-{XxlBreakpoint?.ToDescriptionString()}", XxlBreakpoint != null)
-            .AddClass($"offset-{OffsetXsBreakpoint?.ToDescriptionString()}", OffsetXsBreakpoint != null)
-            .AddClass($"offset-{OffsetSmBreakpoint?.ToDescriptionString()}", OffsetSmBreakpoint != null)
-            .AddClass($"offset-{OffsetMdBreakpoint?.ToDescriptionString()}", OffsetMdBreakpoint != null)
-            .AddClass($"offset-{OffsetLgBreakpoint?.ToDescriptionString()}", OffsetLgBreakpoint != null)
-            .AddClass($"offset-{OffsetXlBreakpoint?.ToDescriptionString()}", OffsetXlBreakpoint != null)
-            .AddClass($"offset-{OffsetXxlBreakpoint?.ToDescriptionString()}", OffsetXxlBreakpoint != null)
+            .AddClass($"{ColumnSize?.ToDescriptionString()}")
+            .AddClass($"col-{BreakpointXs?.ToDescriptionString()}", BreakpointXs != null)
+            .AddClass($"col-{BreakpointSm?.ToDescriptionString()}", BreakpointSm != null)
+            .AddClass($"col-{BreakpointMd?.ToDescriptionString()}", BreakpointMd != null)
+            .AddClass($"col-{BreakpointLg?.ToDescriptionString()}", BreakpointLg != null)
+            .AddClass($"col-{BreakpointXl?.ToDescriptionString()}", BreakpointXl != null)
+            .AddClass($"col-{BreakpointXxl?.ToDescriptionString()}", BreakpointXxl != null)
+            .AddClass($"offset-{(int?)OffsetColumnSize}", OffsetColumnSize != null)
+            .AddClass($"offset-{OffsetBreakpointXs?.ToDescriptionString()}", OffsetBreakpointXs != null)
+            .AddClass($"offset-{OffsetBreakpointSm?.ToDescriptionString()}", OffsetBreakpointSm != null)
+            .AddClass($"offset-{OffsetBreakpointMd?.ToDescriptionString()}", OffsetBreakpointMd != null)
+            .AddClass($"offset-{OffsetBreakpointLg?.ToDescriptionString()}", OffsetBreakpointLg != null)
+            .AddClass($"offset-{OffsetBreakpointXl?.ToDescriptionString()}", OffsetBreakpointXl != null)
+            .AddClass($"offset-{OffsetBreakpointXxl?.ToDescriptionString()}", OffsetBreakpointXxl != null)
             .AddClass(Class)
             .Build();
 
@@ -29,42 +30,45 @@ namespace BootstrapBlazor
         public bool DefaultCol { get; set; }
 
         [Parameter]
-        public ColSize? ColSize { get; set; }
+        public ColumnSize? ColumnSize { get; set; }
 
         [Parameter]
-        public Breakpoint.Xs? XsBreakpoint { get; set; }
+        public Breakpoint.Xs? BreakpointXs { get; set; }
 
         [Parameter]
-        public Breakpoint.Sm? SmBreakpoint { get; set; }
+        public Breakpoint.Sm? BreakpointSm { get; set; }
 
         [Parameter]
-        public Breakpoint.Md? MdBreakpoint { get; set; }
+        public Breakpoint.Md? BreakpointMd { get; set; }
 
         [Parameter]
-        public Breakpoint.Lg? LgBreakpoint { get; set; }
+        public Breakpoint.Lg? BreakpointLg { get; set; }
 
         [Parameter]
-        public Breakpoint.Xl? XlBreakpoint { get; set; }
+        public Breakpoint.Xl? BreakpointXl { get; set; }
 
         [Parameter]
-        public Breakpoint.Xxl? XxlBreakpoint { get; set; }
+        public Breakpoint.Xxl? BreakpointXxl { get; set; }
 
         [Parameter]
-        public Breakpoint.Xs? OffsetXsBreakpoint { get; set; }
+        public ColumnSize? OffsetColumnSize { get; set; }
 
         [Parameter]
-        public Breakpoint.Sm? OffsetSmBreakpoint { get; set; }
+        public Breakpoint.Xs? OffsetBreakpointXs { get; set; }
 
         [Parameter]
-        public Breakpoint.Md? OffsetMdBreakpoint { get; set; }
+        public Breakpoint.Sm? OffsetBreakpointSm { get; set; }
 
         [Parameter]
-        public Breakpoint.Lg? OffsetLgBreakpoint { get; set; }
+        public Breakpoint.Md? OffsetBreakpointMd { get; set; }
 
         [Parameter]
-        public Breakpoint.Xl? OffsetXlBreakpoint { get; set; }
+        public Breakpoint.Lg? OffsetBreakpointLg { get; set; }
 
         [Parameter]
-        public Breakpoint.Xxl? OffsetXxlBreakpoint { get; set; }
+        public Breakpoint.Xl? OffsetBreakpointXl { get; set; }
+
+        [Parameter]
+        public Breakpoint.Xxl? OffsetBreakpointXxl { get; set; }
     }
 }

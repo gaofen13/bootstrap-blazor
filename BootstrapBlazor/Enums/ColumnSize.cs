@@ -2,10 +2,10 @@
 
 namespace BootstrapBlazor
 {
-    public enum ColSize
+    public enum ColumnSize
     {
         [Description("col-1")]
-        col1,
+        col1 = 1,
         [Description("col-2")]
         col2,
         [Description("col-3")]
