@@ -1,0 +1,39 @@
+﻿@page "/components/dropdown"
+
+<h3>Dropdown</h3>
+<BootstrapDropdown ButtonText="Dropdown button" ButtonColor="@Color.primary">
+    <MenuContent>
+        <BootstrapDropdownItem>Action</BootstrapDropdownItem>
+        <BootstrapDropdownItem>Another action</BootstrapDropdownItem>
+        <BootstrapDropdownItem>Something else here</BootstrapDropdownItem>
+    </MenuContent>
+</BootstrapDropdown>
+
+<h3>SplitButton Dropdown</h3>
+<BootstrapDropdown SplitButton ButtonText="Dropdown button" ButtonColor="@Color.primary">
+    <MenuContent>
+        <BootstrapDropdownItem>Action</BootstrapDropdownItem>
+        <BootstrapDropdownItem>Another action</BootstrapDropdownItem>
+        <BootstrapDropdownItem>Something else here</BootstrapDropdownItem>
+    </MenuContent>
+</BootstrapDropdown>
+
+<h3>Dropdown Alignment</h3>
+<BootstrapDropdown TextAlignment="@HorizontalPosition.center" ItemAlignment="@HorizontalPosition.center" ButtonText="Dropdown button" ButtonColor="@Color.primary">
+    <MenuContent>
+        <BootstrapDropdownItem>Action</BootstrapDropdownItem>
+        <BootstrapDropdownItem>Another action</BootstrapDropdownItem>
+        <BootstrapDropdownItem>Something else here</BootstrapDropdownItem>
+    </MenuContent>
+</BootstrapDropdown>
+<BootstrapDropdown TextAlignment="@HorizontalPosition.end" ItemAlignment="@HorizontalPosition.end" ButtonText="Dropdown button" ButtonColor="@Color.primary">
+    <MenuContent>
+        <BootstrapDropdownItem>Action</BootstrapDropdownItem>
+        <BootstrapDropdownItem>Another action</BootstrapDropdownItem>
+        <BootstrapDropdownItem>Something else here</BootstrapDropdownItem>
+    </MenuContent>
+</BootstrapDropdown>
+
+@code {
+
+}
