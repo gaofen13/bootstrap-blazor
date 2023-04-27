@@ -6,7 +6,7 @@
 
 @media (max-width:991.5px) {
     .bd-container[b-stnq5s0i90] {
-        height: auto;
+        height: calc(100vh - 57.6px);
     }
 }
 
