@@ -19,6 +19,7 @@ namespace BootstrapBlazor
             new ClassBuilder("dropdown-menu")
             .AddClass("show", Show)
             .AddClass($"text-{TextAlignment}")
+            .AddClass("dropdown-menu-dark", DarkMenu)
             .AddClass($"{ItemAlignment}-0", ItemAlignment != HorizontalPosition.center)
             .AddClass("start-50 translate-middle-x", ItemAlignment == HorizontalPosition.center)
             .AddClass($"dropdown-menu-xs-{BreakpointXsAlignment}", BreakpointXsAlignment != null)
@@ -40,6 +41,9 @@ namespace BootstrapBlazor
 
         [Parameter]
         public RenderFragment? MenuContent { get; set; }
+
+        [Parameter]
+        public bool DarkMenu { get; set; }
 
         [Parameter]
         public HorizontalPosition ItemAlignment { get; set; } = HorizontalPosition.start;
