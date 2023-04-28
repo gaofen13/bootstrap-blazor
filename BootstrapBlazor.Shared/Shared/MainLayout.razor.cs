@@ -6,6 +6,7 @@ namespace BootstrapBlazor.Shared.Shared
 {
     public partial class MainLayout
     {
+        private bool darkTheme;
         private bool showNavMenu;
         private bool showMenu;
         private int _windowWidth;
@@ -13,6 +14,8 @@ namespace BootstrapBlazor.Shared.Shared
         private DotNetObjectReference<MainLayout>? _objectReference;
 
         private bool ShowBackdrop => _windowWidth < 992;
+
+        private string ThemeType => darkTheme ? "dark" : "light";
 
         [Inject]
         private IJSRuntime JSRuntime { get; set; } = default!;
@@ -73,6 +76,15 @@ namespace BootstrapBlazor.Shared.Shared
         private void ToggleMenu()
         {
             showMenu = !showMenu;
+        }
+
+        private void OnThemeChanged(bool theme)
+        {
+            if(darkTheme != theme)
+            {
+                darkTheme = theme;
+                StateHasChanged();
+            }
         }
     }
 }
