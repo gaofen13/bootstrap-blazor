@@ -7,9 +7,9 @@
   "linkerEnabled": true,
   "resources": {
     "assembly": {
-      "BootstrapBlazor.Client.dll": "sha256-tj+R\/vovY0+YKucvANqM61usbsNpxoFzCPjQOz7PgtY=",
-      "BootstrapBlazor.dll": "sha256-iHp7+MIBthsc62Mujs3pPstZ5UKHCmN\/10SVWoK0TOg=",
-      "BootstrapBlazor.Shared.dll": "sha256-mqBYeryu\/0EatzqmWaUFAklq1OsURpyhM0y3U001+3c=",
+      "BootstrapBlazor.Client.dll": "sha256-a+QbfbbQeefzDdPVl4pQ6ZLIwIC1gSiVD8K9gTOR6fE=",
+      "BootstrapBlazor.dll": "sha256-YSM1esBv4rjm54NSK3O1cTSygZzSMec9yITKNXAAtl0=",
+      "BootstrapBlazor.Shared.dll": "sha256-7Ym+GhIZMSdKexjPjiHtwauK+Kj3QO2vfffn6HQRMJY=",
       "Microsoft.AspNetCore.Components.dll": "sha256-geBqW24+2eNXhG\/UNMHytlbDYHZx0WUKyh27INUASNY=",
       "Microsoft.AspNetCore.Components.Forms.dll": "sha256-vXD0TBWcADSg84KqrhQCWiyOoVUoG1co5zBYU99EW30=",
       "Microsoft.AspNetCore.Components.Web.dll": "sha256-LOlz96jPxdAGuxU\/T5eTH+g75bT8wir76oaOjt7gWNY=",
