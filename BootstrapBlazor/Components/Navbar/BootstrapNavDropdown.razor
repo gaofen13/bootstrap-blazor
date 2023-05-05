@@ -1,7 +1,7 @@
 ﻿@namespace BootstrapBlazor
 @inherits BootstrapComponentBase
 
-<li class="@Classname" style="@Style" @attributes="@AdditionalAttributes">
+<li @ref="@Element" class="@Classname" style="@Style" @attributes="@AdditionalAttributes">
     <a href="javascript:void(0)" class="nav-link dropdown-toggle" @onclick="@OnclickActivator">@Title</a>
     <ul class="@MenuClassname">
         @if (ChildContent != null)

@@ -3,7 +3,7 @@
 <PageTitle>BootstrapBlazor</PageTitle>
 
 <div class="bd-layout" data-bs-theme="@ThemeType">
-    <BootstrapNavbar ExpandBreakpoint="@Size.lg" IsDarkBg Placement="@NavbarPlacement.StickyTop" Style="background-color:#712cf9;box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15), inset 0 -1px 0 rgba(255,255,255,0.15);">
+    <BootstrapNavbar @ref="@_navbar" ExpandBreakpoint="@Size.lg" IsDarkBg Placement="@NavbarPlacement.StickyTop" Style="background-color:#712cf9;box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15), inset 0 -1px 0 rgba(255,255,255,0.15);">
         <BootstrapNavbarToggler OnClick="@ToggleMenu" />
         <BootstrapNavbarBrand Href="">BootstrapBlazor</BootstrapNavbarBrand>
         <BootstrapNavbarToggler OnClick="@(_=>showNavMenu=!showNavMenu)">
@@ -18,7 +18,7 @@
                 <BootstrapNavItem Class="mx-3" Href="https://docs.microsoft.com/aspnet/">About</BootstrapNavItem>
                 </BootstrapNavbarCollaspeNav>
                 </BootstrapNavbar>
-                <div class="w-100 d-flex bd-container">
+                <div class="w-100 d-flex bd-container" style="height:@ContainerHeight">
                     <BootstrapOffcanvas @bind-Show="@showMenu" ShowBackdrop="@ShowBackdrop" ShowCloseButton="@ShowBackdrop" Class="bd-offcanvas">
                     <NavMenu />
                     </BootstrapOffcanvas>

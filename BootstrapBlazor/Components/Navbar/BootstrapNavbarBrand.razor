@@ -1,6 +1,6 @@
 ﻿@namespace BootstrapBlazor
 @inherits BootstrapComponentBase
 
-<BootstrapElement HtmlTag="@HtmlTag" href="@Href" Class="@Classname" Style="@Style" @attributes="@AdditionalAttributes">
+<BootstrapElement @bind-Ref="@Element" HtmlTag="@HtmlTag" href="@Href" Class="@Classname" Style="@Style" @attributes="@AdditionalAttributes">
     @ChildContent
 </BootstrapElement>

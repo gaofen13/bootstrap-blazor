@@ -1,3 +1,6 @@
 ﻿@namespace BootstrapBlazor
+@inherits BootstrapComponentBase
 
-<li><hr class="dropdown-divider"></li>
+<li @ref="Element" class="@Class" style="@Style" @attributes="@AdditionalAttributes">
+    <hr class="dropdown-divider">
+</li>

@@ -1,6 +1,6 @@
 ﻿@namespace BootstrapBlazor
 @inherits BootstrapComponentBase
 
-<ul class="@Classname" style="@Style" @attributes="@AdditionalAttributes">
+<ul @ref="@Element" class="@Classname" style="@Style" @attributes="@AdditionalAttributes">
     @ChildContent
 </ul>

@@ -5,11 +5,11 @@
 {
     if (Mode == RenderMode.Body)
     {
-        <td class="@Classname">@ChildContent</td>
+        <td @ref="@Element" class="@Classname">@ChildContent</td>
     }
     else if (Mode == RenderMode.Head)
     {
-        <th scope="col">
+        <th @ref="@Element" scope="col">
             @if (TitleContent is not null)
             {
                 @TitleContent

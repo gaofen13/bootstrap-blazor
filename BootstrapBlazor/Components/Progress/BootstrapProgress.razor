@@ -1,7 +1,7 @@
 ﻿@namespace BootstrapBlazor
 @inherits BootstrapComponentBase
 
-<div class="progress" role="progressbar">
+<div @ref="@Element" class="progress" role="progressbar">
     <div class="@Classname" style="@Stylelist" @attributes="@AdditionalAttributes">
         @if (ShowLabel)
         {

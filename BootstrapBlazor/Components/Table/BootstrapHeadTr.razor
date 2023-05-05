@@ -2,7 +2,7 @@
 @inherits BootstrapComponentBase
 @typeparam TItem
 
-<tr class="@Class" style="@Style" @attributes="@AdditionalAttributes">
+<tr @ref="@Element" class="@Class" style="@Style" @attributes="@AdditionalAttributes">
     @if (MultiSelection)
     {
         <th scope="col">

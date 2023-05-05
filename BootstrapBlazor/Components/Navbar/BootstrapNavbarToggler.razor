@@ -1,7 +1,7 @@
 ﻿@namespace BootstrapBlazor
 @inherits BootstrapComponentBase
 
-<button class="@Classname" style="@Style" type="button" @onclick="@OnClick">
+<button @ref="@Element" class="@Classname" style="@Style" type="button" @onclick="@OnClick">
     @if (ChildContent != null)
     {
         @ChildContent

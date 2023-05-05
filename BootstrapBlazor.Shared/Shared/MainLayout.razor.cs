@@ -10,8 +10,12 @@ namespace BootstrapBlazor.Shared.Shared
         private bool showNavMenu;
         private bool showMenu;
         private int _windowWidth;
+        private string? _navbarHeight;
+        private BootstrapNavbar? _navbar;
         private IJSObjectReference? _jsModule;
         private DotNetObjectReference<MainLayout>? _objectReference;
+
+        private string ContainerHeight => $"calc(100vh - {_navbarHeight})";
 
         private bool ShowBackdrop => _windowWidth < 992;
 
@@ -35,9 +39,21 @@ namespace BootstrapBlazor.Shared.Shared
                 _objectReference = DotNetObjectReference.Create(this);
                 _jsModule = await JSRuntime.InvokeAsync<IJSObjectReference>("import",
                      "./_content/BootstrapBlazor.Shared/Shared/MainLayout.razor.js");
-                await _jsModule!.InvokeVoidAsync("AddWindowWidthListener", _objectReference);
+                await _jsModule!.InvokeVoidAsync("AddWindowWidthListener", _objectReference, _navbar!.Element);
                 var width = await _jsModule!.InvokeAsync<int>("GetWindowWidth");
+                var height = await _jsModule!.InvokeAsync<string>("GetElementHeight", _navbar!.Element);
                 UpdateOffcanvas(width);
+                UpdateNavbarHeight(height);
+                StateHasChanged();
+            }
+        }
+
+        [JSInvokable]
+        public void UpdateNavbarHeight(string height)
+        {
+            if (_navbarHeight != height)
+            {
+                _navbarHeight = height;
                 StateHasChanged();
             }
         }
@@ -80,7 +96,7 @@ namespace BootstrapBlazor.Shared.Shared
 
         private void OnThemeChanged(bool theme)
         {
-            if(darkTheme != theme)
+            if (darkTheme != theme)
             {
                 darkTheme = theme;
                 StateHasChanged();

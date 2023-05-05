@@ -23,7 +23,7 @@ namespace BootstrapBlazor
         private string CollapseStylelist =>
             new StyleBuilder("will-change", "max-height")
             .AddStyle("transition", "max-height 0.35s ease")
-            .AddStyle("max-height", Open ? "100vh" : "0")
+            .AddStyle("max-height", Open ? "65vh" : "0")
             .AddStyle("overflow-y", "auto")
             .AddStyle("display", "block")
             .Build();

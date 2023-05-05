@@ -1,7 +1,7 @@
 ﻿@namespace BootstrapBlazor
 @inherits BootstrapComponentBase
 
-<nav>
+<nav @ref="@Element">
     <ul class="@Classname">
         <BootstrapPaginationItem Disabled="@PrevDisabled" OnClick="@OnClickPrev">
             &lt;

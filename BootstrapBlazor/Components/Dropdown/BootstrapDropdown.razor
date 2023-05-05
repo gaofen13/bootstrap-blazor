@@ -1,7 +1,7 @@
 ﻿@namespace BootstrapBlazor
 @inherits BootstrapComponentBase
 
-<div class="@Classname" style="@Stylelist" @attributes="@AdditionalAttributes">
+<div @ref="@Element" class="@Classname" style="@Stylelist" @attributes="@AdditionalAttributes">
     <button type="button" class="@BtnClassname" @onclick="@OnclickTextButton">@ButtonText</button>
     @if (SplitButton)
     {

@@ -1,7 +1,7 @@
 ﻿@namespace BootstrapBlazor
 @inherits BootstrapComponentBase
 
-<div tabindex="-1" class="@Classname" style="@Stylelist" role="dialog" @attributes="@AdditionalAttributes" @onclick="@OnClickBackgroundAsync">
+<div @ref="@Element" tabindex="-1" class="@Classname" style="@Stylelist" role="dialog" @attributes="@AdditionalAttributes" @onclick="@OnClickBackgroundAsync">
     <div class="@DialogClassname" @onclick:stopPropagation="@true">
         <div class="modal-content">
             <div class="modal-header">

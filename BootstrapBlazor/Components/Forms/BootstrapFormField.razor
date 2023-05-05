@@ -2,7 +2,7 @@
 @using Microsoft.AspNetCore.Components.Forms
 @inherits BootstrapComponentBase
 
-<div class="@Classname" style="@Style" @attributes="@AdditionalAttributes">
+<div @ref="@Element" class="@Classname" style="@Style" @attributes="@AdditionalAttributes">
     <label for="@ForId" class="@LabelClassname">@Label</label>
     <div class="col">
         <CascadingValue Value="@this" Name="FormField" IsFixed>
