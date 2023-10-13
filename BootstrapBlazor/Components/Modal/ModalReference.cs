@@ -6,23 +6,14 @@ namespace BootstrapBlazor
     {
         private readonly TaskCompletionSource<ModalResult> _resultCompletion = new(TaskCreationOptions.RunContinuationsAsynchronously);
         private readonly Action<ModalResult> _closed;
-        private readonly ModalService _modalService;
 
-        internal Guid InstanceId { get; }
-        internal RenderFragment ModalInstance { get; }
-        internal ModalInstance? ModalInstanceRef { get; set; }
+        internal RenderFragment ModalContent { get; }
 
-        public ModalReference(Guid modalInstanceId, RenderFragment modalInstance, ModalService modalService)
+        public ModalReference(RenderFragment modalContent)
         {
-            InstanceId = modalInstanceId;
-            ModalInstance = modalInstance;
+            ModalContent = modalContent;
             _closed = HandleClosed;
-            _modalService = modalService;
         }
-
-        public void Close() => _modalService.Close(this);
-
-        public void Close(ModalResult result) => _modalService.Close(this, result);
 
         public Task<ModalResult> Result => _resultCompletion.Task;
 

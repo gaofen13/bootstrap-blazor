@@ -1,18 +1,47 @@
 ﻿using BootstrapBlazor.Utilities;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Routing;
-using System.Collections.ObjectModel;
 
 namespace BootstrapBlazor
 {
-    public partial class BootstrapModalContainer
+    public partial class BootstrapModalContainer : BootstrapComponentBase
     {
-        private readonly Collection<ModalReference> _modals = new();
-        private bool _haveActiveModals;
+        private ModalOptions? _modalOptions;
+        private ModalReference? _modal;
 
         [Inject] private NavigationManager? NavigationManager { get; set; }
         [Inject] private ModalService ModalService { get; set; } = default!;
-        [Parameter] public ModalOptions? GlobalOptions { get; set; }
+        [Parameter] public ModalOptions GlobalOptions { get; set; } = new();
+        public ModalOptions? ModalOptions
+        {
+            get => _modalOptions;
+            set
+            {
+                _modalOptions = value;
+                StateHasChanged();
+            }
+        }
+
+        private string Classname =>
+          new ClassBuilder("modal fade")
+            .AddClass("show", _modal != null)
+            .AddClass(Class)
+            .Build();
+
+        private string Stylelist =>
+            new StyleBuilder()
+            .AddStyle("display", "block")
+            .AddStyle("visibility", "hidden", _modal == null)
+            .AddStyle(Style)
+            .Build();
+
+        private string DialogClassname =>
+            new ClassBuilder("modal-dialog")
+            .AddClass("modal-dialog-scrollable", _modalOptions == null ? GlobalOptions.Scrollable : _modalOptions.Scrollable)
+            .AddClass("modal-dialog-centered ", _modalOptions == null ? GlobalOptions.Centered : _modalOptions.Centered)
+            .AddClass("modal-fullscreen", _modalOptions == null ? GlobalOptions.Fullscreen : _modalOptions.Fullscreen)
+            .AddClass($"modal-{(_modalOptions == null ? GlobalOptions.Size : _modalOptions.Size)}")
+            .Build();
 
         protected override void OnInitialized()
         {
@@ -21,77 +50,40 @@ namespace BootstrapBlazor
                 throw new InvalidOperationException($"{GetType()} requires a cascading parameter of type {nameof(ModalService)}.");
             }
 
-            ModalService.OnModalInstanceAdded += Update;
+            ModalService.OnModalInstanceUpdate += Update;
             ModalService.OnModalCloseRequested += CloseInstance;
-            NavigationManager!.LocationChanged += CancelModals;
+            NavigationManager!.LocationChanged += CancelModal;
         }
 
-        internal void CloseInstance(ModalReference? modal, ModalResult result)
+        internal void CloseInstance(ModalResult result)
         {
-            if (modal?.ModalInstanceRef != null)
+            if (_modal != null)
             {
-                // Gracefully close the modal
-                modal.ModalInstanceRef.Close(result);
-                if (!_modals.Any())
-                {
-                    ClearBodyStyles();
-                }
-            }
-            else
-            {
-                DismissInstance(modal, result);
-            }
-        }
-
-        internal void DismissInstance(Guid id, ModalResult result)
-        {
-            var reference = GetModalReference(id);
-            DismissInstance(reference, result);
-        }
-
-        internal void DismissInstance(ModalReference? modal, ModalResult result)
-        {
-            if (modal != null)
-            {
-                modal.Dismiss(result);
-                _modals.Remove(modal);
-                if (!_modals.Any())
-                {
-                    ClearBodyStyles();
-                }
+                _modal.Dismiss(result);
+                _modal = null;
+                _modalOptions = null;
                 StateHasChanged();
             }
         }
 
-        private void CancelModals(object? sender, LocationChangedEventArgs e)
+        private void CancelModal(object? sender, LocationChangedEventArgs e)
         {
-            foreach (var modalReference in _modals.ToList())
-            {
-                modalReference.Dismiss(ModalResult.Cancel());
-            }
-
-            _modals.Clear();
-            ClearBodyStyles();
-            StateHasChanged();
+            CloseInstance(ModalResult.Cancel());
         }
 
         private void Update(ModalReference modalReference)
         {
-            _modals.Add(modalReference);
-
-            if (!_haveActiveModals)
-            {
-                _haveActiveModals = true;
-            }
-
+            CloseInstance(ModalResult.Cancel());
+            _modal = modalReference;
             StateHasChanged();
         }
 
-        private ModalReference? GetModalReference(Guid id) => _modals.SingleOrDefault(x => x.InstanceId == id);
-
-        private void ClearBodyStyles()
+        private void OnClickBackground()
         {
-            _haveActiveModals = false;
+            if (ModalOptions == null ? GlobalOptions?.StaticBackdrop == false : !ModalOptions.StaticBackdrop)
+            {
+                CloseInstance(ModalResult.Cancel());
+            }
         }
     }
 }

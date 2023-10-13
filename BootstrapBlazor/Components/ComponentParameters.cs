@@ -2,35 +2,43 @@
 
 namespace BootstrapBlazor
 {
-    public class ModalParameters : IEnumerable<KeyValuePair<string, object>>
+    public class ComponentParameters : IEnumerable<KeyValuePair<string, object>>
     {
-        internal readonly Dictionary<string, object> Parameters;
+        internal readonly Dictionary<string, object?> Parameters;
 
-        public ModalParameters()
+        public ComponentParameters()
         {
-            Parameters = new Dictionary<string, object>();
+            Parameters = [];
         }
 
-        public ModalParameters Add(string parameterName, object value)
+        public ComponentParameters Add(string parameterName, object? value)
         {
             Parameters[parameterName] = value;
             return this;
         }
 
-        public T Get<T>(string parameterName)
+        public T? Get<T>(string parameterName)
         {
             if (Parameters.TryGetValue(parameterName, out var value))
             {
+                if (value == null)
+                {
+                    return default;
+                }
                 return (T)value;
             }
 
-            throw new KeyNotFoundException($"{parameterName} does not exist in modal parameters");
+            throw new KeyNotFoundException($"{parameterName} does not exist in parameters");
         }
 
         public T? TryGet<T>(string parameterName)
         {
             if (Parameters.TryGetValue(parameterName, out var value))
             {
+                if (value == null)
+                {
+                    return default;
+                }
                 return (T)value;
             }
 

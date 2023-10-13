@@ -2,18 +2,12 @@
 
 namespace BootstrapBlazor
 {
-    internal class ToastReference
+    internal class ToastReference(Guid id, RenderFragment toastInstance)
     {
-        public ToastReference(Guid id, RenderFragment toastInstance)
-        {
-            Id = id;
-            ToastInstance = toastInstance;
-        }
-
-        public Guid Id { get; set; }
+        public Guid Id { get; set; } = id;
 
         public DateTime TimeStamp { get; set; } = DateTime.Now;
 
-        public RenderFragment ToastInstance { get; set; }
+        public RenderFragment ToastInstance { get; set; } = toastInstance;
     }
 }

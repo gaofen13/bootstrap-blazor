@@ -1,8 +1,16 @@
 ﻿@namespace BootstrapBlazor
+@inherits BootstrapComponentBase
 
-<CascadingValue Value="@this" IsFixed>
-    @foreach (var modal in _modals)
-    {
-        @modal.ModalInstance
-    }
-</CascadingValue>
+<div @ref="@Element" tabindex="-1" class="@Classname" style="@Stylelist" role="dialog"
+    @attributes="@AdditionalAttributes" @onclick="@OnClickBackground">
+    <div class="@DialogClassname" @onclick:stopPropagation="@true">
+        <CascadingValue Value="@this" IsFixed>
+            @_modal?.ModalContent
+        </CascadingValue>
+    </div>
+</div>
+
+@if (_modal != null)
+{
+    <div class="modal-backdrop fade show"></div>
+}

@@ -4,8 +4,8 @@ namespace BootstrapBlazor
 {
     public class ModalService
     {
-        internal event Action<ModalReference>? OnModalInstanceAdded;
-        internal event Action<ModalReference, ModalResult>? OnModalCloseRequested;
+        internal event Action<ModalReference>? OnModalInstanceUpdate;
+        internal event Action<ModalResult>? OnModalCloseRequested;
 
         /// <summary>
         /// Shows the modal with the component type using the specified <paramref name="title"/>,
@@ -13,7 +13,7 @@ namespace BootstrapBlazor
         /// </summary>
         /// <param name="title">Modal title.</param>
         /// <param name="parameters">Key/Value collection of parameters to pass to component being displayed.</param>
-        public ModalReference Show<T>(ModalParameters? parameters = null) where T : IComponent
+        public ModalReference Show<T>(ComponentParameters? parameters = null) where T : IComponent
             => Show(typeof(T), parameters);
 
         /// <summary>
@@ -24,15 +24,13 @@ namespace BootstrapBlazor
         /// <param name="title">Modal title.</param>
         /// <param name="parameters">Key/Value collection of parameters to pass to component being displayed.</param>
         /// <param name="options">Options to configure the modal.</param>
-        public ModalReference Show(Type contentComponent, ModalParameters? parameters = null)
+        public ModalReference Show(Type contentComponent, ComponentParameters? parameters = null)
         {
             if (!typeof(IComponent).IsAssignableFrom(contentComponent))
             {
                 throw new ArgumentException($"{contentComponent.FullName} must be a Blazor Component");
             }
 
-            ModalReference? modalReference = null;
-            var modalInstanceId = Guid.NewGuid();
             var modalContent = new RenderFragment(builder =>
             {
                 var i = 0;
@@ -46,24 +44,13 @@ namespace BootstrapBlazor
                 }
                 builder.CloseComponent();
             });
-            var modalInstance = new RenderFragment(builder =>
-            {
-                builder.OpenComponent<ModalInstance>(0);
-                builder.SetKey("ModalInstance_" + modalInstanceId);
-                builder.AddAttribute(1, "InstanceId", modalInstanceId);
-                builder.AddAttribute(2, "ChildContent", modalContent);
-                builder.AddComponentReferenceCapture(3, compRef => modalReference!.ModalInstanceRef = (ModalInstance)compRef);
-                builder.CloseComponent();
-            });
-            modalReference = new ModalReference(modalInstanceId, modalInstance, this);
+            var reference = new ModalReference(modalContent);
 
-            OnModalInstanceAdded?.Invoke(modalReference);
+            OnModalInstanceUpdate?.Invoke(reference);
 
-            return modalReference;
+            return reference;
         }
 
-        internal void Close(ModalReference modal) => Close(modal, ModalResult.Ok());
-
-        internal void Close(ModalReference modal, ModalResult result) => OnModalCloseRequested?.Invoke(modal, result);
+        public void Close(ModalResult result) => OnModalCloseRequested?.Invoke(result);
     }
 }

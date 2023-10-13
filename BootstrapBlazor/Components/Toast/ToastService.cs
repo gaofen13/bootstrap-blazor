@@ -7,7 +7,7 @@ namespace BootstrapBlazor
         /// <summary>
         /// A event that will be invoked when showing a toast
         /// </summary>
-        public event Action<Type, ToastParameters?, ToastOptions?>? OnShowComponent;
+        public event Action<Type, ComponentParameters?, ToastOptions?>? OnShowComponent;
 
         /// <summary>
         /// A event that will be invoked when clearing all toasts
@@ -60,9 +60,9 @@ namespace BootstrapBlazor
         public void ShowToast(Color color, string message, string? title = null, RenderFragment? iconContent = null, ToastOptions? options = null)
             => ShowToast<BootstrapToast>(SetParameters(color, message, title, iconContent), options);
 
-        private static ToastParameters SetParameters(Color? color, string? message, string? title, RenderFragment? iconContent)
+        private static ComponentParameters SetParameters(Color? color, string? message, string? title, RenderFragment? iconContent)
         {
-            var res = new ToastParameters();
+            var res = new ComponentParameters();
             if (color != null)
             {
                 res.Add("Color", color);
@@ -82,10 +82,10 @@ namespace BootstrapBlazor
             return res;
         }
 
-        public void ShowToast<TComponent>(ToastParameters? parameters = null, ToastOptions? options = null) where TComponent : IComponent
+        public void ShowToast<TComponent>(ComponentParameters? parameters = null, ToastOptions? options = null) where TComponent : IComponent
             => ShowToast(typeof(TComponent), parameters, options);
 
-        public void ShowToast<TComponent>(ToastParameters? parameters = null) where TComponent : IComponent
+        public void ShowToast<TComponent>(ComponentParameters? parameters = null) where TComponent : IComponent
             => ShowToast(typeof(TComponent), parameters);
 
         public void ShowToast<TComponent>(ToastOptions? options = null) where TComponent : IComponent
@@ -94,7 +94,7 @@ namespace BootstrapBlazor
         public void ShowToast<TComponent>() where TComponent : IComponent
             => ShowToast(typeof(TComponent));
 
-        public void ShowToast(Type toastComponent, ToastParameters? parameters = null, ToastOptions? options = null)
+        public void ShowToast(Type toastComponent, ComponentParameters? parameters = null, ToastOptions? options = null)
         {
             if (!typeof(IComponent).IsAssignableFrom(toastComponent))
             {

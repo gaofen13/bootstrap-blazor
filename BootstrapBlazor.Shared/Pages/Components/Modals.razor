@@ -3,61 +3,61 @@
 @inject ModalService ModalService
 
 <h3>Examples</h3>
-<BootstrapModal @bind-Visible="@visible1" Title="Modal title" Options="@(new ModalOptions{ ShowCloseBtn = true})">
+<BootstrapModal @ref="@modal1" Title="Modal title">
     <ChildContent>
         <p>Modal body text goes here.</p>
     </ChildContent>
     <ActionsContent>
-        <BootstrapButton Color="@Color.secondary" OnClick="_=>visible1=false">Close</BootstrapButton>
+        <BootstrapButton Color="@Color.secondary" OnClick="_=>modal1?.Close()">Close</BootstrapButton>
         <BootstrapButton>Save changes</BootstrapButton>
     </ActionsContent>
 </BootstrapModal>
-<BootstrapButton OnClick="_=>visible1=true">ShowModal</BootstrapButton>
+<BootstrapButton OnClick="_=>modal1?.Show()">ShowModal</BootstrapButton>
 
 <h3>Live demo</h3>
 <BootstrapButton OnClick="@ShowLiveModalAsync">ShowLiveModal</BootstrapButton>
 
 <h3>Static backdrop</h3>
-<BootstrapModal @bind-Visible="@visible2" Title="Modal title" Options="@(new ModalOptions{ ShowCloseBtn = true, StaticBackdrop = true })">
+<BootstrapModal @ref="@modal2" Title="Modal title" Options="@(new ModalOptions{ StaticBackdrop = true })">
     <ChildContent>
         <p>Modal body text goes here.</p>
     </ChildContent>
     <ActionsContent>
-        <BootstrapButton Color="@Color.secondary" OnClick="_=>visible2=false">Close</BootstrapButton>
+        <BootstrapButton Color="@Color.secondary" OnClick="_=>modal2?.Close()">Close</BootstrapButton>
         <BootstrapButton>Save changes</BootstrapButton>
     </ActionsContent>
 </BootstrapModal>
-<BootstrapButton OnClick="_=>visible2=true">ShowModal</BootstrapButton>
+<BootstrapButton OnClick="_=>modal2?.Show()">ShowModal</BootstrapButton>
 
 <h3>Vertically centered</h3>
-<BootstrapModal @bind-Visible="@visible3" Title="Modal title" Options="@(new ModalOptions{ ShowCloseBtn = true, Centered = true })">
+<BootstrapModal @ref="@modal3" Title="Modal title" Options="@(new ModalOptions{ Centered = true })">
     <ChildContent>
         <p>Modal body text goes here.</p>
     </ChildContent>
     <ActionsContent>
-        <BootstrapButton Color="@Color.secondary" OnClick="_=>visible3=false">Close</BootstrapButton>
+        <BootstrapButton Color="@Color.secondary" OnClick="_=>modal3?.Close()">Close</BootstrapButton>
         <BootstrapButton>Save changes</BootstrapButton>
     </ActionsContent>
 </BootstrapModal>
-<BootstrapButton OnClick="_=>visible3=true">ShowModal</BootstrapButton>
+<BootstrapButton OnClick="_=>modal3?.Show()">ShowModal</BootstrapButton>
 
 <h3>Toggle between modals</h3>
-<BootstrapModal @bind-Visible="@visible4" Title="Modal title">
+<BootstrapModal @ref="@modal4" Title="Modal title">
     <ChildContent>
         <p>Modal body text goes here.</p>
     </ChildContent>
     <ActionsContent>
-        <BootstrapButton Color="@Color.secondary" OnClick="_=>visible4=false">Close</BootstrapButton>
+        <BootstrapButton Color="@Color.secondary" OnClick="_=>modal4?.Close()">Close</BootstrapButton>
         <BootstrapButton OnClick="@ShowLiveModalAsync">Open sencode modal</BootstrapButton>
     </ActionsContent>
 </BootstrapModal>
-<BootstrapButton OnClick="_=>visible4=true">Open first modal</BootstrapButton>
+<BootstrapButton OnClick="_=>modal4?.Show()">Open first modal</BootstrapButton>
 
 @code {
-    private bool visible1;
-    private bool visible2;
-    private bool visible3;
-    private bool visible4;
+    private BootstrapModal? modal1;
+    private BootstrapModal? modal2;
+    private BootstrapModal? modal3;
+    private BootstrapModal? modal4;
 
     private async Task ShowLiveModalAsync()
     {
