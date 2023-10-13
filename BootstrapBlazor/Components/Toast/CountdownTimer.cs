@@ -2,18 +2,29 @@
 {
     internal class CountdownTimer : IDisposable
     {
-        private readonly PeriodicTimer _timer;
-        private readonly CancellationToken _cancellationToken;
+        private readonly Timer _timer;
         private int _countdownTime;
 
         private Func<int, Task>? _tickDelegate;
         private Action? _elapsedDelegate;
 
-        internal CountdownTimer(int timeout, CancellationToken cancellationToken = default)
+        internal CountdownTimer(int timeout)
         {
             _countdownTime = timeout;
-            _timer = new PeriodicTimer(TimeSpan.FromSeconds(1));
-            _cancellationToken = cancellationToken;
+            _timer = new Timer(TimerElapsed);
+        }
+
+        private void TimerElapsed(object? state)
+        {
+            if (_countdownTime > 0)
+            {
+                _countdownTime--;
+                _tickDelegate?.Invoke(_countdownTime);
+            }
+            else
+            {
+                _elapsedDelegate?.Invoke();
+            }
         }
 
         internal CountdownTimer OnTick(Func<int, Task> updateProgressDelegate)
@@ -28,29 +39,19 @@
             return this;
         }
 
-        internal async Task StartAsync()
+        internal void Start()
         {
-            await DoWorkAsync();
+            _timer?.Change(0, 1000);
         }
 
-        private async Task DoWorkAsync()
+        internal void Stop()
         {
-            while (await _timer.WaitForNextTickAsync(_cancellationToken) && !_cancellationToken.IsCancellationRequested)
-            {
-                if (_countdownTime > 0)
-                {
-                    _countdownTime--;
-                    await _tickDelegate?.Invoke(_countdownTime)!;
-                }
-                if (_countdownTime == 0)
-                {
-                    _elapsedDelegate?.Invoke();
-                }
-            }
+            _timer?.Change(Timeout.Infinite, Timeout.Infinite);
         }
 
         public void Dispose()
         {
+            Stop();
             _timer.Dispose();
         }
     }

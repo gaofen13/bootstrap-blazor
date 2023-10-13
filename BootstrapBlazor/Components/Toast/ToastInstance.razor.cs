@@ -42,7 +42,7 @@ namespace BootstrapBlazor
                     .OnTick(CountdownAsync)
                     .OnElapsed(Close);
 
-                return _countdownTimer.StartAsync();
+                _countdownTimer.Start();
             }
             return base.OnInitializedAsync();
         }

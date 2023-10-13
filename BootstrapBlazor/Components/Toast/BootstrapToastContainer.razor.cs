@@ -62,7 +62,7 @@ namespace BootstrapBlazor
             if (toast != null)
             {
                 ToastList.Remove(toast);
-                StateHasChanged();
+                InvokeAsync(StateHasChanged);
             }
 
             if (ToastWaitingQueue.Any())
@@ -74,7 +74,7 @@ namespace BootstrapBlazor
         private void ClearToasts(object? sender, LocationChangedEventArgs args)
         {
             ToastList.Clear();
-            StateHasChanged();
+            InvokeAsync(StateHasChanged);
 
             if (ToastWaitingQueue.Any())
             {
@@ -113,7 +113,7 @@ namespace BootstrapBlazor
             if (ToastList.Count < MaxItemsShown)
             {
                 ToastList.Add(toastReference);
-                StateHasChanged();
+                InvokeAsync(StateHasChanged);
             }
             else
             {
@@ -127,13 +127,13 @@ namespace BootstrapBlazor
 
             ToastList.Add(toast);
 
-            StateHasChanged();
+            InvokeAsync(StateHasChanged);
         }
 
         private void ClearAll()
         {
             ToastList.Clear();
-            StateHasChanged();
+            InvokeAsync(StateHasChanged);
         }
     }
 }
