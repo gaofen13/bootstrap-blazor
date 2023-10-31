@@ -41,7 +41,7 @@ jobs:
         CLEAN: true
 
     - name: Sync to Gitee
-      uses: Yikun/hub-mirror-action@v1.2
+      uses: Yikun/hub-mirror-action@master
       with:
           src: 'github/gaofen13'    						
           dst: 'gitee/gaofen13'     						
