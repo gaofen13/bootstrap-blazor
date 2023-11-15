@@ -5,6 +5,30 @@ namespace BootstrapBlazor
 {
     public partial class BootstrapModal : BootstrapComponentBase
     {
+        private bool _staticActived;
+
+        private string Classname =>
+          new ClassBuilder("modal fade")
+            .AddClass("show", Visible)
+            .AddClass("modal-static", _staticActived)
+            .AddClass(Class)
+            .Build();
+
+        private string Stylelist =>
+            new StyleBuilder()
+            .AddStyle("display", "block")
+            .AddStyle("visibility", "hidden", !Visible)
+            .AddStyle(Style)
+            .Build();
+
+        private string DialogClassname =>
+            new ClassBuilder("modal-dialog")
+            .AddClass("modal-dialog-scrollable", Options?.Scrollable)
+            .AddClass("modal-dialog-centered ", Options?.Centered)
+            .AddClass("modal-fullscreen", Options?.Fullscreen)
+            .AddClass($"modal-{Options?.Size}", Options != null)
+            .Build();
+
         private string BodyClassname =>
           new ClassBuilder("modal-body")
             .AddClass(Class)
@@ -12,9 +36,13 @@ namespace BootstrapBlazor
 
         private bool IsInline => ModalContainer == null;
 
-        [Inject] private ModalService ModalService { get; set; } = default!;
+        [Inject] private ModalService? ModalService { get; set; }
 
         [CascadingParameter] private BootstrapModalContainer? ModalContainer { get; set; }
+
+        [Parameter] public bool Visible { get; set; }
+
+        [Parameter] public EventCallback<bool> VisibleChanged { get; set; }
 
         [Parameter] public ModalOptions? Options { get; set; }
 
@@ -31,21 +59,30 @@ namespace BootstrapBlazor
             base.OnInitialized();
         }
 
-        public ModalReference Show()
+        private void Close()
         {
-            var parameters = new ComponentParameters
+            if (IsInline)
             {
-                { nameof(Title), Title },
-                { nameof(Options), Options },
-                { nameof(ChildContent), ChildContent },
-                { nameof(ActionsContent), ActionsContent }
-            };
-            return ModalService.Show<BootstrapModal>(parameters);
+                Visible = false;
+                VisibleChanged.InvokeAsync(false);
+            }
+            else
+            {
+                ModalService?.Close(ModalResult.Cancel());
+            }
         }
 
-        public void Close()
+        private void OnClickBackground()
         {
-            ModalService.Close(ModalResult.Cancel());
+            if (Options?.StaticBackdrop == true)
+            {
+                _staticActived = !_staticActived;
+                StateHasChanged();
+            }
+            else
+            {
+                Close();
+            }
         }
     }
 }
