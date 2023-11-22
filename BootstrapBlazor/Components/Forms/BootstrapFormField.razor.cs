@@ -43,19 +43,19 @@ namespace BootstrapBlazor
 
         public void SetInvalid(string? error)
         {
-            if (_isValid!=false)
+            if (string.IsNullOrWhiteSpace(InvalidText))
+            {
+                _invalidText = error;
+            }
+            if (_isValid != false)
             {
                 _isValid = false;
-                if (string.IsNullOrWhiteSpace(InvalidText))
-                {
-                    _invalidText = error;
-                }
             }
         }
 
         public void SetValid()
         {
-            if (_isValid!=true)
+            if (_isValid != true)
             {
                 _isValid = true;
             }
