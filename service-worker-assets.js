@@ -25,27 +25,27 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-uxpFtfKng9dcqDjkdGUheaks6CVUgkj2weR91t3K9eo=",
+      "hash": "sha256-BGXX7Dt9yyVTaUfq+Fs9ptNnCldiGYIBoaPkrovjouY=",
       "url": "_framework\/blazor.boot.json"
     },
     {
-      "hash": "sha256-8su0dfqXmrR6nSS80nF\/thphOx+y1Myj7Zbp7+5wV3Y=",
+      "hash": "sha256-J2KgXrrbrrqsNozIT08rwcdkSLXSO+5rH7xoI+3bgT0=",
       "url": "_framework\/dotnet.native.8.0.0.t50xf57b14.js"
     },
     {
-      "hash": "sha256-GryLVmEAPmmwVrR65dntij6v31St2Vh0m78\/hVfdkyQ=",
+      "hash": "sha256-wrKprMaSp5X+JFmxH38H26YJOe88X+wlXXAtLwpy7H4=",
       "url": "_framework\/dotnet.native.wasm"
     },
     {
-      "hash": "sha256-rvEF1IyCOul+kFUjcu7kKQtLBr6rlRToB0trMa+3\/i0=",
+      "hash": "sha256-0X0oxnmwc3OmBdd51QFKtdmTBX39xbe6GffBUcS8k9g=",
       "url": "_framework\/BootstrapBlazor.Client.wasm"
     },
     {
-      "hash": "sha256-EXYH8w\/MPKzsx+3kK5PjCtzu9a+P2HtIkwMLVw1tdYY=",
+      "hash": "sha256-88BZiTG\/aD4g5mCEDXxigYpjbfbcaKGFIrAgGrbECQE=",
       "url": "_framework\/BootstrapBlazor.Shared.wasm"
     },
     {
-      "hash": "sha256-RkDSpv6CZoz9SY8bni2phi\/oGcoykneUEM0HgumNUuE=",
+      "hash": "sha256-QXneIXqKvG04STfZsZdsYJMvPgHB+lyRLBjZEzmYJXE=",
       "url": "_framework\/BootstrapBlazor.wasm"
     },
     {
@@ -169,7 +169,7 @@
       "url": "_framework\/System.ObjectModel.wasm"
     },
     {
-      "hash": "sha256-PUjI3aduCt1haQFopB8Y4Sv6Ceq8tCO6nDivSAWoJtI=",
+      "hash": "sha256-jHph47LuPsFf0O\/wUlmML4kYvKMbRrogJqB4XVMrcJ8=",
       "url": "_framework\/System.Private.CoreLib.wasm"
     },
     {
@@ -185,7 +185,7 @@
       "url": "_framework\/System.Runtime.wasm"
     },
     {
-      "hash": "sha256-PPjgJMbaJy7HmAFbiVQDmuLd+9vm5X5Uxk2KptWctx4=",
+      "hash": "sha256-ldvxfScfkBeG4OF4ijVnVt8g4MLzdBx9TiTSQYxh80k=",
       "url": "_framework\/System.Text.Encodings.Web.wasm"
     },
     {
@@ -413,5 +413,5 @@
       "url": "_content\/BootstrapBlazor\/exampleJsInterop.js"
     }
   ],
-  "version": "BRRyG3IB"
+  "version": "MEsGOaCg"
 };
