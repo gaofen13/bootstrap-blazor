@@ -11,7 +11,7 @@
                     <h1 class="modal-title fs-5">@Title</h1>
                     @if (Options?.ShowCloseBtn == true)
                     {
-                        <BootstrapCloseButton OnClick="@Close"></BootstrapCloseButton>
+                        <button class="btn-close" @onclick="@Close"></button>
                     }
                 </div>
                 <div class="@BodyClassname">
@@ -39,7 +39,7 @@ else
             <h1 class="modal-title fs-5">@Title</h1>
             @if (Options == null ? ModalContainer!.GlobalOptions.ShowCloseBtn : Options.ShowCloseBtn)
             {
-                <BootstrapCloseButton OnClick="@Close"></BootstrapCloseButton>
+                <button class="btn-close" @onclick="@Close"></button>
             }
         </div>
         <div class="@BodyClassname">

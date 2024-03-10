@@ -40,7 +40,7 @@ namespace BootstrapBlazor
         [Parameter]
         public ToastOptions GlobalOptions { get; set; } = new();
 
-        private List<ToastReference> ToastList { get; set; } = new();
+        private List<ToastReference> ToastList { get; set; } = [];
 
         private Queue<ToastReference> ToastWaitingQueue { get; set; } = new();
 
@@ -57,83 +57,88 @@ namespace BootstrapBlazor
 
         public void RemoveToast(Guid toastId)
         {
-            var toast = ToastList.Find(t => t.Id == toastId);
-
-            if (toast != null)
+            InvokeAsync(() =>
             {
-                ToastList.Remove(toast);
-                InvokeAsync(StateHasChanged);
-            }
+                var toast = ToastList.Find(t => t.Id == toastId);
 
-            if (ToastWaitingQueue.Any())
-            {
-                ShowEnqueuedToast();
-            }
+                if (toast != null)
+                {
+                    ToastList.Remove(toast);
+                    StateHasChanged();
+                }
+
+                if (ToastWaitingQueue.Count > 0)
+                {
+                    ShowEnqueuedToast();
+                }
+            });
         }
 
         private void ClearToasts(object? sender, LocationChangedEventArgs args)
         {
-            ToastList.Clear();
-            InvokeAsync(StateHasChanged);
-
-            if (ToastWaitingQueue.Any())
+            InvokeAsync(() =>
             {
-                ShowEnqueuedToast();
-            }
+                ToastList.Clear();
+                StateHasChanged();
+
+                if (ToastWaitingQueue.Count > 0)
+                {
+                    ShowEnqueuedToast();
+                }
+            });
         }
 
         private void ShowToast(Type contentComponent, ComponentParameters? parameters, ToastOptions? options)
         {
-            var childContent = new RenderFragment(builder =>
+            InvokeAsync(() =>
             {
-                var i = 0;
-                builder.OpenComponent(i++, contentComponent);
-                if (parameters is not null)
+                var toastContent = new RenderFragment(builder =>
                 {
-                    foreach (var parameter in parameters.Parameters)
+                    var i = 0;
+                    builder.OpenComponent(i++, contentComponent);
+                    if (parameters is not null)
                     {
-                        builder.AddAttribute(i++, parameter.Key, parameter.Value);
+                        foreach (var parameter in parameters.Parameters)
+                        {
+                            builder.AddAttribute(i++, parameter.Key, parameter.Value);
+                        }
                     }
+                    builder.CloseComponent();
+                });
+
+                var toastReference = new ToastReference(toastContent, options);
+
+                if (ToastList.Count < MaxItemsShown)
+                {
+                    ToastList.Add(toastReference);
+                    StateHasChanged();
                 }
-                builder.CloseComponent();
+                else
+                {
+                    ToastWaitingQueue.Enqueue(toastReference);
+                }
             });
-
-            var guid = Guid.NewGuid();
-            var toastInstance = new RenderFragment(builder =>
-            {
-                builder.OpenComponent<ToastInstance>(0);
-                builder.AddAttribute(1, "Options", options);
-                builder.AddAttribute(2, "ChildContent", childContent);
-                builder.AddAttribute(3, "Id", guid);
-                builder.CloseComponent();
-            });
-
-            var toastReference = new ToastReference(guid, toastInstance);
-
-            if (ToastList.Count < MaxItemsShown)
-            {
-                ToastList.Add(toastReference);
-                InvokeAsync(StateHasChanged);
-            }
-            else
-            {
-                ToastWaitingQueue.Enqueue(toastReference);
-            }
         }
 
         private void ShowEnqueuedToast()
         {
-            var toast = ToastWaitingQueue.Dequeue();
+            InvokeAsync(() =>
+            {
+                var toast = ToastWaitingQueue.Dequeue();
 
-            ToastList.Add(toast);
+                ToastList.Add(toast);
 
-            InvokeAsync(StateHasChanged);
+                StateHasChanged();
+            });
         }
 
         private void ClearAll()
         {
-            ToastList.Clear();
-            InvokeAsync(StateHasChanged);
+            InvokeAsync(() =>
+            {
+                ToastList.Clear();
+                StateHasChanged();
+            });
         }
     }
 }

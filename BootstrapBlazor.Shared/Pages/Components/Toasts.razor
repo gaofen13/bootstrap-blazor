@@ -50,6 +50,6 @@
 
     private void ShowLiveCustomToast()
     {
-        ToastService.ShowToast<CustomToastExample>(new ToastOptions { AutoClose = true });
+        ToastService.ShowToast<CustomToastExample>(new ToastOptions{ManualClose = false});
     }
 }

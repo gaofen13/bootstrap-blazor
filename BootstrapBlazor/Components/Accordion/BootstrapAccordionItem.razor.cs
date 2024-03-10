@@ -21,11 +21,11 @@ namespace BootstrapBlazor
             .Build();
 
         private string CollapseStylelist =>
-            new StyleBuilder("will-change", "max-height")
-            .AddStyle("transition", "max-height 0.35s ease")
-            .AddStyle("max-height", Open ? "65vh" : "0")
-            .AddStyle("overflow-y", "auto")
-            .AddStyle("display", "block")
+            new StyleBuilder("display", "grid")
+            .AddStyle("overflow", "hidden")
+            .AddStyle("height", "0", !Open)
+            .AddStyle("transition", "all 0.35s ease")
+            .AddStyle("grid-auto-rows", Open ? "1fr" : "0fr")
             .Build();
 
         [CascadingParameter]

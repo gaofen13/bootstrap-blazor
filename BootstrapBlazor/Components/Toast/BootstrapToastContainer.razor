@@ -7,7 +7,9 @@
         <CascadingValue Value="@this" IsFixed>
             @foreach (var toast in ToastList.OrderBy(x => x.TimeStamp))
             {
-                @toast.ToastInstance
+                <ToastInstance @key="@toast" Id="@toast.Id" Options="@toast.Options">
+                    @toast.ToastContent
+                </ToastInstance>
             }
         </CascadingValue>
     </div>

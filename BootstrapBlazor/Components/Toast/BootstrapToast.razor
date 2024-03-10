@@ -1,5 +1,6 @@
 ﻿@namespace BootstrapBlazor
 @inherits BootstrapComponentBase
+@implements IDisposable
 
 <div @ref="@Element" class="@Classname" style="@Style" role="alert" @attributes="@AdditionalAttributes">
     @if (HasHeader)
@@ -7,11 +8,11 @@
         <div class="@HeaderClassname" style="font-size:larger">
             @IconContent
             <strong class="me-auto">@Title</strong>
-            @if (ToastInstance?.LiveOptions.AutoClose == true && ToastInstance.LiveOptions.CountdownTimeout > 0)
+            @if (_showCounterdown)
             {
-                <small>@ToastInstance.CountdownTimeout 秒后关闭</small>
+                <small>@_counter 秒后关闭</small>
             }
-            @if (ToastInstance?.LiveOptions?.ManualClose == true)
+            @if (_options?.ManualClose == true)
             {
                 <BootstrapCloseButton OnClick="@Close"></BootstrapCloseButton>
             }

@@ -1,25 +1,24 @@
 ﻿namespace BootstrapBlazor
 {
-    internal class CountdownTimer : IDisposable
+    internal class CounterdownTimer : IDisposable
     {
+        private int _counter;
         private readonly Timer _timer;
-        private int _countdownTime;
-
-        private Func<int, Task>? _tickDelegate;
         private Action? _elapsedDelegate;
+        private Func<int, Task>? _tickDelegate;
 
-        internal CountdownTimer(int timeout)
+        internal CounterdownTimer(int timeout)
         {
-            _countdownTime = timeout;
+            _counter = timeout;
             _timer = new Timer(TimerElapsed);
         }
 
         private void TimerElapsed(object? state)
         {
-            if (_countdownTime > 0)
+            if (_counter > 0)
             {
-                _countdownTime--;
-                _tickDelegate?.Invoke(_countdownTime);
+                _counter--;
+                _tickDelegate?.Invoke(_counter);
             }
             else
             {
@@ -27,13 +26,13 @@
             }
         }
 
-        internal CountdownTimer OnTick(Func<int, Task> updateProgressDelegate)
+        internal CounterdownTimer OnTick(Func<int, Task> updateProgressDelegate)
         {
             _tickDelegate = updateProgressDelegate;
             return this;
         }
 
-        internal CountdownTimer OnElapsed(Action elapsedDelegate)
+        internal CounterdownTimer OnElapsed(Action elapsedDelegate)
         {
             _elapsedDelegate = elapsedDelegate;
             return this;
