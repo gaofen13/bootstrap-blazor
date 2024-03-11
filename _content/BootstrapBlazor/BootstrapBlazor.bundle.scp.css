@@ -1,0 +1,15 @@
+/* _content/BootstrapBlazor/Components/Collapse/BootstrapCollapse.razor.rz.scp.css */
+.collapse[b-78tmkyqb7k] {
+    display: grid !important;
+    grid-template-rows: 0fr;
+    overflow: hidden;
+    transition: all 0.35s ease;
+}
+
+.collapse.show[b-78tmkyqb7k] {
+    grid-template-rows: 1fr;
+}
+
+.collapse>.collapse-body[b-78tmkyqb7k] {
+    min-height: 0;
+}
