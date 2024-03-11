@@ -1,0 +1,16 @@
+@page "/components/collapse"
+
+<h3>Example</h3>
+<p>
+    <BootstrapButton OnClick="_=>open=!open">Button toggle collapse</BootstrapButton>
+</p>
+<BootstrapCollapse Open="@open">
+    <div class=" card card-body">
+        Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user
+        activates the relevant trigger.
+    </div>
+</BootstrapCollapse>
+
+@code {
+    private bool open;
+}

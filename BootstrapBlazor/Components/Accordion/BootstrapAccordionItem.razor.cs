@@ -15,17 +15,8 @@ namespace BootstrapBlazor
             .AddClass("collapsed", !Open)
             .Build();
 
-        private string CollapseClassname =>
-            new ClassBuilder("accordion-collapse collapse")
-            .AddClass("show", Open)
-            .Build();
-
-        private string CollapseStylelist =>
-            new StyleBuilder("display", "grid")
-            .AddStyle("overflow", "hidden")
-            .AddStyle("height", "0", !Open)
-            .AddStyle("transition", "all 0.35s ease")
-            .AddStyle("grid-auto-rows", Open ? "1fr" : "0fr")
+        private static string CollapseClassname =>
+            new ClassBuilder("accordion-collapse")
             .Build();
 
         [CascadingParameter]

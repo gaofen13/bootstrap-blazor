@@ -1,0 +1,14 @@
+.collapse {
+    display: grid !important;
+    grid-template-rows: 0fr;
+    overflow: hidden;
+    transition: all 0.35s ease;
+}
+
+.collapse.show {
+    grid-template-rows: 1fr;
+}
+
+.collapse>.collapse-body {
+    min-height: 0;
+}
