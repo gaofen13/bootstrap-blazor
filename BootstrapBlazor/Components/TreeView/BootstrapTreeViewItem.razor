@@ -1,0 +1,42 @@
+@namespace BootstrapBlazor
+@inherits BootstrapComponentBase
+@typeparam TValue
+
+<li @ref="@Element" class="@Classname" style="@Style" @attributes="@AdditionalAttributes">
+    @if (HasChildren)
+    {
+        <div class="treeview-item-header">
+            <button class="btn btn-arrow" @onclick="@OnOpenChanged">
+                <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" viewBox="0 0 16 16"
+                    fill="currentColor">
+                    <path fill-rule="evenodd"
+                        d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                </svg>
+            </button>
+            <label class="@TitleClassname" @onclick="@OnClickItemAsync">
+                @if (Root?.MultiSelection == true)
+                {
+                    <BootstrapCheckbox Value="@Checked" ValueChanged="@OnCheckedChanged" />
+                }
+                @Title
+            </label>
+        </div>
+        <BootstrapCollapse Open="@_opened">
+            <ul class="treeview list-group">
+                <CascadingValue Value="@this" IsFixed>
+                    @ChildContent
+                </CascadingValue>
+            </ul>
+        </BootstrapCollapse>
+    }
+    else
+    {
+        <label class="@TitleClassname" @onclick="@OnClickItemAsync">
+            @if (Root?.MultiSelection == true)
+            {
+                <BootstrapCheckbox Value="@Checked" ValueChanged="@OnCheckedChanged" />
+            }
+            @Title
+        </label>
+    }
+</li>

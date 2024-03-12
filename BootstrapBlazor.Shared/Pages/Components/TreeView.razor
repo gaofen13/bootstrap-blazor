@@ -1,0 +1,34 @@
+@page "/components/treeview"
+
+<h3>Example</h3>
+<div>选择的值：@selectedValue</div>
+<BootstrapTreeView @bind-SelectedValue="@selectedValue">
+    <BootstrapTreeViewItem Value="@("1")" Title="1">
+        <BootstrapTreeViewItem Value="@("1.1")" Title="1.1">
+            <BootstrapTreeViewItem Value="@("1.1.1")" Title="1.1.1"></BootstrapTreeViewItem>
+            <BootstrapTreeViewItem Value="@("1.1.2")" Title="1.1.2"></BootstrapTreeViewItem>
+        </BootstrapTreeViewItem>
+        <BootstrapTreeViewItem Value="@("1.2")" Title="1.2"></BootstrapTreeViewItem>
+    </BootstrapTreeViewItem>
+    <BootstrapTreeViewItem Value="@("2")" Title="2"></BootstrapTreeViewItem>
+    <BootstrapTreeViewItem Value="@("3")" Title="3"></BootstrapTreeViewItem>
+</BootstrapTreeView>
+
+<h3>多选</h3>
+<div>选择的值：@string.Join(", ", selectedValues)</div>
+<BootstrapTreeView @bind-SelectedValues="@selectedValues" MultiSelection>
+    <BootstrapTreeViewItem Value="@("1")" Title="1">
+        <BootstrapTreeViewItem Value="@("1.1")" Title="1.1">
+            <BootstrapTreeViewItem Value="@("1.1.1")" Title="1.1.1"></BootstrapTreeViewItem>
+            <BootstrapTreeViewItem Value="@("1.1.2")" Title="1.1.2"></BootstrapTreeViewItem>
+        </BootstrapTreeViewItem>
+        <BootstrapTreeViewItem Value="@("1.2")" Title="1.2"></BootstrapTreeViewItem>
+    </BootstrapTreeViewItem>
+    <BootstrapTreeViewItem Value="@("2")" Title="2"></BootstrapTreeViewItem>
+    <BootstrapTreeViewItem Value="@("3")" Title="3"></BootstrapTreeViewItem>
+</BootstrapTreeView>
+
+@code{
+    string selectedValue = "1.1.2";
+    IEnumerable<string> selectedValues = ["1.1.2", "2"];
+}

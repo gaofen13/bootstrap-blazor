@@ -1,0 +1,42 @@
+.treeview {
+    padding-left: 1rem;
+}
+
+.treeview-item {
+    display: block;
+}
+
+.treeview-item .list-group-item {
+    border: none;
+}
+
+.treeview-item-header {
+    display: flex;
+    align-items: center;
+}
+
+.treeview-item-title {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-left: 2rem;
+}
+
+.treeview-item-header .treeview-item-title {
+    margin-left: 0;
+}
+
+.btn.btn-arrow {
+    border-radius: 100%;
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+}
+
+.arrow {
+    transition: all 0.35s ease;
+}
+
+.treeview-item-open>.treeview-item-header .arrow {
+    transform: rotate(180deg);
+}
