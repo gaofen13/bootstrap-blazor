@@ -13,3 +13,50 @@
 .collapse>.collapse-body[b-78tmkyqb7k] {
     min-height: 0;
 }
+/* _content/BootstrapBlazor/Components/TreeView/BootstrapTreeView.razor.rz.scp.css */
+.treeview[b-47zaz03q7i]{
+    padding-left: 0;
+}
+/* _content/BootstrapBlazor/Components/TreeView/BootstrapTreeViewItem.razor.rz.scp.css */
+.treeview[b-qw7athg7f6] {
+    padding-left: 1rem;
+}
+
+.treeview-item[b-qw7athg7f6] {
+    display: block;
+}
+
+.treeview-item .list-group-item[b-qw7athg7f6] {
+    border: none;
+}
+
+.treeview-item-header[b-qw7athg7f6] {
+    display: flex;
+    align-items: center;
+}
+
+.treeview-item-title[b-qw7athg7f6] {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-left: 2rem;
+}
+
+.treeview-item-header .treeview-item-title[b-qw7athg7f6] {
+    margin-left: 0;
+}
+
+.btn.btn-arrow[b-qw7athg7f6] {
+    border-radius: 100%;
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+}
+
+.arrow[b-qw7athg7f6] {
+    transition: all 0.35s ease;
+}
+
+.treeview-item-open>.treeview-item-header .arrow[b-qw7athg7f6] {
+    transform: rotate(180deg);
+}
