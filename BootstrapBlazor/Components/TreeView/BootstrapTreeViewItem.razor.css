@@ -19,11 +19,12 @@
     display: flex;
     align-items: center;
     width: 100%;
-    margin-left: 1rem;
+    margin-left: 1.5rem;
+    padding: 0;
 }
 
 .treeview-item-header .treeview-item-title {
-    margin-left: 0;
+    margin-left: 0.5;
 }
 
 .btn.btn-close {
