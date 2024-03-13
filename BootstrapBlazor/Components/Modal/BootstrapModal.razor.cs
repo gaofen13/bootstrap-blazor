@@ -5,12 +5,9 @@ namespace BootstrapBlazor
 {
     public partial class BootstrapModal : BootstrapComponentBase
     {
-        private bool _staticActived;
-
         private string Classname =>
           new ClassBuilder("modal fade")
             .AddClass("show", Visible)
-            .AddClass("modal-static", _staticActived)
             .AddClass(Class)
             .Build();
 
@@ -74,12 +71,7 @@ namespace BootstrapBlazor
 
         private void OnClickBackground()
         {
-            if (Options?.StaticBackdrop == true)
-            {
-                _staticActived = !_staticActived;
-                StateHasChanged();
-            }
-            else
+            if (Options?.StaticBackdrop != true)
             {
                 Close();
             }

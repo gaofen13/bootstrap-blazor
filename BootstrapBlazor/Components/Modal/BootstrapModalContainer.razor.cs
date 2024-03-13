@@ -8,11 +8,11 @@ namespace BootstrapBlazor
     {
         private ModalOptions? _modalOptions;
         private ModalReference? _modal;
-        private bool _staticActived;
 
         [Inject] private NavigationManager? NavigationManager { get; set; }
         [Inject] private ModalService ModalService { get; set; } = default!;
         [Parameter] public ModalOptions GlobalOptions { get; set; } = new();
+
         public ModalOptions? ModalOptions
         {
             get => _modalOptions;
@@ -26,7 +26,6 @@ namespace BootstrapBlazor
         private string Classname =>
           new ClassBuilder("modal fade")
             .AddClass("show", _modal != null)
-            .AddClass("modal-static", _staticActived)
             .AddClass(Class)
             .Build();
 
@@ -85,11 +84,6 @@ namespace BootstrapBlazor
             if (ModalOptions == null ? GlobalOptions?.StaticBackdrop == false : !ModalOptions.StaticBackdrop)
             {
                 CloseInstance(ModalResult.Cancel());
-            }
-            else
-            {
-                _staticActived = !_staticActived;
-                StateHasChanged();
             }
         }
     }
