@@ -24,6 +24,7 @@
 
 .treeview-item[b-qw7athg7f6] {
     display: block;
+    line-height: 2rem;
 }
 
 .treeview-item .list-group-item[b-qw7athg7f6] {
@@ -39,12 +40,12 @@
     display: flex;
     align-items: center;
     width: 100%;
-    margin-left: 1.5rem;
-    padding: 0;
+    margin-left: 1.25rem;
+    padding: 0 0.25rem;
 }
 
 .treeview-item-header .treeview-item-title[b-qw7athg7f6] {
-    margin-left: 0.5;
+    margin-left: 0.25rem;
 }
 
 .btn.btn-close[b-qw7athg7f6] {
