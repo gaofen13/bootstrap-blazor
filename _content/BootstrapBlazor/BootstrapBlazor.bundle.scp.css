@@ -13,6 +13,14 @@
 .collapse>.collapse-body[b-78tmkyqb7k] {
     min-height: 0;
 }
+/* _content/BootstrapBlazor/Components/Modal/BootstrapModal.razor.rz.scp.css */
+.modal:active .modal-dialog[b-acsru3dwql] {
+    transform: scale(1.05);
+}
+/* _content/BootstrapBlazor/Components/Modal/BootstrapModalContainer.razor.rz.scp.css */
+.modal:active .modal-dialog[b-axua14nled] {
+    transform: scale(1.05);
+}
 /* _content/BootstrapBlazor/Components/TreeView/BootstrapTreeView.razor.rz.scp.css */
 .treeview[b-47zaz03q7i]{
     padding-left: 0;
