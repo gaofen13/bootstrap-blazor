@@ -1,5 +1,6 @@
 ﻿using BootstrapBlazor.Utilities;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Web;
 
 namespace BootstrapBlazor
 {
@@ -91,15 +92,15 @@ namespace BootstrapBlazor
         [Parameter]
         public HorizontalPosition? BreakpointXxlAlignment { get; set; }
 
-        private void OnclickTextButton()
+        private void OnclickTextButton(MouseEventArgs args)
         {
             if (!SplitButton)
             {
-                OnclickSplitButton();
+                Show = !Show;
             }
         }
 
-        private void OnclickSplitButton()
+        private void OnclickSplitButton(MouseEventArgs args)
         {
             Show = !Show;
         }

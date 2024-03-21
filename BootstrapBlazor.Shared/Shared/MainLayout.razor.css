@@ -16,7 +16,8 @@
 }
 
 ::deep .bd-offcanvas {
-    overflow-y: auto;
+    border: none;
+    padding: 1rem 0;
 }
 
 @media (min-width: 992px) {

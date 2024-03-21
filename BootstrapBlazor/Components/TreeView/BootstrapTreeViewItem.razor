@@ -6,7 +6,7 @@
     @if (HasChildren)
     {
         <div class="treeview-item-header">
-            <button class="btn btn-close" @onclick="@OnOpenChanged"></button>
+            <button class="btn-close" @onclick="@OnOpenChanged"></button>
             <label class="@TitleClassname" @onclick="@OnClickItemAsync">
                 @if (Root?.MultiSelection == true)
                 {
