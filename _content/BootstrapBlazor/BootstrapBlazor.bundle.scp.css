@@ -13,6 +13,15 @@
 .collapse>.collapse-body[b-78tmkyqb7k] {
     min-height: 0;
 }
+/* _content/BootstrapBlazor/Components/Dropdown/BootstrapDropdown.razor.rz.scp.css */
+.dropdown-overlay[b-88ksnmjx2a]{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+}
 /* _content/BootstrapBlazor/Components/Modal/BootstrapModal.razor.rz.scp.css */
 .modal:active .modal-dialog[b-acsru3dwql] {
     transform: scale(1.05);
@@ -20,6 +29,58 @@
 /* _content/BootstrapBlazor/Components/Modal/BootstrapModalContainer.razor.rz.scp.css */
 .modal:active .modal-dialog[b-axua14nled] {
     transform: scale(1.05);
+}
+/* _content/BootstrapBlazor/Components/Navbar/BootstrapNavbar.razor.rz.scp.css */
+@media (min-width: 576px) {
+    .navbar.navbar-expand-sm[b-0gjzzljesz]  .navbar-collapse {
+        overflow: visible;
+    }
+}
+
+@media (min-width: 768px) {
+    .navbar.navbar-expand-md[b-0gjzzljesz]  .navbar-collapse {
+        overflow: visible;
+    }
+}
+
+@media (min-width: 992) {
+    .navbar.navbar-expand-lg[b-0gjzzljesz]  .navbar-collapse {
+        overflow: visible;
+    }
+}
+
+@media (min-width: 1200px) {
+    .navbar.navbar-expand-xl[b-0gjzzljesz]  .navbar-collapse {
+        overflow: visible;
+    }
+}
+
+@media (min-width: 1400px) {
+    .navbar.navbar-expand-xxl[b-0gjzzljesz]  .navbar-collapse {
+        overflow: visible;
+    }
+}
+/* _content/BootstrapBlazor/Components/Navbar/BootstrapNavbarCollaspeNav.razor.rz.scp.css */
+.navbar-backdrop[b-b92ygicc19] {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+}
+/* _content/BootstrapBlazor/Components/Navbar/BootstrapNavDropdown.razor.rz.scp.css */
+.navbar .dropdown-menu[b-t94wb9kork]{
+    position: relative;
+}
+
+.dropdown-overlay[b-t94wb9kork]{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
 }
 /* _content/BootstrapBlazor/Components/TreeView/BootstrapTreeView.razor.rz.scp.css */
 .treeview[b-47zaz03q7i]{
