@@ -2,4 +2,9 @@
 @inherits BootstrapInputBase<TValue>
 @typeparam TValue
 
-<input @ref="@Element" type="range" min="@Min" max="@Max" step="@Step" id="@Id" name="@Name" class="@Classname" style="@Style" disabled="@Disabled" @attributes="@AdditionalAttributes" value="@BindConverter.FormatValue(CurrentValueAsString)" @onchange="@(EventCallback.Factory.CreateBinder<string?>(this, __value => CurrentValueAsString = __value, CurrentValueAsString))" />
+<div class="@ContainerClassname">
+    <input @ref="@Element" type="range" min="@Min" max="@Max" step="@Step" id="@Id" name="@Name" class="@Classname"
+        style="@Style" disabled="@Disabled" @attributes="@AdditionalAttributes"
+        value="@BindConverter.FormatValue(CurrentValueAsString)"
+        @onchange="@(EventCallback.Factory.CreateBinder<string?>(this, __value => CurrentValueAsString = __value, CurrentValueAsString))" />
+</div>

@@ -15,14 +15,10 @@ namespace BootstrapBlazor
 
         private string ContainerClass =>
           new ClassBuilder("form-check")
+            .AddClass("is-invalid", IsValid == false)
+            .AddClass("is-valid", IsValid == true)
             .AddClass("form-switch", IsSwitch)
             .Build();
-
-        [Parameter]
-        public string? InvalidText { get; set; }
-
-        [Parameter]
-        public string? ValidText { get; set; }
 
         [Parameter]
         public string? Label { get; set; }

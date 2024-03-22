@@ -9,9 +9,13 @@ namespace BootstrapBlazor
     {
         private string Classname =>
           new ClassBuilder("form-range")
+            .AddClass(Class)
+            .Build();
+
+        private string ContainerClassname =>
+            new ClassBuilder("form-control d-flex align-items-center")
             .AddClass("is-invalid", IsValid == false)
             .AddClass("is-valid", IsValid == true)
-            .AddClass(Class)
             .Build();
 
         [Parameter]

@@ -11,23 +11,4 @@
         <span class="form-check-label">@Label</span>
     }
     <input @ref="@Element" type="checkbox" id="@Id" name="@Name" class="@Classname" style="@Style" required="@Required" disabled="@Disabled" readonly="@Readonly" @attributes="@AdditionalAttributes" checked="@BindConverter.FormatValue(Value)" @onchange="@(EventCallback.Factory.CreateBinder<bool>(this,__value=>Value=__value,Value))" />
-    @if (IsValid == true)
-    {
-        <span class="valid-feedback">
-            @ValidText
-        </span>
-    }
-    else if (IsValid == false)
-    {
-        <span class="invalid-feedback">
-            @if (!string.IsNullOrWhiteSpace(InvalidText))
-            {
-                @InvalidText
-            }
-            else
-            {
-                @InvalidMessageList.FirstOrDefault()
-            }
-        </span>
-    }
 </label>

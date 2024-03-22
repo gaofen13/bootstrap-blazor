@@ -5,20 +5,20 @@
 
 <EditForm @ref="@form" Model="@test" OnValidSubmit="@OnValidSubmit">
     <DataAnnotationsValidator />
-    <BootstrapFormField InvalidText="不能为空">
+    <BootstrapFormField Label="Text1" Class="mb-3" LabelClass="col-lg-3 col-md-2 text-md-end" InvalidText="不能为空">
         <BootstrapInputText @bind-Value="@test.Field1" />
     </BootstrapFormField>
-    <BootstrapFormField>
+    <BootstrapFormField Label="Text2" Class="mb-3" LabelClass="col-lg-3 col-md-2 text-md-end">
         <BootstrapInputText @bind-Value="@test.Field1" />
     </BootstrapFormField>
-    <BootstrapFormField>
+    <BootstrapFormField Label="RadioGroup" Class="mb-3" LabelClass="col-lg-3 col-md-2 text-md-end">
         <BootstrapRadioGroup @bind-Value="@test.Radio1">
             <BootstrapRadio Value="1">1</BootstrapRadio>
             <BootstrapRadio Value="2">2</BootstrapRadio>
             <BootstrapRadio Value="3">3</BootstrapRadio>
         </BootstrapRadioGroup>
     </BootstrapFormField>
-    <BootstrapFormField>
+    <BootstrapFormField Label="Select" Class="mb-3" LabelClass="col-lg-3 col-md-2 text-md-end">
         <BootstrapSelect @bind-Value="@test.Radio1">
             <option value="0">0</option>
             <option value="1">1</option>
@@ -26,13 +26,20 @@
             <option value="3">3</option>
         </BootstrapSelect>
     </BootstrapFormField>
-    <BootstrapFormField>
+    <BootstrapFormField Label="Range" Class="mb-3" LabelClass="col-lg-3 col-md-2 text-md-end">
         <BootstrapRange Min="0" Max="100" @bind-Value="@test.Range1" />
     </BootstrapFormField>
-    <BootstrapCheckbox Label="同意" @bind-Value="@test.Checked1" />
-    <BootstrapCheckbox IsSwitch Label="同意" @bind-Value="@test.Checked1" />
-    <BootstrapButton ButtonType="@ButtonType.submit">Submit form</BootstrapButton>
-    <BootstrapButton ButtonType="@ButtonType.reset" Color="@Color.secondary" OnClick="@OnResetForm">Reset form</BootstrapButton>
+    <BootstrapFormField Class="mb-3" LabelClass="col-lg-3 col-md-2 text-md-end">
+        <BootstrapCheckbox Label="同意" @bind-Value="@test.Checked1" />
+    </BootstrapFormField>
+    <BootstrapFormField Class="mb-3" LabelClass="col-lg-3 col-md-2 text-md-end">
+        <BootstrapCheckbox IsSwitch Label="同意" @bind-Value="@test.Checked1" />
+    </BootstrapFormField>
+    <div class="offset-lg-3 offset-md-2">
+        <BootstrapButton ButtonType="@ButtonType.submit">Submit form</BootstrapButton>
+        <BootstrapButton ButtonType="@ButtonType.reset" Color="@Color.secondary" OnClick="@OnResetForm">Reset form
+        </BootstrapButton>
+    </div>
 </EditForm>
 
 @code {
