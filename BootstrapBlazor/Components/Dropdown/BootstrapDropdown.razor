@@ -5,7 +5,7 @@
     <button type="button" class="@BtnClassname" @onclick="@OnclickTextButton">@ButtonText</button>
     @if (SplitButton)
     {
-        <button type="button" class="@SplitBtnClassname" @onclick="@OnclickSplitButton">
+        <button type="button" class="@SplitBtnClassname" @onclick="@Toggle">
             <span class="visually-hidden">Toggle Dropdown</span>
         </button>
     }
@@ -22,10 +22,10 @@
             }
             @MenuContent
         }
+
+        @if (Show)
+        {
+            <div class="dropdown-overlay" @onclick="@Toggle"></div>
+        }
     </ul>
 </div>
-
-@if (Show)
-{
-    <div class="fade show" style="position:fixed;top:0;bottom:0;left:0;right:0;" @onclick="@OnclickSplitButton"></div>
-}

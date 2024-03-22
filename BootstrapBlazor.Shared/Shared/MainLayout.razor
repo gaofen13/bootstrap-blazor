@@ -14,20 +14,20 @@
                 </path>
             </svg>
         </BootstrapNavbarToggler>
-        <BootstrapNavbarCollaspeNav Show="@showNavMenu">
+        <BootstrapNavbarCollaspeNav AutoClose @bind-Show="@showNavMenu">
             <BootstrapNavItem Class="mx-3">
                 <BootstrapCheckbox IsSwitch Label="@ThemeType" Value="@darkTheme" ValueChanged="@OnThemeChanged" />
             </BootstrapNavItem>
             <BootstrapNavItem Class="mx-3" Href="https://gaofen13.gitee.io/bootstrap-blazor/">About</BootstrapNavItem>
         </BootstrapNavbarCollaspeNav>
     </BootstrapNavbar>
-    <div class="w-100 d-flex bd-container" style="height:@ContainerHeight">
+    <div class="w-100 d-flex bd-container">
         <BootstrapOffcanvas @bind-Show="@showMenu" ShowBackdrop="@ShowBackdrop" ShowCloseButton="@ShowBackdrop"
-            Class="bd-offcanvas">
+            Class="bd-offcanvas" Style="@($"top:{OffcanvasTop};height:{OffcanvasHeight}")">
             <NavMenu />
         </BootstrapOffcanvas>
 
-        <main class="w-100 p-3" style="overflow-y:auto;">
+        <main class="w-100 p-3">
             <BootstrapErrorBoundary>
                 @Body
             </BootstrapErrorBoundary>

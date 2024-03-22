@@ -1,7 +1,7 @@
 ﻿let windowEventListeners = {};
 
-export function AddWindowWidthListener(objReference, element) {
-    let eventListener = () => { UpdateOffcanvas(objReference); UpdateNavbarHeight(objReference, element); }
+export function AddWindowWidthListener(objReference) {
+    let eventListener = () => { UpdateOffcanvas(objReference); }
     window.addEventListener("resize", eventListener);
     windowEventListeners[objReference] = eventListener;
 }
@@ -12,10 +12,6 @@ export function RemoveWindowWidthListener(objReference) {
 
 function UpdateOffcanvas(objReference) {
     objReference.invokeMethodAsync("UpdateOffcanvas", window.innerWidth);
-}
-
-function UpdateNavbarHeight(objReference, element) {
-    objReference.invokeMethodAsync("UpdateNavbarHeight", GetElementHeight(element));
 }
 
 export function GetWindowWidth() {

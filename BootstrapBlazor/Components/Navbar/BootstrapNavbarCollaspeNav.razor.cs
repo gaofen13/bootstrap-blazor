@@ -5,9 +5,10 @@ namespace BootstrapBlazor
 {
     public partial class BootstrapNavbarCollaspeNav : BootstrapComponentBase
     {
+        private bool _show;
+
         private string Classname =>
-          new ClassBuilder("collapse navbar-collapse")
-            .AddClass("show", Show)
+          new ClassBuilder("navbar-collapse")
             .AddClass(Class)
             .Build();
 
@@ -17,9 +18,28 @@ namespace BootstrapBlazor
             .Build();
 
         [Parameter]
-        public bool Show { get; set; }
+#pragma warning disable BL0007 // Component parameters should be auto properties
+        public bool Show
+#pragma warning restore BL0007 // Component parameters should be auto properties
+        {
+            get => _show;
+            set
+            {
+                if (_show != value)
+                {
+                    _show = value;
+                    ShowChanged.InvokeAsync(value);
+                }
+            }
+        }
+
+        [Parameter]
+        public EventCallback<bool> ShowChanged { get; set; }
 
         [Parameter]
         public bool Scrolling { get; set; }
+
+        [Parameter]
+        public bool AutoClose { get; set; }
     }
 }

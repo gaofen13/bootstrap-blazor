@@ -1,25 +1,5 @@
 ﻿@page "/components/navbar"
+@using BootstrapBlazor.Shared.Pages.Examples.Navbars
 
 <h3>Navbar</h3>
-<BootstrapNavbar ExpandBreakpoint="@Size.md" IsDarkBg BgColor="@Color.primary">
-    <BootstrapNavbarBrand>Navbar</BootstrapNavbarBrand>
-    <BootstrapNavbarToggler OnClick="@(_=>show=!show)">
-        <svg class="my-1" width="24" height="24" viewBox="0 0 16 16" fill="currentColor">
-            <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"></path>
-        </svg>
-    </BootstrapNavbarToggler>
-    <BootstrapNavbarCollaspeNav Show="@show">
-        <BootstrapNavItem Href="components/navbar/#">item1</BootstrapNavItem>
-        <BootstrapNavItem Href="components/navbar/#">item2</BootstrapNavItem>
-        <BootstrapNavItem Href="components/navbar/#">item3</BootstrapNavItem>
-        <BootstrapNavDropdown Title="Dropdown link">
-            <BootstrapDropdownItem>Action</BootstrapDropdownItem>
-            <BootstrapDropdownItem>Another action</BootstrapDropdownItem>
-            <BootstrapDropdownItem>Something else here</BootstrapDropdownItem>
-        </BootstrapNavDropdown>
-    </BootstrapNavbarCollaspeNav>
-</BootstrapNavbar>
-
-@code {
-    private bool show;
-}
+<ExampleSnippet Component="@typeof(SimpleNavbar)" />

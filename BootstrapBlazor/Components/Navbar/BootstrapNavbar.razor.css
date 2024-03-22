@@ -1,0 +1,29 @@
+@media (min-width: 576px) {
+    .navbar.navbar-expand-sm ::deep .navbar-collapse {
+        overflow: visible;
+    }
+}
+
+@media (min-width: 768px) {
+    .navbar.navbar-expand-md ::deep .navbar-collapse {
+        overflow: visible;
+    }
+}
+
+@media (min-width: 992) {
+    .navbar.navbar-expand-lg ::deep .navbar-collapse {
+        overflow: visible;
+    }
+}
+
+@media (min-width: 1200px) {
+    .navbar.navbar-expand-xl ::deep .navbar-collapse {
+        overflow: visible;
+    }
+}
+
+@media (min-width: 1400px) {
+    .navbar.navbar-expand-xxl ::deep .navbar-collapse {
+        overflow: visible;
+    }
+}

@@ -1,6 +1,5 @@
 ﻿using BootstrapBlazor.Utilities;
 using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Web;
 
 namespace BootstrapBlazor
 {
@@ -32,10 +31,9 @@ namespace BootstrapBlazor
         private string MenuClassname =>
             new ClassBuilder("dropdown-menu")
             .AddClass("show", Show)
-            .AddClass($"text-{TextAlignment}")
+            .AddClass("end-0", AlignEnd)
+            .AddClass("text-end", AlignEnd)
             .AddClass("dropdown-menu-dark", DarkMenu)
-            .AddClass($"{ItemAlignment}-0", ItemAlignment != HorizontalPosition.center)
-            .AddClass("start-50 translate-middle-x", ItemAlignment == HorizontalPosition.center)
             .AddClass($"dropdown-menu-xs-{BreakpointXsAlignment}", BreakpointXsAlignment != null)
             .AddClass($"dropdown-menu-sm-{BreakpointSmAlignment}", BreakpointSmAlignment != null)
             .AddClass($"dropdown-menu-md-{BreakpointMdAlignment}", BreakpointMdAlignment != null)
@@ -69,10 +67,7 @@ namespace BootstrapBlazor
         public Color? ButtonColor { get; set; }
 
         [Parameter]
-        public HorizontalPosition ItemAlignment { get; set; } = HorizontalPosition.start;
-
-        [Parameter]
-        public HorizontalPosition TextAlignment { get; set; } = HorizontalPosition.start;
+        public bool AlignEnd { get; set; }
 
         [Parameter]
         public HorizontalPosition? BreakpointXsAlignment { get; set; }
@@ -92,15 +87,15 @@ namespace BootstrapBlazor
         [Parameter]
         public HorizontalPosition? BreakpointXxlAlignment { get; set; }
 
-        private void OnclickTextButton(MouseEventArgs args)
+        private void OnclickTextButton()
         {
             if (!SplitButton)
             {
-                Show = !Show;
+                Toggle();
             }
         }
 
-        private void OnclickSplitButton(MouseEventArgs args)
+        private void Toggle()
         {
             Show = !Show;
         }

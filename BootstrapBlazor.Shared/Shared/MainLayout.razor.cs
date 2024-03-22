@@ -15,7 +15,8 @@ namespace BootstrapBlazor.Shared.Shared
         private IJSObjectReference? _jsModule;
         private DotNetObjectReference<MainLayout>? _objectReference;
 
-        private string ContainerHeight => $"calc(100vh - {_navbarHeight})";
+        private string OffcanvasTop => ShowBackdrop ? "0" : _navbarHeight ?? "0";
+        private string OffcanvasHeight => ShowBackdrop ? "100vh" : $"calc(100vh - {_navbarHeight})";
 
         private bool ShowBackdrop => _windowWidth < 992;
 
@@ -41,10 +42,8 @@ namespace BootstrapBlazor.Shared.Shared
                      "./_content/BootstrapBlazor.Shared/Shared/MainLayout.razor.js");
                 await _jsModule!.InvokeVoidAsync("AddWindowWidthListener", _objectReference, _navbar!.Element);
                 var width = await _jsModule!.InvokeAsync<int>("GetWindowWidth");
-                var height = await _jsModule!.InvokeAsync<string>("GetElementHeight", _navbar!.Element);
+                _navbarHeight = await _jsModule!.InvokeAsync<string>("GetElementHeight", _navbar!.Element);
                 UpdateOffcanvas(width);
-                UpdateNavbarHeight(height);
-                StateHasChanged();
             }
         }
 

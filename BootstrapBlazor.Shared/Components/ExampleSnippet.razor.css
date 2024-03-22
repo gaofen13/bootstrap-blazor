@@ -1,0 +1,27 @@
+.example-snippet {
+    border: solid var(--bs-border-color);
+    border-width: 1px;
+    border-radius: 0.375rem;
+}
+
+.highlight {
+    position: relative;
+    padding: 0.75rem;
+    background-color: var(--bs-tertiary-bg);
+    border-radius: 0 0 0.375rem 0.375rem;
+}
+
+.highlight-toolbar {
+    text-align: right;
+}
+
+.example {
+    position: relative;
+    padding: 1rem;
+    border-bottom: solid var(--bs-border-color);
+    border-width: 1px;
+}
+
+.btn-code{
+    border: none;
+}

@@ -2,7 +2,7 @@
 @inherits BootstrapComponentBase
 
 <li @ref="@Element" class="@Classname" style="@Style" @attributes="@AdditionalAttributes">
-    <a href="javascript:void(0)" class="nav-link dropdown-toggle" @onclick="@OnclickActivator">@Title</a>
+    <a href="javascript:void(0)" class="@ToggleClassname" @onclick="@Toggle">@Title</a>
     <ul class="@MenuClassname">
         @if (ChildContent != null)
         {
@@ -16,10 +16,10 @@
             }
             @MenuContent
         }
+
+        @if(Show)
+        {
+            <div class="dropdown-overlay" @onclick="@Toggle"></div>
+        }
     </ul>
 </li>
-
-@if (Show)
-{
-    <div class="fade show" style="position:fixed;top:0;bottom:0;left:0;right:0;" @onclick="@OnclickActivator"></div>
-}
