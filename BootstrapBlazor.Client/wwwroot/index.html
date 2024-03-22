@@ -12,6 +12,11 @@
     <link href="_content/BootstrapBlazor.Shared/BootstrapBlazor.Shared.bundle.scp.css" rel="stylesheet" />
     <link href="_content/BootstrapBlazor.Shared/font/css/open-iconic-bootstrap.min.css" rel="stylesheet" />
     <link href="_content/BootstrapBlazor.Shared/css/site.css" rel="stylesheet" />
+
+    <!-- highlight -->
+    <link rel="stylesheet" href="_content/BootstrapBlazor.Shared/highlight/css/vs.min.css">
+    <link rel="stylesheet" href="_content/BootstrapBlazor.Shared/highlight/css/highlightjs-copy.min.css">
+    
     <link rel="icon" type="image/png" href="favicon.png" />
     <link href="manifest.json" rel="manifest" />
     <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png" />
@@ -66,6 +71,16 @@
     <!-- End Single Page Apps for GitHub Pages -->
     <script src="_framework/blazor.webassembly.js"></script>
     <script>navigator.serviceWorker.register('service-worker.js');</script>
+
+    <!-- highlight -->
+    <script type="text/javascript" src="_content/BootstrapBlazor.Shared/highlight/js/highlight.min.js"></script>
+    <script type="text/javascript" src="_content/BootstrapBlazor.Shared/highlight/js/cshtml-razor.min.js"></script>
+    <script type="text/javascript" src="_content/BootstrapBlazor.Shared/highlight/js/highlightjs-copy.min.js"></script>
+    <script>
+        if (hljs != null) {
+            hljs.addPlugin(new CopyButtonPlugin());
+        }
+    </script>
 </body>
 
 </html>
