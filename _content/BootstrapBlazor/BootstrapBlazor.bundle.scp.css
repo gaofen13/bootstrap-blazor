@@ -1,3 +1,86 @@
+/* _content/BootstrapBlazor/Components/Carousel/BootstrapCarousel.razor.rz.scp.css */
+.carousel-fade[b-johe8fdvvq]  .carousel-item {
+    display: block;
+    animation: none !important;
+}
+/* _content/BootstrapBlazor/Components/Carousel/BootstrapCarouselItem.razor.rz.scp.css */
+.carousel-item[b-9xxll4epvq] {
+    animation-duration: 0.6s;
+    animation-timing-function: linear;
+}
+
+.carousel-item.active[b-9xxll4epvq] {
+    width: 100%;
+}
+
+.carousel-item .carousel-caption[b-9xxll4epvq] {
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.carousel-item.active .carousel-caption[b-9xxll4epvq] {
+    display: block;
+}
+
+.carousel-item.slider-left-in[b-9xxll4epvq] {
+    animation-name: slider-left-in-b-9xxll4epvq;
+}
+
+.carousel-item.slider-right-in[b-9xxll4epvq] {
+    animation-name: slider-right-in-b-9xxll4epvq;
+}
+
+.carousel-item.slider-left-out[b-9xxll4epvq] {
+    animation-name: slider-left-out-b-9xxll4epvq;
+}
+
+.carousel-item.slider-right-out[b-9xxll4epvq] {
+    animation-name: slider-right-out-b-9xxll4epvq;
+}
+
+@keyframes slider-left-in-b-9xxll4epvq {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slider-right-in-b-9xxll4epvq {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slider-left-out-b-9xxll4epvq {
+    0% {
+        display: block;
+        transform: translateX(0);
+    }
+
+    100% {
+        display: block;
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes slider-right-out-b-9xxll4epvq {
+    0% {
+        display: block;
+        transform: translateX(0);
+    }
+
+    100% {
+        display: block;
+        transform: translateX(100%);
+    }
+}
 /* _content/BootstrapBlazor/Components/Collapse/BootstrapCollapse.razor.rz.scp.css */
 .collapse[b-78tmkyqb7k] {
     display: grid !important;
@@ -81,6 +164,58 @@
     left: 0;
     right: 0;
     z-index: -1;
+}
+/* _content/BootstrapBlazor/Components/Tooltip/BootstrapTooltip.razor.rz.scp.css */
+.tooltip-container[b-q6b20tzmd3] {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip-container[b-q6b20tzmd3]  .tooltip {
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tooltip-container[b-q6b20tzmd3]  .tooltip .tooltip-arrow {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.tooltip-container[b-q6b20tzmd3]  .tooltip .tooltip-inner {
+    width: max-content;
+}
+
+.tooltip-container[b-q6b20tzmd3]  .tooltip.bs-tooltip-top {
+    flex-direction: column-reverse;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.tooltip-container[b-q6b20tzmd3]  .tooltip.bs-tooltip-bottom {
+    flex-direction: column;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.tooltip-container[b-q6b20tzmd3]  .tooltip.bs-tooltip-start {
+    flex-direction: row-reverse;
+    left: 0;
+    top: 50%;
+    transform: translate(-100%, -50%);
+}
+
+.tooltip-container[b-q6b20tzmd3]  .tooltip.bs-tooltip-end {
+    flex-direction: row;
+    right: 0;
+    top: 50%;
+    transform: translate(100%, -50%);
 }
 /* _content/BootstrapBlazor/Components/TreeView/BootstrapTreeView.razor.rz.scp.css */
 .treeview[b-47zaz03q7i]{
