@@ -1,0 +1,33 @@
+@page "/components/breadcrumb"
+
+<h3>Breadcrumb</h3>
+<BootstrapBreadcrumb>
+    <BootstrapBreadcrumbItem Actived>Home</BootstrapBreadcrumbItem>
+</BootstrapBreadcrumb>
+<BootstrapBreadcrumb>
+    <BootstrapBreadcrumbItem Href="home">Home</BootstrapBreadcrumbItem>
+    <BootstrapBreadcrumbItem Actived>Library</BootstrapBreadcrumbItem>
+</BootstrapBreadcrumb>
+<BootstrapBreadcrumb>
+    <BootstrapBreadcrumbItem Href="home">Home</BootstrapBreadcrumbItem>
+    <BootstrapBreadcrumbItem Href="library">Library</BootstrapBreadcrumbItem>
+    <BootstrapBreadcrumbItem Actived>Data</BootstrapBreadcrumbItem>
+</BootstrapBreadcrumb>
+
+<h3>Custom dividers</h3>
+<BootstrapBreadcrumb Style="--bs-breadcrumb-divider: '>';">
+    <BootstrapBreadcrumbItem Href="home">Home</BootstrapBreadcrumbItem>
+    <BootstrapBreadcrumbItem Href="library">Library</BootstrapBreadcrumbItem>
+    <BootstrapBreadcrumbItem Actived>Data</BootstrapBreadcrumbItem>
+</BootstrapBreadcrumb>
+<BootstrapBreadcrumb
+    Style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);">
+    <BootstrapBreadcrumbItem Href="home">Home</BootstrapBreadcrumbItem>
+    <BootstrapBreadcrumbItem Href="library">Library</BootstrapBreadcrumbItem>
+    <BootstrapBreadcrumbItem Actived>Data</BootstrapBreadcrumbItem>
+</BootstrapBreadcrumb>
+<BootstrapBreadcrumb Style="--bs-breadcrumb-divider: '';">
+    <BootstrapBreadcrumbItem Href="home">Home</BootstrapBreadcrumbItem>
+    <BootstrapBreadcrumbItem Href="library">Library</BootstrapBreadcrumbItem>
+    <BootstrapBreadcrumbItem Actived>Data</BootstrapBreadcrumbItem>
+</BootstrapBreadcrumb>

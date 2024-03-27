@@ -1,0 +1,13 @@
+@namespace BootstrapBlazor
+@inherits BootstrapComponentBase
+@implements IDisposable
+
+<div id="@Id" class="@Classname" style="@Style" @attributes="@AdditionalAttributes">
+    @ChildContent
+    @if (CaptionContent is not null)
+    {
+        <div class="carousel-caption">
+            @CaptionContent
+        </div>
+    }
+</div>

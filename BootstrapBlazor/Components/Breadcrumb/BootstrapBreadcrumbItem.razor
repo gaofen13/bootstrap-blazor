@@ -1,0 +1,13 @@
+@namespace BootstrapBlazor
+@inherits BootstrapComponentBase
+
+<li class="@Classname" style="@Style" @attributes="@AdditionalAttributes">
+    @if (Href is not null)
+    {
+        <a href="@Href">@ChildContent</a>
+    }
+    else
+    {
+        @ChildContent
+    }
+</li>

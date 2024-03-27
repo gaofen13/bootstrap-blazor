@@ -1,0 +1,28 @@
+@page "/components/tooltip"
+
+<h3>Tooltip</h3>
+<BootstrapTooltip Message="Tooltip with button">
+    <BootstrapButton>Button</BootstrapButton>
+</BootstrapTooltip>
+
+<BootstrapTooltip Placement="@Placement.bottom" Message="Tooltip with button">
+    <BootstrapButton>Button</BootstrapButton>
+</BootstrapTooltip>
+
+<BootstrapTooltip Placement="@Placement.start" Message="Tooltip with button">
+    <BootstrapButton>Button</BootstrapButton>
+</BootstrapTooltip>
+
+<BootstrapTooltip Placement="@Placement.end" Message="Tooltip with button">
+    <BootstrapButton>Button</BootstrapButton>
+</BootstrapTooltip>
+
+<h3>Custom</h3>
+<BootstrapTooltip Style="--bs-tooltip-bg: var(--bs-danger);">
+    <MessageContent>
+        <div><em>Tooltip</em> <u>with</u> <b>HTML</b></div>
+    </MessageContent>
+    <ChildContent>
+        <BootstrapButton>Button</BootstrapButton>
+    </ChildContent>
+</BootstrapTooltip>

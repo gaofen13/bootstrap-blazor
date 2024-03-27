@@ -1,0 +1,77 @@
+.carousel-item {
+    animation-duration: 0.6s;
+    animation-timing-function: linear;
+}
+
+.carousel-item.active {
+    width: 100%;
+}
+
+.carousel-item .carousel-caption {
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.carousel-item.active .carousel-caption {
+    display: block;
+}
+
+.carousel-item.slider-left-in {
+    animation-name: slider-left-in;
+}
+
+.carousel-item.slider-right-in {
+    animation-name: slider-right-in;
+}
+
+.carousel-item.slider-left-out {
+    animation-name: slider-left-out;
+}
+
+.carousel-item.slider-right-out {
+    animation-name: slider-right-out;
+}
+
+@keyframes slider-left-in {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slider-right-in {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slider-left-out {
+    0% {
+        display: block;
+        transform: translateX(0);
+    }
+
+    100% {
+        display: block;
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes slider-right-out {
+    0% {
+        display: block;
+        transform: translateX(0);
+    }
+
+    100% {
+        display: block;
+        transform: translateX(100%);
+    }
+}

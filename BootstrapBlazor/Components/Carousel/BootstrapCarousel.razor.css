@@ -1,0 +1,4 @@
+.carousel-fade ::deep .carousel-item {
+    display: block;
+    animation: none !important;
+}

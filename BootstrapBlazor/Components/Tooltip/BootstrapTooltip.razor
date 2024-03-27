@@ -1,0 +1,22 @@
+@namespace BootstrapBlazor
+@inherits BootstrapComponentBase
+
+<label class="tooltip-container" @onpointerover="_=>_show=true" @onpointerleave="_=>_show=false">
+    @if (_show)
+    {
+        <div class="@Classname" style="@Style" role="tooltip" @attributes="@AdditionalAttributes">
+            <div class="tooltip-arrow"></div>
+            <div class="tooltip-inner">
+                @if (MessageContent is not null)
+                {
+                    @MessageContent
+                }
+                else
+                {
+                    @Message
+                }
+            </div>
+        </div>
+    }
+    @ChildContent
+</label>
