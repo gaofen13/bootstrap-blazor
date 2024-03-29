@@ -14,6 +14,8 @@ namespace BootstrapBlazor.Shared.Components
             .AddClass("example-show", !HideExample)
             .Build();
 
+        private string CodeTooltip => _showCode ? "Hide code" : "Show code";
+
         [Parameter]
         public string Label { get; set; } = "Example";
 

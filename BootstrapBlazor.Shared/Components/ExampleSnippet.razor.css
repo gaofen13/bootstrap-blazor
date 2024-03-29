@@ -15,6 +15,10 @@
     text-align: right;
 }
 
+.highlight-toolbar ::deep .tooltip-container{
+    margin-right: 0.5rem;
+}
+
 .example {
     position: relative;
     padding: 1rem;
