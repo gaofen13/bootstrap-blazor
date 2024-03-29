@@ -25,7 +25,7 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-hcaJDF1ZyBQrzgjOPpqsT87q0SoIJHZa9vCqlYwagnY=",
+      "hash": "sha256-DGinREBHydTPZZ9\/ZOtbJTw+BApRqVcbjCHKGKHxl9E=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -37,15 +37,15 @@
       "url": "_framework\/dotnet.native.wasm"
     },
     {
-      "hash": "sha256-3ajSFyndHS+4ysbboyprHLeSU5m9Y61\/\/+t8\/kU7oVc=",
+      "hash": "sha256-rtxC9RCYM2VT9FjGoZlEiugh9+BqK1gvqCpv0djoiws=",
       "url": "_framework\/BootstrapBlazor.Client.wasm"
     },
     {
-      "hash": "sha256-uSjUnhlnrzqswAETE3OjNgrWMKS8bltFgjyJ+x6cHXc=",
+      "hash": "sha256-0PlNSvXNBAyFc3N8Rxfr129W6jEmQHEEg6H+xKSFVPE=",
       "url": "_framework\/BootstrapBlazor.Shared.wasm"
     },
     {
-      "hash": "sha256-RGWWHG9\/32LLEE9\/+9iFV0eUtDWyUHZX0EhzIYOifLk=",
+      "hash": "sha256-PXZqtLxXM95SeQ781N5CAtcVXp0Uco\/uHeil14toZgY=",
       "url": "_framework\/BootstrapBlazor.wasm"
     },
     {
@@ -57,7 +57,7 @@
       "url": "_framework\/Microsoft.AspNetCore.Components.wasm"
     },
     {
-      "hash": "sha256-EfZ+76fgumNacYwYzcH5bsPzheOHEEe171FgCStMNlA=",
+      "hash": "sha256-3UebvlRYmunDct\/mYKexWlaQBer1eVJ0a66flBn7BW0=",
       "url": "_framework\/Microsoft.AspNetCore.Components.Web.wasm"
     },
     {
@@ -181,7 +181,7 @@
       "url": "_framework\/System.Runtime.InteropServices.JavaScript.wasm"
     },
     {
-      "hash": "sha256-wAmOxx06G1K0uQ2F1rH3\/DtqoIsD74YFiPLnddEvytI=",
+      "hash": "sha256-r\/mI4dRRW9Oi5F0DwZ+0C8UAQpMGFEUE0f9XKS6Be3Y=",
       "url": "_framework\/System.Runtime.wasm"
     },
     {
@@ -241,11 +241,11 @@
       "url": "manifest.json"
     },
     {
-      "hash": "sha256-EhIt6MEkyYp0IZXzIuGrrI7MmZirZUTJ4RI2NNaTqc4=",
+      "hash": "sha256-IEJYxUjyjC1X9MGrueCecSQf0XmnS+Vu7zoDCwR8H3E=",
       "url": "_content\/BootstrapBlazor.Shared\/BootstrapBlazor.Shared.bundle.scp.css"
     },
     {
-      "hash": "sha256-cBIa5xZwe06\/00TPjyVmVgaU6xY9HdI21LJ1hLea2oQ=",
+      "hash": "sha256-V3XuP5rUnt74MaFyqZSdI6s8pk58ZoaRjLrO7Zd047k=",
       "url": "_content\/BootstrapBlazor\/BootstrapBlazor.bundle.scp.css"
     },
     {
@@ -437,5 +437,5 @@
       "url": "_content\/BootstrapBlazor\/exampleJsInterop.js"
     }
   ],
-  "version": "rXlpyFtW"
+  "version": "Alz5U1UD"
 };

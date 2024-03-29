@@ -229,7 +229,7 @@
 .treeview-item[b-qw7athg7f6] {
     display: block;
     line-height: 2rem;
-    padding-left: 1.25rem;
+    padding-left: 1.4rem;
 }
 
 .treeview-item:has(>.treeview-item-header)[b-qw7athg7f6] {
@@ -253,7 +253,7 @@
 }
 
 .treeview-item-header .treeview-item-title[b-qw7athg7f6] {
-    margin-left: 0.3rem;
+    margin-left: 0.4rem;
 }
 
 .treeview-item-header .btn-close[b-qw7athg7f6] {
@@ -265,8 +265,8 @@
 }
 
 .treeview-item-header .btn-close:hover[b-qw7athg7f6] {
-    box-shadow: 0 0 0 4px #0002;
-    background-color: #0002;
+    box-shadow: 0 0 0 6px rgba(0, 0, 0, 0.15);
+    background-color: rgba(0, 0, 0, 0.15);
 }
 
 .treeview-item-open>.treeview-item-header .btn-close[b-qw7athg7f6] {
