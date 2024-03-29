@@ -84,6 +84,14 @@ namespace BootstrapBlazor.Shared.Shared
             showMenu = !showMenu;
         }
 
+        private void OnSwipeOffcanvas(SwipeDirection direction)
+        {
+            if(direction==SwipeDirection.RightToLeft)
+            {
+                showMenu = false;
+            }
+        }
+
         private void OnThemeChanged(bool theme)
         {
             if (darkTheme != theme)

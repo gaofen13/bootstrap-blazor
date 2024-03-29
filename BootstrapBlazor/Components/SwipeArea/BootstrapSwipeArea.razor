@@ -1,0 +1,8 @@
+@namespace BootstrapBlazor
+@inherits BootstrapComponentBase
+
+<div class="@Class" style="@Style" @attributes="@AdditionalAttributes" @ontouchstart="OnTouchStart"
+@ontouchstart:stopPropagation @ontouchend="OnTouchEnd" @ontouchend:stopPropagation @ontouchcancel="OnTouchCancel"
+@ontouchcancel:stopPropagation>
+    @ChildContent
+</div>

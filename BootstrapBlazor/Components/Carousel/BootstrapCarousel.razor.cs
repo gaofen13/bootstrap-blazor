@@ -42,7 +42,7 @@ namespace BootstrapBlazor
         {
             InvokeAsync(() =>
             {
-                OnClickNext();
+                Next();
                 StateHasChanged();
             });
         }
@@ -91,7 +91,7 @@ namespace BootstrapBlazor
             }
         }
 
-        private void OnClickPrev()
+        public void Prev()
         {
             var currentIndex = Array.IndexOf([.. _items], _activedItem);
             if (currentIndex != -1)
@@ -109,7 +109,7 @@ namespace BootstrapBlazor
             }
         }
 
-        private void OnClickNext()
+        public void Next()
         {
             var currentIndex = Array.IndexOf([.. _items], _activedItem);
             if (currentIndex != -1)

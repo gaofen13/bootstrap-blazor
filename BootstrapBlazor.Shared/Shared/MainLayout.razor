@@ -18,13 +18,15 @@
             <BootstrapNavItem Class="mx-3">
                 <BootstrapCheckbox IsSwitch Label="@ThemeType" Value="@darkTheme" ValueChanged="@OnThemeChanged" />
             </BootstrapNavItem>
-            <BootstrapNavItem Class="mx-3" Href="https://gaofen13.gitee.io/bootstrap-blazor/">About</BootstrapNavItem>
+            <BootstrapNavItem Class="mx-3" Href="https://github.com/gaofen13/bootstrap-blazor/">About</BootstrapNavItem>
         </BootstrapNavbarCollaspeNav>
     </BootstrapNavbar>
     <div class="w-100 d-flex bd-container">
         <BootstrapOffcanvas @bind-Show="@showMenu" ShowBackdrop="@ShowBackdrop" ShowCloseButton="@ShowBackdrop"
             Class="bd-offcanvas" Style="@($"top:{OffcanvasTop};height:{OffcanvasHeight}")">
-            <NavMenu />
+            <BootstrapSwipeArea OnSwipe="@OnSwipeOffcanvas">
+                <NavMenu />
+            </BootstrapSwipeArea>
         </BootstrapOffcanvas>
 
         <main class="w-100 p-3">
@@ -34,6 +36,6 @@
         </main>
     </div>
 
-	<BootstrapToastContainer GlobalOptions="new ToastOptions{ AutoClose = true }" />
-	<BootstrapModalContainer GlobalOptions="new ModalOptions{ ShowCloseBtn = true }" />
+    <BootstrapToastContainer GlobalOptions="new ToastOptions{ AutoClose = true }" />
+    <BootstrapModalContainer GlobalOptions="new ModalOptions{ ShowCloseBtn = true }" />
 </div>
