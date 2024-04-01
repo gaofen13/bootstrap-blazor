@@ -1,140 +1,39 @@
 ﻿<nav>
-    <ul class="p-0">
-        <li class="nav-item list-unstyled px-3">
-            <NavLink class="nav-link px-3" href="" Match="NavLinkMatch.All">
-                <span class="oi oi-home" aria-hidden="true"></span> Home
-            </NavLink>
-        </li>
-        <li class="nav-item list-unstyled px-3">
-            <NavLink class="nav-link px-3" href="counter">
-                <span class="oi oi-plus" aria-hidden="true"></span> Counter
-            </NavLink>
-        </li>
-        <li class="nav-item list-unstyled px-3">
-            <NavLink class="nav-link px-3" href="fetchdata">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Fetch data
-            </NavLink>
-        </li>
-        <li class="nav-item list-unstyled px-3">
-            <strong style="color:#575757" class="d-flex w-100 align-items-center fs-5 fw-semibold">
-                Layout
-            </strong>
-            <ul class="p-0">
-                <li class="nav-item list-unstyled px-3">
-                    <NavLink class="nav-link px-3" href="layout/containers">
-                        Containers
-                    </NavLink>
-                </li>
-                <li class="nav-item list-unstyled px-3">
-                    <NavLink class="nav-link px-3" href="layout/grid">
-                        Grid
-                    </NavLink>
-                </li>
-            </ul>
-        </li>
-        <li class="nav-item list-unstyled px-3">
-            <strong style="color:#575757" class="d-flex w-100 align-items-center fs-5 fw-semibold">
-                Forms
-            </strong>
-            <ul class="p-0">
-                <li class="nav-item list-unstyled px-3">
-                    <NavLink class="nav-link px-3" href="forms/formcontrols">
-                        FormControls
-                    </NavLink>
-                </li>
-                <li class="nav-item list-unstyled px-3">
-                    <NavLink class="nav-link px-3" href="forms/validation">
-                        Validation
-                    </NavLink>
-                </li>
-            </ul>
-        </li>
-        <li class="nav-item list-unstyled px-3">
-            <strong style="color:#575757" class="d-flex w-100 align-items-center fs-5 fw-semibold">
-                Components
-            </strong>
-            <ul class="p-0">
-                <li class="nav-item list-unstyled px-3">
-                    <NavLink class="nav-link px-3" href="components/accordion">
-                        Accordion
-                    </NavLink>
-                </li>
-                <li class="nav-item list-unstyled px-3">
-                    <NavLink class="nav-link px-3" href="components/alert">
-                        Alert
-                    </NavLink>
-                </li>
-                <li class="nav-item list-unstyled px-3">
-                    <NavLink class="nav-link px-3" href="components/badge">
-                        Badge
-                    </NavLink>
-                </li>
-                <li class="nav-item list-unstyled px-3">
-                    <NavLink class="nav-link px-3" href="components/breadcrumb">
-                        Breadcrumbs
-                    </NavLink>
-                </li>
-                <li class="nav-item list-unstyled px-3">
-                    <NavLink class="nav-link px-3" href="components/buttons">
-                        Buttons
-                    </NavLink>
-                </li>
-                <li class="nav-item list-unstyled px-3">
-                    <NavLink class="nav-link px-3" href="components/carousel">
-                        Carousels
-                    </NavLink>
-                </li>
-                <li class="nav-item list-unstyled px-3">
-                    <NavLink class="nav-link px-3" href="components/collapse">
-                        Collaspes
-                    </NavLink>
-                </li>
-                <li class="nav-item list-unstyled px-3">
-                    <NavLink class="nav-link px-3" href="components/dropdown">
-                        Dropdowns
-                    </NavLink>
-                </li>
-                <li class="nav-item list-unstyled px-3">
-                    <NavLink class="nav-link px-3" href="components/listgroup">
-                        List group
-                    </NavLink>
-                </li>
-                <li class="nav-item list-unstyled px-3">
-                    <NavLink class="nav-link px-3" href="components/modal">
-                        Modal
-                    </NavLink>
-                </li>
-                <li class="nav-item list-unstyled px-3">
-                    <NavLink class="nav-link px-3" href="components/nav">
-                        Nav
-                    </NavLink>
-                </li>
-                <li class="nav-item list-unstyled px-3">
-                    <NavLink class="nav-link px-3" href="components/navbar">
-                        Navbar
-                    </NavLink>
-                </li>
-                <li class="nav-item list-unstyled px-3">
-                    <NavLink class="nav-link px-3" href="components/spinner">
-                        Spiners
-                    </NavLink>
-                </li>
-                <li class="nav-item list-unstyled px-3">
-                    <NavLink class="nav-link px-3" href="components/toast">
-                        Toast
-                    </NavLink>
-                </li>
-                <li class="nav-item list-unstyled px-3">
-                    <NavLink class="nav-link px-3" href="components/tooltip">
-                        Tooltips
-                    </NavLink>
-                </li>
-                <li class="nav-item list-unstyled px-3">
-                    <NavLink class="nav-link px-3" href="components/treeview">
-                        TreeView
-                    </NavLink>
-                </li>
-            </ul>
-        </li>
-    </ul>
+    <BootstrapNavMenu>
+        <BootstrapNavMenuItem Href="" Match="NavLinkMatch.All">
+            <span class="oi oi-home" aria-hidden="true"></span> Home
+        </BootstrapNavMenuItem>
+        <BootstrapNavMenuItem Href="counter" Match="NavLinkMatch.All">
+            <span class="oi oi-plus" aria-hidden="true"></span> Counter
+        </BootstrapNavMenuItem>
+        <BootstrapNavMenuItem Href="fetchdata" Match="NavLinkMatch.All">
+            <span class="oi oi-list-rich" aria-hidden="true"></span> Fetch data
+        </BootstrapNavMenuItem>
+        <BootstrapNavMenuSubItem Title="Layout">
+            <BootstrapNavMenuItem Href="layout/containers">Containers</BootstrapNavMenuItem>
+            <BootstrapNavMenuItem Href="layout/grid">Grid</BootstrapNavMenuItem>
+        </BootstrapNavMenuSubItem>
+        <BootstrapNavMenuSubItem Title="Forms">
+            <BootstrapNavMenuItem Href="forms/formcontrols">FormControls</BootstrapNavMenuItem>
+            <BootstrapNavMenuItem Href="forms/validation">Validation</BootstrapNavMenuItem>
+        </BootstrapNavMenuSubItem>
+        <BootstrapNavMenuSubItem Title="Components">
+            <BootstrapNavMenuItem Href="components/accordion">Accordion</BootstrapNavMenuItem>
+            <BootstrapNavMenuItem Href="components/alert">Alert</BootstrapNavMenuItem>
+            <BootstrapNavMenuItem Href="components/badge">Badge</BootstrapNavMenuItem>
+            <BootstrapNavMenuItem Href="components/breadcrumb">Breadcrumbs</BootstrapNavMenuItem>
+            <BootstrapNavMenuItem Href="components/buttons">Buttons</BootstrapNavMenuItem>
+            <BootstrapNavMenuItem Href="components/carousel">Carousels</BootstrapNavMenuItem>
+            <BootstrapNavMenuItem Href="components/collapse">Collapses</BootstrapNavMenuItem>
+            <BootstrapNavMenuItem Href="components/dropdown">Dropdowns</BootstrapNavMenuItem>
+            <BootstrapNavMenuItem Href="components/listgroup">List group</BootstrapNavMenuItem>
+            <BootstrapNavMenuItem Href="components/modal">Modals</BootstrapNavMenuItem>
+            <BootstrapNavMenuItem Href="components/nav">Nav</BootstrapNavMenuItem>
+            <BootstrapNavMenuItem Href="components/navbar">Navbar</BootstrapNavMenuItem>
+            <BootstrapNavMenuItem Href="components/spinner">Spiners</BootstrapNavMenuItem>
+            <BootstrapNavMenuItem Href="components/toast">Toast</BootstrapNavMenuItem>
+            <BootstrapNavMenuItem Href="components/tooltip">Tooltips</BootstrapNavMenuItem>
+            <BootstrapNavMenuItem Href="components/treeview">TreeView</BootstrapNavMenuItem>
+        </BootstrapNavMenuSubItem>
+    </BootstrapNavMenu>
 </nav>

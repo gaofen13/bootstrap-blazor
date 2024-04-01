@@ -1,0 +1,7 @@
+@namespace BootstrapBlazor
+@inherits BootstrapComponentBase
+@using Microsoft.AspNetCore.Components.Routing
+
+<li class="@Classname" style="@Style" @attributes="@AdditionalAttributes">
+    <NavLink Match="@Match" href="@Href" class="nav-link px-3">@ChildContent</NavLink>
+</li>

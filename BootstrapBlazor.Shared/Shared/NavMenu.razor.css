@@ -4,32 +4,3 @@
     vertical-align: text-top;
     top: -2px;
 }
-
-.nav-item {
-    font-size: 0.9rem;
-    padding-bottom: 0.5rem;
-}
-
-    .nav-item ::deep a {
-        color: #575757;
-        border-radius: 4px;
-        height: 3rem;
-        display: flex;
-        align-items: center;
-        line-height: 3rem;
-    }
-
-        .nav-item ::deep a.active {
-            background-color: rgba(24,24,255,0.7);
-            color: white;
-        }
-
-        .nav-item ::deep a.active:hover {
-            background-color: rgba(24,24,255,0.6);
-            color: white;
-        }
-
-        .nav-item ::deep a:hover {
-            background-color: rgba(24,24,255,0.4);
-            color: white;
-        }

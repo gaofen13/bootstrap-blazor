@@ -1,0 +1,18 @@
+@namespace BootstrapBlazor
+@inherits BootstrapComponentBase
+
+<li class="@Classname" style="@Style" @attributes="@AdditionalAttributes">
+    <div class="navmenu-sub-title px-3" @onclick="_=>Open=!Open">
+        @if (TitleContent is not null)
+        {
+            @TitleContent
+        }
+        else
+        {
+            @Title
+        }
+    </div>
+    <BootstrapCollapse Class="navmenu-sub-menu" Open="@Open">
+        @ChildContent
+    </BootstrapCollapse>
+</li>
