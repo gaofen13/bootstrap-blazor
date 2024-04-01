@@ -1,9 +1,5 @@
-.navmenu-item {
-    color: inherit;
-}
-
 .navmenu-item ::deep a {
-    color: #575757;
+    color: var(--bs-body-color);
     border-radius: 4px;
     height: 3rem;
     display: flex;
@@ -12,11 +8,10 @@
 }
 
 .navmenu-item ::deep a:hover {
-    background-color: rgba(48, 48, 255, 0.3);
-    color: white;
+    background-color: var(--bs-primary-bg-subtle);
 }
 
 .navmenu-item ::deep a.active {
-    background-color: rgba(24, 24, 255, 0.7);
+    background-color: var(--bs-primary);
     color: white;
 }
