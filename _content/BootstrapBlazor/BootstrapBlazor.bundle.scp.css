@@ -171,12 +171,8 @@
     padding: 0;
 }
 /* _content/BootstrapBlazor/Components/NavMenu/BootstrapNavMenuItem.razor.rz.scp.css */
-.navmenu-item[b-04zj70vctl] {
-    color: inherit;
-}
-
 .navmenu-item[b-04zj70vctl]  a {
-    color: #575757;
+    color: var(--bs-body-color);
     border-radius: 4px;
     height: 3rem;
     display: flex;
@@ -185,17 +181,16 @@
 }
 
 .navmenu-item[b-04zj70vctl]  a:hover {
-    background-color: rgba(48, 48, 255, 0.3);
-    color: white;
+    background-color: var(--bs-primary-bg-subtle);
 }
 
 .navmenu-item[b-04zj70vctl]  a.active {
-    background-color: rgba(24, 24, 255, 0.7);
+    background-color: var(--bs-primary);
     color: white;
 }
 /* _content/BootstrapBlazor/Components/NavMenu/BootstrapNavMenuSubItem.razor.rz.scp.css */
 [b-hphbklw9t0] .navmenu-sub-menu {
-    padding-left: 0.5rem;
+    padding-left: 1rem;
 }
 
 .navmenu-sub-title[b-hphbklw9t0] {
@@ -204,7 +199,7 @@
     align-items: center;
     width: 100%;
     cursor: pointer;
-    color: #575757;
+    color: var(--bs-body-color);
     border-radius: 4px;
     height: 3rem;
     line-height: 3rem;
@@ -212,13 +207,13 @@
 
 .navmenu-sub-title[b-hphbklw9t0]::after {
     flex-shrink: 0;
-    width: 1.25rem;
-    height: 1.25rem;
+    width: 1rem;
+    height: 1rem;
     margin-left: auto;
     content: "";
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23212529' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='M2 5L8 11L14 5'/%3e%3c/svg%3e");
     background-repeat: no-repeat;
-    background-size: 1.25rem;
+    background-size: 1rem;
     transition: transform 0.2s ease-in-out;
 }
 
