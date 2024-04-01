@@ -124,32 +124,3 @@
     vertical-align: text-top;
     top: -2px;
 }
-
-.nav-item[b-igrtg5w5ag] {
-    font-size: 0.9rem;
-    padding-bottom: 0.5rem;
-}
-
-    .nav-item[b-igrtg5w5ag]  a {
-        color: #575757;
-        border-radius: 4px;
-        height: 3rem;
-        display: flex;
-        align-items: center;
-        line-height: 3rem;
-    }
-
-        .nav-item[b-igrtg5w5ag]  a.active {
-            background-color: rgba(24,24,255,0.7);
-            color: white;
-        }
-
-        .nav-item[b-igrtg5w5ag]  a.active:hover {
-            background-color: rgba(24,24,255,0.6);
-            color: white;
-        }
-
-        .nav-item[b-igrtg5w5ag]  a:hover {
-            background-color: rgba(24,24,255,0.4);
-            color: white;
-        }
