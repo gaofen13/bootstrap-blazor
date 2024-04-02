@@ -14,7 +14,7 @@
             }
             @if (_options?.ManualClose == true)
             {
-                <BootstrapCloseButton OnClick="@Close"></BootstrapCloseButton>
+                <button class="btn-close" @onclick="@Close"></button>
             }
         </div>
     }

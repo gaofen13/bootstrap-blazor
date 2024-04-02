@@ -14,26 +14,19 @@
 }
 else
 {
-    <BootstrapTable Bordered Hoverable Striped>
-        <thead>
-            <tr>
-                <th>Date</th>
-                <th>Temp. (C)</th>
-                <th>Temp. (F)</th>
-                <th>Summary</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var forecast in forecasts)
-            {
-                <tr>
-                    <td>@forecast.Date.ToShortDateString()</td>
-                    <td>@forecast.TemperatureC</td>
-                    <td>@forecast.TemperatureF</td>
-                    <td>@forecast.Summary</td>
-                </tr>
-            }
-        </tbody>
+    <BootstrapTable Items="@forecasts" Bordered Hoverable Striped>
+        <THeadContent>
+            <th>Date</th>
+            <th>Temp. (C)</th>
+            <th>Temp. (F)</th>
+            <th>Summary</th>
+        </THeadContent>
+        <Columns>
+            <TableColumn>@context.Date.ToShortDateString()</TableColumn>
+            <TableColumn>@context.TemperatureC</TableColumn>
+            <TableColumn>@context.TemperatureF</TableColumn>
+            <TableColumn>@context.Summary</TableColumn>
+        </Columns>
     </BootstrapTable>
 }
 
