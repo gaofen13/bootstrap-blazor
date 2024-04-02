@@ -224,6 +224,10 @@
 .offcanvas[b-ko2koob20y] {
     transition: all 0.3s ease-in-out;
 }
+/* _content/BootstrapBlazor/Components/Pagination/BootstrapPaginationItem.razor.rz.scp.css */
+.page-link[b-vhn05b0kf8] {
+    cursor: pointer;
+}
 /* _content/BootstrapBlazor/Components/Tooltip/BootstrapTooltip.razor.rz.scp.css */
 .tooltip-container[b-q6b20tzmd3] {
     position: relative;
