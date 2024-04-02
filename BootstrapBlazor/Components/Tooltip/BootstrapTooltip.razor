@@ -1,7 +1,7 @@
 @namespace BootstrapBlazor
 @inherits BootstrapComponentBase
 
-<label class="tooltip-container" @onmouseover="_=>_show=true" @onmouseleave="_=>_show=false">
+<div class="tooltip-container" @onpointerover="_=>_show=true" @onpointerleave="_=>_show=false">
     @if (_show)
     {
         <div class="@Classname" style="@Style" role="tooltip" @attributes="@AdditionalAttributes">
@@ -19,4 +19,4 @@
         </div>
     }
     @ChildContent
-</label>
+</div>
