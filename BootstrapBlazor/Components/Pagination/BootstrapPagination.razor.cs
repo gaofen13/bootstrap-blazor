@@ -6,12 +6,12 @@ namespace BootstrapBlazor
     public partial class BootstrapPagination : BootstrapComponentBase
     {
         private int _index = 1;
-        private int _size = 10;
         private int _total = 1;
 
         private string Classname =>
           new ClassBuilder("pagination")
             .AddClass($"justify-content-{Position}")
+            .AddClass($"pagination-{Size}")
             .AddClass(Class)
             .Build();
 
@@ -19,6 +19,12 @@ namespace BootstrapBlazor
         private bool PrevDisabled => PageIndex <= 1 || Total <= 0;
 
         private bool NexDisabled => PageIndex == Total || Total <= 0;
+
+        /// <summary>
+        /// Only use sm、md and lg
+        /// </summary>
+        [Parameter]
+        public Size Size { get; set; } = Size.md;
 
         [Parameter]
         public HorizontalPosition Position { get; set; } = HorizontalPosition.start;
@@ -38,29 +44,6 @@ namespace BootstrapBlazor
                 _total = value;
             }
         }
-
-        [Parameter]
-#pragma warning disable BL0007 // Component parameters should be auto properties
-        public int PageSize
-#pragma warning restore BL0007 // Component parameters should be auto properties
-        {
-            get => _size;
-            set
-            {
-                if (value < 1)
-                {
-                    throw new NotSupportedException("The Value parameter should be Larger than 1");
-                }
-                if (_size != value)
-                {
-                    _size = value;
-                    PageSizeChanged.InvokeAsync(value);
-                }
-            }
-        }
-
-        [Parameter]
-        public EventCallback<int> PageSizeChanged { get; set; }
 
         [Parameter]
 #pragma warning disable BL0007 // Component parameters should be auto properties
