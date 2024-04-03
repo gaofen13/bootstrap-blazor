@@ -106,11 +106,11 @@
     z-index: -1;
 }
 /* _content/BootstrapBlazor/Components/Modal/BootstrapModal.razor.rz.scp.css */
-.modal:active .modal-dialog[b-acsru3dwql] {
+.modal:active .modal-dialog:not(:active)[b-acsru3dwql] {
     transform: scale(1.05);
 }
 /* _content/BootstrapBlazor/Components/Modal/BootstrapModalContainer.razor.rz.scp.css */
-.modal:active .modal-dialog[b-axua14nled] {
+.modal:active .modal-dialog:not(:active)[b-axua14nled] {
     transform: scale(1.05);
 }
 /* _content/BootstrapBlazor/Components/Navbar/BootstrapNavbar.razor.rz.scp.css */
