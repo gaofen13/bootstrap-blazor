@@ -26,6 +26,9 @@
             <option value="3">3</option>
         </BootstrapSelect>
     </BootstrapFormField>
+    <BootstrapFormField Label="Date" Class="mb-3" LabelClass="col-lg-3 col-md-2 text-md-end">
+        <BootstrapDateTime @bind-Value="@test.Date1" />
+    </BootstrapFormField>
     <BootstrapFormField Label="Range" Class="mb-3" LabelClass="col-lg-3 col-md-2 text-md-end">
         <BootstrapRange Min="0" Max="100" @bind-Value="@test.Range1" />
     </BootstrapFormField>
@@ -63,6 +66,10 @@
 
         [Range(1, 10)]
         public int Radio1 { get; set; }
+
+        [Required]
+        [Range(typeof(DateTime), "2024-01-01", "2024-03-31")]
+        public DateTime? Date1 { get; set; }
 
         [Range(1, 100)]
         public int Range1 { get; set; }

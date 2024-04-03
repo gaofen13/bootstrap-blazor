@@ -239,12 +239,6 @@ namespace BootstrapBlazor
             InvalidMessageList = EditContext.GetValidationMessages(FieldIdentifier);
             if (InvalidMessageList.Any())
             {
-                if (IsValid == false)
-                {
-                    // Do not overwrite the attribute value
-                    return;
-                }
-
                 IsValid = false;
                 var errorText = InvalidMessageList.FirstOrDefault();
                 FormField?.SetInvalid(errorText);
