@@ -4,23 +4,18 @@ namespace BootstrapBlazor
 {
     public partial class BootstrapHeadTr<TItem> : BootstrapComponentBase
     {
-        private bool Checked => SelectedItems?.Count() == Items?.Count();
+        private bool Checked => Table?.SelectedItems?.Count() == Table?.Items?.Count();
 
         [CascadingParameter]
         public ITable<TItem>? Table { get; set; }
 
-        [Parameter]
-        public IEnumerable<TItem>? SelectedItems { get; set; }
-
-        [Parameter]
-        public bool MultiSelection { get; set; }
-
-        [Parameter]
-        public IEnumerable<TItem>? Items { get; set; }
-
-        private void OnCheckedChanged(bool @checked)
+        private void OnCheckedChanged(ChangeEventArgs args)
         {
-            if (@checked)
+            if (args.Value == null)
+            {
+                return;
+            }
+            if ((bool)args.Value)
             {
                 Table?.SelectAllItems();
             }

@@ -2,11 +2,11 @@
 @inherits BootstrapComponentBase
 @typeparam TItem
 
-<tr @ref="@Element" class="@TrClass" style="@Style" @attributes="@AdditionalAttributes">
-    @if (MultiSelection)
+<tr @ref="@Element" class="@Classname" style="@Style" @attributes="@AdditionalAttributes">
+    @if (Table?.MultiSelection == true)
     {
-        <td class="mdui-table-cell-checkbox">
-            <BootstrapCheckbox Value="@Checked" ValueChanged="@OnCheckedChanged" />
+        <td class="table-checkbox">
+            <input type="checkbox" class="form-check-input" checked="@Checked" @onchange="@OnCheckedChanged" />
         </td>
     }
     @ChildContent

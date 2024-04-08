@@ -2,7 +2,7 @@
 {
     public class ToastOptions
     {
-        public bool AutoClose { get; set; }
+        public bool AutoClose { get; set; } = true;
 
         public int CountdownTimeout { get; set; } = 5;
 

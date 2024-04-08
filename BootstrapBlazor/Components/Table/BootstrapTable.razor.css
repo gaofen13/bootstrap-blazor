@@ -1,0 +1,14 @@
+.table * {
+    vertical-align: middle;
+}
+
+.table ::deep .table-checkbox {
+    width: 48px;
+    text-align: center;
+}
+
+.table ::deep .table-checkbox>.form-check-input {
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+}

@@ -7,7 +7,7 @@ namespace BootstrapBlazor
     {
         protected string Classname =>
             new ClassBuilder()
-            .AddClass("mdui-table-col-numeric", AlignRight)
+            .AddClass("text-end", AlignRight)
             .Build();
 
         [CascadingParameter(Name = "RenderMode")]

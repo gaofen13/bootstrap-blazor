@@ -183,21 +183,18 @@ namespace BootstrapBlazor
                 // This is the first run
                 // Could put this logic in OnInit, but its nice to avoid forcing people who override OnInit to call base.OnInit()
 
-                if (ValueExpression == null)
+                if (ValueExpression != null)
                 {
-                    throw new InvalidOperationException($"{GetType()} requires a value for the 'ValueExpression' " +
-                        $"parameter. Normally this is provided automatically when using 'bind-Value'.");
+                    FieldIdentifier = FieldIdentifier.Create(ValueExpression);
+
+                    if (CascadedEditContext != null)
+                    {
+                        EditContext = CascadedEditContext;
+                        EditContext.OnValidationRequested += _validationRequestedHandler;
+                    }
+
+                    _nullableUnderlyingType = Nullable.GetUnderlyingType(typeof(TValue));
                 }
-
-                FieldIdentifier = FieldIdentifier.Create(ValueExpression);
-
-                if (CascadedEditContext != null)
-                {
-                    EditContext = CascadedEditContext;
-                    EditContext.OnValidationRequested += _validationRequestedHandler;
-                }
-
-                _nullableUnderlyingType = Nullable.GetUnderlyingType(typeof(TValue));
             }
             else if (CascadedEditContext != EditContext)
             {

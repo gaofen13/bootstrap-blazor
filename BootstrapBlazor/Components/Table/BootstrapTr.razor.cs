@@ -6,14 +6,14 @@ namespace BootstrapBlazor
 {
     public partial class BootstrapTr<TItem> : BootstrapComponentBase
     {
-        private string TrClass =>
+        private string Classname =>
             new ClassBuilder()
             .AddClass("table-active", Checked)
             .AddClass($"table-{Color}", Color != null)
             .AddClass(Class)
             .Build();
 
-        private bool Checked => SelectedItems?.Contains(Item) == true;
+        private bool Checked => Table?.SelectedItems?.Contains(Item) == true;
 
         [CascadingParameter]
         public ITable<TItem>? Table { get; set; }
@@ -22,18 +22,16 @@ namespace BootstrapBlazor
         public Color? Color { get; set; }
 
         [Parameter]
-        public bool MultiSelection { get; set; }
-
-        [Parameter]
-        public IEnumerable<TItem>? SelectedItems { get; set; }
-
-        [Parameter]
         [NotNull]
         public TItem? Item { get; set; }
 
-        private void OnCheckedChanged(bool @checked)
+        private void OnCheckedChanged(ChangeEventArgs args)
         {
-            if (@checked)
+            if (args.Value == null)
+            {
+                return;
+            }
+            if ((bool)args.Value)
             {
                 Table?.AddSelectedItem(Item);
             }

@@ -3,10 +3,10 @@
 @typeparam TItem
 
 <tr @ref="@Element" class="@Class" style="@Style" @attributes="@AdditionalAttributes">
-    @if (MultiSelection)
+    @if (Table?.MultiSelection == true)
     {
-        <th scope="col">
-            <BootstrapCheckbox Value="@Checked" ValueChanged="@OnCheckedChanged" />
+        <th scope="col" class="table-checkbox">
+            <input type="checkbox" class="form-check-input" checked="@Checked" @onchange="@OnCheckedChanged" />
         </th>
     }
     @ChildContent

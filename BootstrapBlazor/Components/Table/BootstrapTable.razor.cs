@@ -73,18 +73,10 @@ namespace BootstrapBlazor
             get => _items;
             set
             {
-                if (value == null)
+                if (!EqualityComparer<IEnumerable<TItem>>.Default.Equals(value, _items))
                 {
-                    _items = Enumerable.Empty<TItem>();
-                }
-                else
-                {
-                    _items = value;
-                }
-                if (_selectedItems.Any())
-                {
-                    _selectedItems.Clear();
-                    SelectedItemsChanged.InvokeAsync(_selectedItems);
+                    _items = value ?? [];
+                    ClearSelectedItems();
                 }
             }
         }
@@ -100,7 +92,11 @@ namespace BootstrapBlazor
             get => _selectedItems;
             set
             {
-                _selectedItems = value.ToList();
+                if (!EqualityComparer<IEnumerable<TItem>>.Default.Equals(value, _selectedItems))
+                {
+                    _selectedItems = value?.ToList() ?? [];
+                    _ = SelectedItemsChanged.InvokeAsync(_selectedItems);
+                }
             }
         }
 
@@ -118,11 +114,7 @@ namespace BootstrapBlazor
             if (!_selectedItems.Contains(item))
             {
                 _selectedItems.Add(item);
-                SelectedItemsChanged.InvokeAsync(SelectedItems);
-                if (_selectedItems.Count == _items.Count())
-                {
-                    StateHasChanged();
-                }
+                _ = SelectedItemsChanged.InvokeAsync(_selectedItems);
             }
         }
 
@@ -131,26 +123,18 @@ namespace BootstrapBlazor
             if (_selectedItems.Contains(item))
             {
                 _selectedItems.Remove(item);
-                SelectedItemsChanged.InvokeAsync(SelectedItems);
-                if (_selectedItems.Count + 1 == _items.Count())
-                {
-                    StateHasChanged();
-                }
+                _ = SelectedItemsChanged.InvokeAsync(_selectedItems);
             }
         }
 
         public void SelectAllItems()
         {
             SelectedItems = _items;
-            SelectedItemsChanged.InvokeAsync(SelectedItems);
-            StateHasChanged();
         }
 
         public void ClearSelectedItems()
         {
-            _selectedItems.Clear();
-            SelectedItemsChanged.InvokeAsync(SelectedItems);
-            StateHasChanged();
+            SelectedItems = [];
         }
     }
 }

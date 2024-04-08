@@ -4,7 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace BootstrapBlazor
 {
-    public partial class BootstrapInputText : BootstrapInputBase<string>
+    public partial class BootstrapInputText : BootstrapInputBase<string?>
     {
         private string Classname =>
           new ClassBuilder("form-control")
