@@ -25,7 +25,7 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-MvCd7rWhUYTF8suoFvuV20Z\/\/V2juQoj279\/k2rV95c=",
+      "hash": "sha256-4yJlZ5q56ftybNIafMgL92AkxdjggF35c7MjZDMpcMc=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -37,15 +37,15 @@
       "url": "_framework\/dotnet.native.wasm"
     },
     {
-      "hash": "sha256-TGfQzgkOZp15MgscHRnGLSPqUQ1DoFPVCsA3q2GDC7Y=",
+      "hash": "sha256-fnUej1aQRy7sJCqudTaxFz91H+gIdWb6ENb3n\/WS5I8=",
       "url": "_framework\/BootstrapBlazor.Client.wasm"
     },
     {
-      "hash": "sha256-oSMWGNMtWX2TD92EjaAc8+\/bBCyuGA7pOWIipIwb9NA=",
+      "hash": "sha256-xkuuWcJOCC2Y8cE+Q12vjBZSVqdyLCJGROeghG44XLM=",
       "url": "_framework\/BootstrapBlazor.Shared.wasm"
     },
     {
-      "hash": "sha256-Fu56XjW5C7LIhcjQcyYRl1t0mrHE01TS8n\/99hvsW1E=",
+      "hash": "sha256-99YeRKHEK6JfG\/sOmzaIev70f1uvDwI38sZ\/8UbFUAs=",
       "url": "_framework\/BootstrapBlazor.wasm"
     },
     {
@@ -245,7 +245,7 @@
       "url": "_content\/BootstrapBlazor.Shared\/BootstrapBlazor.Shared.bundle.scp.css"
     },
     {
-      "hash": "sha256-X1kZepcc\/ANwastZrJaSqp9VkNI3h4\/LoZiSGVPZkQY=",
+      "hash": "sha256-jZxkoceTBMYsKFarCEwHM5ndRWxy7tOmQ1Sx1ykf6LI=",
       "url": "_content\/BootstrapBlazor\/BootstrapBlazor.bundle.scp.css"
     },
     {
@@ -437,5 +437,5 @@
       "url": "_content\/BootstrapBlazor\/exampleJsInterop.js"
     }
   ],
-  "version": "1p4Yc7oB"
+  "version": "5LvA9pbK"
 };

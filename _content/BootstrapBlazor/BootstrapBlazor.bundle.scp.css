@@ -224,9 +224,29 @@
 .offcanvas[b-ko2koob20y] {
     transition: all 0.3s ease-in-out;
 }
+/* _content/BootstrapBlazor/Components/Pagination/BootstrapPagination.razor.rz.scp.css */
+.pagination[b-0xgqg1dx6q] {
+    padding: 0;
+    margin: 0;
+}
 /* _content/BootstrapBlazor/Components/Pagination/BootstrapPaginationItem.razor.rz.scp.css */
 .page-link[b-vhn05b0kf8] {
     cursor: pointer;
+}
+/* _content/BootstrapBlazor/Components/Table/BootstrapTable.razor.rz.scp.css */
+.table *[b-1lhvtmcwyy] {
+    vertical-align: middle;
+}
+
+.table[b-1lhvtmcwyy]  .table-checkbox {
+    width: 48px;
+    text-align: center;
+}
+
+.table[b-1lhvtmcwyy]  .table-checkbox>.form-check-input {
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
 }
 /* _content/BootstrapBlazor/Components/Tooltip/BootstrapTooltip.razor.rz.scp.css */
 .tooltip-container[b-q6b20tzmd3] {
