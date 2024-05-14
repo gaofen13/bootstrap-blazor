@@ -25,7 +25,7 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-2KT3P2TzhvtACWbXHvEvRj9NE6j54SLZfxDEy7wLIg0=",
+      "hash": "sha256-0xOZxbBmtVbRvxKMrwMxM45vtm+KPk5YY9teSt2f4Fo=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -37,27 +37,27 @@
       "url": "_framework\/dotnet.native.wasm"
     },
     {
-      "hash": "sha256-JhZmEZM\/3u5pldsPj0HoAjsQwZQvO19aYpsQiwjDIXs=",
+      "hash": "sha256-BSmOUutdYlnAzqHF1tq2TBDegi59GcLHRQJlGfmqOd8=",
       "url": "_framework\/BootstrapBlazor.Client.wasm"
     },
     {
-      "hash": "sha256-UCIVzhqx6MzTQhYZoRic+NMyj71kQ8kINfIcce2TLY4=",
+      "hash": "sha256-G9xU3+WqeDvOc9z\/WHBIFU0YftVjV06XqaGf7n88KKc=",
       "url": "_framework\/BootstrapBlazor.Shared.wasm"
     },
     {
-      "hash": "sha256-w48h5yYjsHS\/Coh\/o14\/a5s9rV5r\/\/14QE5L6gOdDnM=",
+      "hash": "sha256-00MSGvi0c1qS9Y1Ywo0U\/ZsUoT+52NXpfSyor41UQbY=",
       "url": "_framework\/BootstrapBlazor.wasm"
     },
     {
-      "hash": "sha256-mBKtDDWQVkbKqv6P3FXTxh3MhBdNEZEbAoQeWy+Znxg=",
+      "hash": "sha256-G\/nJ6BrFoIS+nDOaCZhwxhcqZLJgBIrP0jvVttYWWNA=",
       "url": "_framework\/Microsoft.AspNetCore.Components.Forms.wasm"
     },
     {
-      "hash": "sha256-Eg2AeCfXa7eAiVzWWx8V\/WJb6+hd2X\/te\/poeTIXVTI=",
+      "hash": "sha256-HwW+r+PkWNV5UWJs9kN8\/pVOWY42jgUQ7SraUmmiR70=",
       "url": "_framework\/Microsoft.AspNetCore.Components.wasm"
     },
     {
-      "hash": "sha256-3UebvlRYmunDct\/mYKexWlaQBer1eVJ0a66flBn7BW0=",
+      "hash": "sha256-XNkMlxH+qw8KTK3gKobzy3dMVpx3\/bo8lh15hxbBdMs=",
       "url": "_framework\/Microsoft.AspNetCore.Components.Web.wasm"
     },
     {
@@ -101,7 +101,7 @@
       "url": "_framework\/Microsoft.Extensions.Primitives.wasm"
     },
     {
-      "hash": "sha256-7cz6QpuDCe70BU97TSKtznhs92irD1PcOGz3\/Kd3Gjc=",
+      "hash": "sha256-pVRRYCn1SbN88TrMMc\/8fnuq\/TZKGOUjnRKRUjL6nnI=",
       "url": "_framework\/Microsoft.JSInterop.wasm"
     },
     {
@@ -437,5 +437,5 @@
       "url": "_content\/BootstrapBlazor\/exampleJsInterop.js"
     }
   ],
-  "version": "gatkbSpQ"
+  "version": "BMWqNY0G"
 };
