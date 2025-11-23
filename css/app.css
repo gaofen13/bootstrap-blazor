@@ -1,9 +1,10 @@
 .loading-progress {
-    position: relative;
+    position: absolute;
     display: block;
     width: 8rem;
     height: 8rem;
-    margin: 20vh auto 1rem auto;
+    inset: 20vh 0 auto 0;
+    margin: 0 auto 0 auto;
 }
 
     .loading-progress circle {
@@ -24,10 +25,7 @@
     position: absolute;
     text-align: center;
     font-weight: bold;
-    top: calc(20vh + 3.25rem);
-    bottom: auto;
-    left: 0.2rem;
-    right: 0;
+    inset: calc(20vh + 3.25rem) 0 auto 0.2rem;
 }
 
     .loading-progress-text:after {

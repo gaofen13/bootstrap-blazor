@@ -3,24 +3,42 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BootstrapBlazor</title>
     <base href="/bootstrap-blazor/" />
-    <link href="css/app.css" rel="stylesheet" />
-    <link href="BootstrapBlazor.Client.styles.css" rel="stylesheet" />
-    <link href="_content/BootstrapBlazor/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="_content/BootstrapBlazor.Shared/BootstrapBlazor.Shared.bundle.scp.css" rel="stylesheet" />
-    <link href="_content/BootstrapBlazor.Shared/font/css/open-iconic-bootstrap.min.css" rel="stylesheet" />
-    <link href="_content/BootstrapBlazor.Shared/css/site.css" rel="stylesheet" />
+    <link href="_framework/dotnet.6778mps90i.js" rel="preload" as="script" fetchpriority="high" crossorigin="anonymous" integrity="sha256-jk8etTqRsdutFxr3dO8aUKQgDBX5mF1hlgJfswk8EeA=" />
+    <link rel="stylesheet" href="css/app.css" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" href="BootstrapBlazor.WebAssembly.styles.css" />
+    <link rel="stylesheet" href="_content/BootstrapBlazor.Shared/css/site.css" />
+    <link rel="stylesheet" href="_content/BootstrapBlazor.Shared/font/css/open-iconic-bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
     <!-- highlight -->
     <link rel="stylesheet" href="_content/BootstrapBlazor.Shared/highlight/css/vs.min.css">
     <link rel="stylesheet" href="_content/BootstrapBlazor.Shared/highlight/css/highlightjs-copy.min.css">
-    
-    <link rel="icon" type="image/png" href="favicon.png" />
-    <link href="manifest.json" rel="manifest" />
+    <link rel="manifest" href="manifest.webmanifest" />
     <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png" />
     <link rel="apple-touch-icon" sizes="192x192" href="icon-192.png" />
+    <script type="importmap">{
+  "imports": {
+    "./_framework/blazor.webassembly.js": "./_framework/blazor.webassembly.66stpp682q.js",
+    "./_framework/dotnet.js": "./_framework/dotnet.6778mps90i.js",
+    "./_framework/dotnet.native.js": "./_framework/dotnet.native.54saoeecvo.js",
+    "./_framework/dotnet.runtime.js": "./_framework/dotnet.runtime.o0qy896u8v.js"
+  },
+  "scopes": {},
+  "integrity": {
+    "./_framework/blazor.webassembly.66stpp682q.js": "sha256-3lCWrko3zwspV40aQhs2S/IMkRSarnHRKIdkHhuXIBA=",
+    "./_framework/blazor.webassembly.js": "sha256-3lCWrko3zwspV40aQhs2S/IMkRSarnHRKIdkHhuXIBA=",
+    "./_framework/dotnet.6778mps90i.js": "sha256-jk8etTqRsdutFxr3dO8aUKQgDBX5mF1hlgJfswk8EeA=",
+    "./_framework/dotnet.js": "sha256-jk8etTqRsdutFxr3dO8aUKQgDBX5mF1hlgJfswk8EeA=",
+    "./_framework/dotnet.native.54saoeecvo.js": "sha256-K2P/04E5oaXuVywG2YzQ80CWIACsd3pnP/zC+5pQkcI=",
+    "./_framework/dotnet.native.js": "sha256-K2P/04E5oaXuVywG2YzQ80CWIACsd3pnP/zC+5pQkcI=",
+    "./_framework/dotnet.runtime.js": "sha256-yJvgPPUUvavYVmu9VD/fYtMcoEnLVaB0Cr7JAE29btw=",
+    "./_framework/dotnet.runtime.o0qy896u8v.js": "sha256-yJvgPPUUvavYVmu9VD/fYtMcoEnLVaB0Cr7JAE29btw="
+  }
+}</script>
 </head>
 
 <body>
@@ -34,10 +52,10 @@
 
     <div id="blazor-error-ui">
         An unhandled error has occurred.
-        <a href="" class="reload">Reload</a>
-        <a class="dismiss">🗙</a>
+        <a href="." class="reload">Reload</a>
+        <span class="dismiss">🗙</span>
     </div>
-
+    
     <!-- Start Single Page Apps for GitHub Pages -->
     <script type="text/javascript">
         // Single Page Apps for GitHub Pages
@@ -68,9 +86,8 @@
             }
         }(window.location))
     </script>
-    <!-- End Single Page Apps for GitHub Pages -->
-    <script src="_framework/blazor.webassembly.js"></script>
-    <script>navigator.serviceWorker.register('service-worker.js');</script>
+    <script src="_framework/blazor.webassembly.66stpp682q.js"></script>
+    <script>navigator.serviceWorker.register('service-worker.js', { updateViaCache: 'none' });</script>
 
     <!-- highlight -->
     <script type="text/javascript" src="_content/BootstrapBlazor.Shared/highlight/js/highlight.min.js"></script>
