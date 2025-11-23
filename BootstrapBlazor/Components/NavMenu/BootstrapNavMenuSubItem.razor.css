@@ -10,8 +10,8 @@
     cursor: pointer;
     color: var(--bs-body-color);
     border-radius: 4px;
-    height: 3rem;
-    line-height: 3rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
 }
 
 .navmenu-sub-title::after {

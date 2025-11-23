@@ -1,20 +1,26 @@
 {
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
         {
-            // Use IntelliSense to find out which attributes exist for C# debugging
-            // Use hover for the description of the existing attributes
-            // For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md
-            "name": ".NET Core Launch (web)",
+            "name": "Blazor WebAssembly App",
+            "type": "blazorwasm",
+            "request": "launch",
+            "preLaunchTask": "buildWasm",
+            "cwd": "${workspaceFolder}/BootstrapBlazor.WebAssembly",
+            "browser": "chrome"
+        },
+        {
+            "name": "Blazor Web App",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/BootstrapBlazor.Server/bin/Debug/net8.0/BootstrapBlazor.Server.dll",
+            "program": "${workspaceFolder}/BootstrapBlazor.Web/bin/Debug/Net10.0/BootstrapBlazor.Web.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/BootstrapBlazor.Server",
+            "cwd": "${workspaceFolder}/BootstrapBlazor.Web",
             "stopAtEntry": false,
-            // Enable launching a web browser when ASP.NET Core starts. For more information: https://aka.ms/VSCode-CS-LaunchJson-WebBrowser
             "serverReadyAction": {
                 "action": "openExternally",
                 "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
@@ -23,13 +29,9 @@
                 "ASPNETCORE_ENVIRONMENT": "Development"
             },
             "sourceFileMap": {
-                "/Views": "${workspaceFolder}/Views"
+                "/Views": "${workspaceFolder}/BootstrapBlazor.Web/Views",
+                "/wwwroot": "${workspaceFolder}/BootstrapBlazor.Web/wwwroot"
             }
-        },
-        {
-            "name": ".NET Core Attach",
-            "type": "coreclr",
-            "request": "attach"
         }
     ]
 }

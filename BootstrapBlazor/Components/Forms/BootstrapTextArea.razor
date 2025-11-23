@@ -1,4 +1,4 @@
 ﻿@namespace BootstrapBlazor
-@inherits BootstrapInputBase<string>
+@inherits BootstrapInputBase<string?>
 
 <textarea @ref="@Element" id="@Id" name="@Name" class="@Classname" style="@Style" required="@Required" autofocus="@AutoFocus" rows="@Rows" placeholder="@Placeholder" disabled="@Disabled" readonly="@Readonly" @attributes="@AdditionalAttributes" value="@BindConverter.FormatValue(CurrentValueAsString)" @onchange="@(EventCallback.Factory.CreateBinder<string?>(this, __value => CurrentValueAsString = __value, CurrentValueAsString))" />

@@ -52,6 +52,9 @@ namespace BootstrapBlazor
         public string? HeaderText { get; set; }
 
         [Parameter]
+        public RenderFragment? ActiveContent { get; set; }
+
+        [Parameter]
         public RenderFragment? MenuContent { get; set; }
 
         [Parameter]

@@ -1,0 +1,57 @@
+name: .Net_deployghpages
+env:
+  PUBLISH_DIR: BootstrapBlazor.WebAssembly/bin/Release/net10.0/publish/wwwroot
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+  
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 10.0.x
+      
+    - run: dotnet workload install wasm-tools
+
+    - name: Restore dependencies
+      run: dotnet restore
+
+    - name: Build
+      run: dotnet build --no-restore
+
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
+
+    - name: Publish wasm
+      run: dotnet publish -c Release BootstrapBlazor.WebAssembly
+
+    - name: Rewrite base href
+      uses: SteveSandersonMS/ghaction-rewrite-base-href@5b54862a8831e012d4f1a8b2660894415fdde8ec # v1.1.0
+      with:
+        html_path: ${{ env.PUBLISH_DIR }}/index.html
+        base_href: /bootstrap-blazor/
+
+    - name: Setup Pages
+      uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5.0.0
+
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b # v4.0.0
+      with:
+        path: ${{ env.PUBLISH_DIR }}
+      
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        TOKEN: ${{ secrets.GH_PUSH_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: ${{ env.PUBLISH_DIR }}
+        CLEAN: true

@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="BootstrapBlazor/BootstrapBlazor.csproj" />
+  <Project Path="BootstrapBlazor.Client/BootstrapBlazor.Client.csproj" />
+  <Project Path="BootstrapBlazor.Generators/BootstrapBlazor.Generators.csproj" />
+  <Project Path="BootstrapBlazor.Shared/BootstrapBlazor.Shared.csproj" />
+  <Project Path="BootstrapBlazor.Web/BootstrapBlazor.Web.csproj" />
+  <Project Path="BootstrapBlazor.WebAssembly/BootstrapBlazor.WebAssembly.csproj" />
+</Solution>
